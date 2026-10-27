@@ -1,0 +1,52 @@
+.tim-mascot[data-order-open=true] { z-index: 1100; }
+.tim-order__overlay { position: absolute; inset: 0; z-index: 1; background: #153d457a; pointer-events: auto; opacity: 0; }
+.tim-order {
+  position: absolute; z-index: 4; right: 22px; bottom: max(18px, env(safe-area-inset-bottom));
+  display: flex; flex-direction: column; width: 380px; max-width: calc(100% - 24px); max-height: calc(100% - 32px);
+  margin: 0; padding: 0; border: 1px solid #cee0e2; border-radius: 22px 22px 18px 18px;
+  background: #fff; box-shadow: 0 16px 64px #143b4533, 0 2px 6px #143b4512;
+  color: #31555c; font-family: 'Open Sans', sans-serif; text-align: left; pointer-events: auto;
+  will-change: transform; visibility: hidden;
+}
+.tim-order[data-positioned=true] { visibility: visible; }
+.tim-order[data-side=left] { right: auto; left: 22px; }
+.tim-order__header { flex: none; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; padding: 21px 21px 18px; border-bottom: 1px solid #e4eded; border-radius: 22px 22px 0 0; background: #f3f9f9; }
+.tim-order__heading { min-width: 0; }
+.tim-order .tim-order__title { float: none; margin: 0; padding: 0; color: #254e57; font-size: 21px; line-height: 1.35; font-weight: 600; outline: none; }
+.tim-order .site-button.tim-order__close { flex: none; min-width: 34px; width: 34px; height: 34px; min-height: 34px; margin: -3px -3px 0 0; padding: 0; border-radius: 50%; background: #fff; }
+.tim-order__body { flex: 1 1 auto; min-height: 100px; padding: 23px 20px 10px; overflow: auto; overscroll-behavior: contain; }
+/* The provider draws a 1px frame around its 217px form inside a 230px iframe.
+   Use the form-height viewport and trim the frame plus its antialiased edge. Native iframe
+   scrolling still exposes validation/results; the surrounding slot stays stable. */
+.tim-order .site-status-widget__frame { height: calc(var(--status-widget-height, 230px) - 13px); clip-path: inset(2px); }
+.tim-order__footer { flex: none; padding: 12px 20px 18px; text-align: center; }
+.tim-order__footer a { color: #748a8f; font-size: 11px; text-underline-offset: 3px; }
+.tim-order__footer a:hover { color: #028291; }
+.tim-order__footer a:focus-visible { outline: 2px solid #028291; outline-offset: 4px; border-radius: 2px; }
+.tim-order__handle { position: absolute; left: -10px; bottom: var(--tim-order-handle, 24px); display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: var(--tim-order-handle-height, 38px); border: 2px solid #028291; border-radius: 8px; background: #e6f5f3; box-shadow: 0 2px 4px #163f4520; pointer-events: none; }
+.tim-order__handle i { width: 2px; height: 12px; border-radius: 2px; background: #86c2c3; }
+.tim-order__handle { opacity: var(--tim-order-handle-opacity, 1); }
+.tim-order[data-side=left] .tim-order__handle { left: auto; right: -10px; }
+.tim-mascot[data-order-open=true] :is(.tim-mascot__settings,.tim-mascot__order,.tim-mascot__parts,.tim-mascot__panel) { display: none !important; }
+.tim-mascot[data-order-open=true] .tim-mascot__shape { pointer-events: none; }
+@media (max-width: 767px), (hover: none) and (pointer: coarse) {
+  .tim-order, .tim-order[data-side=left] { left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); width: auto; max-height: calc(100% - 28px); border-radius: 22px 22px 16px 16px; }
+  .tim-order__header { min-height: 116px; padding: 18px 15px 17px 124px; align-items: center; gap: 6px; }
+  .tim-order[data-side=right] .tim-order__header { padding-left: 18px; padding-right: 124px; }
+  .tim-order .tim-order__title { font-size: 18px; }
+  .tim-order .site-button.tim-order__close { position: absolute; top: -14px; right: 10px; }
+  .tim-order[data-side=right] .tim-order__close { left: 10px; right: auto; }
+  .tim-order__body { padding: 16px 14px 6px; }
+  .tim-order__footer { padding-bottom: 15px; }
+  .tim-order__handle { display: none; }
+}
+@media (max-width: 359px) {
+  .tim-order, .tim-order[data-side=left] { left: 8px; right: 8px; max-width: calc(100% - 16px); }
+  .tim-order__body { padding-right: 0; padding-left: 0; }
+  .tim-order__header { padding-left: 108px; }
+  .tim-order[data-side=right] .tim-order__header { padding-right: 108px; }
+  .tim-order .tim-order__title { font-size: 16px; }
+}
+.tim-mascot[data-order-open=true] { bottom: auto; height: 100dvh; }
+html[data-tim-order-lock] { overflow-y: hidden; scrollbar-gutter: auto; }
+html[data-tim-order-lock] body { margin-right: var(--tim-order-page-gap, 0px) !important; padding-right: 0; }

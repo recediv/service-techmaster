@@ -1,0 +1,54 @@
+html {
+  --site-scrollbar-thumb: #6f949a;
+  --site-scrollbar-track: transparent;
+  scroll-padding-top: 110px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
+/* One native scrollbar style for the page and all nested scroll areas. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--site-scrollbar-thumb) var(--site-scrollbar-track);
+}
+@supports not (scrollbar-width: thin) {
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner { background: var(--site-scrollbar-track); }
+  ::-webkit-scrollbar-thumb { border-radius: 999px; background: var(--site-scrollbar-thumb); }
+  ::-webkit-scrollbar-thumb:hover { background: #028291; }
+}
+@media (forced-colors: active) {
+  * { scrollbar-color: auto; }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+}
+body > .header,
+body > .info_cont,
+body > footer.footer { flex-shrink: 0; }
+.site-page-content {
+  display: flow-root;
+  flex: 1 0 auto;
+  clear: both;
+  width: 100%;
+  min-width: 0;
+  background: #fff;
+}
+/* The original category hero floats; prices must begin below its full width. */
+.catalog-source > .ceni { clear: both; }
+.site-projector { position: fixed; inset: 0; z-index: 24; overflow: hidden; pointer-events: none; }
+.site-projector svg { display: block; overflow: visible; }
+.site-projector-source { position: fixed; z-index: 26; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; background: radial-gradient(circle, #fff 0%, #e5fff7e6 8%, #86e4d56b 30%, #a8f3e500 70%); }
+.site-not-found { min-height: 300px; padding-top: 70px; padding-bottom: 70px; }
+.site-not-found h1 { text-align: left; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .site-projector, .site-projector-source { display: none; }
+}

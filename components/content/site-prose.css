@@ -1,0 +1,55 @@
+/* Shared long-form typography. Apply explicitly; UI, heroes and cards stay outside. */
+.site-prose.site-prose { min-width: 0; color: #435d63; font: 400 16px/1.8 'Open Sans', sans-serif; text-align: left; overflow-wrap: anywhere; }
+.site-prose *, .site-prose *::before, .site-prose *::after { box-sizing: border-box; }
+.site-prose.site-prose :is(.context, .center) { width: 100%; max-width: none; min-width: 0; margin: 0; padding: 0; }
+.site-prose.site-prose .service_title:has(h2, h3, h4) { display: block; float: none; width: auto; margin: 0; padding: 0; text-align: left; }
+.site-prose.site-prose p { position: static; float: none; left: auto; width: auto; margin: 0 0 18px; padding: 0; color: inherit; font: inherit; text-align: left; }
+.site-prose.site-prose :is(h2, h3, h4),
+.site-prose.site-prose .site-prose__heading,
+.site-prose.site-prose .service_title:not(:has(h2, h3, h4)) { float: none; width: auto; margin: 42px 0 20px; padding: 0; border: 0; color: #29474e; font: 600 28px/1.4 'Open Sans', sans-serif; text-align: left; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.site-prose.site-prose h2::after,
+.site-prose.site-prose .site-prose__heading::after,
+.site-prose.site-prose .service_title:not(:has(h2, h3, h4))::after { display: block; width: 48px; height: 3px; margin-top: 15px; border-radius: 2px; background: #e66b52; content: ''; }
+.site-prose.site-prose h3 { margin-top: 32px; font-size: 22px; }
+.site-prose.site-prose h4 { margin-top: 28px; font-size: 20px; }
+.site-prose.site-prose > :is(h2, h3, h4, .site-prose__heading, .service_title):first-child,
+.site-prose.site-prose > :is(.context, .center) > :is(h2, h3, h4, .site-prose__heading, .service_title):first-child,
+.site-prose.site-prose > :is(.context, .center) > .service_title:first-child :is(h2, h3, h4) { margin-top: 0; }
+.site-prose.site-prose :is(ul, ol) { position: static; float: none; left: auto; width: auto; margin: 18px 0 28px; padding: 0 0 0 24px; color: inherit; list-style-position: outside; text-align: left; }
+.site-prose.site-prose ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 40px; list-style-type: disc; }
+.site-prose.site-prose ol { display: block; list-style-type: decimal; }
+.site-prose.site-prose :is(ul, ol) li { position: static; display: list-item; float: none; left: auto; width: auto; min-width: 0; margin: 0 0 8px; padding: 2px 0 2px 3px; color: inherit; font: inherit; }
+.site-prose.site-prose ul > li { margin-bottom: 0; }
+.site-prose.site-prose li::marker { color: #e66b52; }
+.site-prose.site-prose :is(ul, ol) :is(ul, ol) { display: block; margin: 12px 0; }
+.site-prose.site-prose > :last-child,
+.site-prose.site-prose :is(.context, .center) > :last-child,
+.site-prose.site-prose li:last-child { margin-bottom: 0; }
+.site-prose.site-prose a { color: #028291; text-decoration: underline; text-underline-offset: 3px; }
+.site-prose.site-prose a:focus-visible { outline: 2px solid #028291; outline-offset: 3px; }
+.site-prose.site-prose img { max-width: 100%; height: auto; }
+.site-prose.site-prose .site-prose__intro,
+.site-prose.site-prose > .context > .service_title:first-child + p,
+.site-prose.site-prose > .center > h2:first-child + p { color: #29474e; font-size: 17px; }
+.site-prose.site-prose--single-column ul { grid-template-columns: minmax(0, 1fr); }
+/* About's source paragraphs already contain the literal bullet character. */
+.site-prose.site-prose--literal-bullets ul { padding: 0; list-style: none; }
+.site-prose.site-prose--literal-bullets ul > li { display: block; margin: 0; padding: 0; list-style: none; }
+.site-prose.site-prose--literal-bullets .about-content__list-copy p { padding-left: 17px; text-indent: -17px; }
+/* Full-width catalog sections limit only their inner copy. */
+.catalog-source .site-prose-section { box-sizing: border-box; position: static; display: flow-root; float: none; clear: both; left: auto; width: 100%; max-width: none; min-width: 0; margin: 0; padding: 52px 15px 56px; background: #fff; }
+.site-prose-section > .site-prose,
+.site-prose-section .site-prose-section__inner { box-sizing: border-box; width: 100%; max-width: 1000px; min-width: 0; margin: 0 auto; padding: 0; }
+@media (max-width: 650px) {
+  .site-prose.site-prose :is(h2, h3, h4),
+  .site-prose.site-prose .site-prose__heading,
+  .site-prose.site-prose .service_title:not(:has(h2, h3, h4)) { margin-top: 32px; font-size: 24px; }
+  .site-prose.site-prose h3 { font-size: 20px; }
+  .site-prose.site-prose h4 { font-size: 18px; }
+  .site-prose.site-prose ul { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  .site-prose.site-prose .site-prose__intro,
+  .site-prose.site-prose > .context > .service_title:first-child + p,
+  .site-prose.site-prose > .center > h2:first-child + p { font-size: 16px; }
+  .catalog-source .site-prose-section { padding: 34px 20px 38px; }
+}
+@media (max-width: 380px) { .catalog-source .site-prose-section { padding-inline: 15px; } }

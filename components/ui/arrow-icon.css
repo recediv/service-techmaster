@@ -1,0 +1,13 @@
+.site-arrow-icon {
+  display: block;
+  flex-shrink: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 350ms cubic-bezier(.4, 0, .2, 1), color 350ms cubic-bezier(.4, 0, .2, 1);
+}
+:where(a, button):focus-visible .site-arrow-icon { transform: translate3d(4px, 0, 0); }
+@media (hover: hover) {
+  :where(a, button):hover .site-arrow-icon { transform: translate3d(4px, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-arrow-icon.site-arrow-icon { transform: none; transition: none; }
+}

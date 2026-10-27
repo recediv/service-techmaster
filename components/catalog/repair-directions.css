@@ -1,0 +1,153 @@
+.repair-directions {
+  box-sizing: border-box;
+  display: flow-root;
+  clear: both;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 48px 0;
+  background: #028291;
+  color: #fff;
+}
+.repair-directions *, .repair-directions *::before, .repair-directions *::after { box-sizing: border-box; }
+.repair-directions .repair-directions__container { width: 100%; max-width: 1220px; min-width: 0; margin: 0 auto; padding: 0 15px; }
+.repair-directions .repair-directions__title { float: none; width: auto; margin: 0 0 28px; padding: 0; color: #fff; font: 400 32px/1.25 'Open Sans', sans-serif; letter-spacing: -.025em; text-align: left; }
+.repair-directions .repair-directions__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; width: 100%; margin: 0; padding: 0; list-style: none; }
+.repair-directions .repair-directions__grid > li { float: none; width: auto; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.repair-directions .repair-directions__link { position: relative; display: grid; grid-template-columns: 42px minmax(0, 1fr) 18px; align-items: center; gap: 12px; width: 100%; min-height: 94px; height: 100%; margin: 0; padding: 18px 16px; border: 1px solid rgb(255 255 255 / .22); border-radius: 12px; background: rgb(255 255 255 / .07); color: #fff; text-decoration: none; transition: background-color 350ms cubic-bezier(.4, 0, .2, 1), color 350ms cubic-bezier(.4, 0, .2, 1), border-color 350ms cubic-bezier(.4, 0, .2, 1); }
+.repair-directions .repair-directions__icon { display: flex; flex: none; align-items: center; justify-content: center; width: 42px; height: 42px; margin: 0; border-radius: 10px; background: rgb(255 255 255 / .1); color: inherit; transition: background-color 350ms cubic-bezier(.4, 0, .2, 1); }
+.repair-directions .repair-directions__icon > svg { display: block; width: 28px; height: 28px; margin: 0; background: none; fill: none; }
+/* Device details move independently; the shared menu icons stay still. */
+.repair-directions :where(.repair-directions__icon > svg) { --repair-icon-animation: none; --repair-icon-duration: 760ms; transform-box: view-box; transform-origin: 12px 12px; }
+.repair-directions [data-icon-part] { transform-box: view-box; transform-origin: 12px 12px; }
+.repair-directions [data-section-icon='iphone'] { --repair-icon-animation: repair-icon-vibrate; --repair-icon-duration: 640ms; transform-origin: 12px 16px; }
+.repair-directions [data-icon-part='phone-front'] { --repair-icon-animation: repair-icon-phone-fan; transform-origin: 13px 20px; }
+.repair-directions [data-icon-part='laptop-typing'] { --repair-icon-animation: repair-icon-type; --repair-icon-duration: 1100ms; opacity: 0; stroke-dasharray: 18; stroke-dashoffset: 18; }
+.repair-directions [data-icon-part='computer-boot'] { --repair-icon-animation: repair-icon-boot; --repair-icon-duration: 1000ms; opacity: 0; stroke-dasharray: 7; stroke-dashoffset: 7; }
+.repair-directions [data-icon-part='computer-led'] { --repair-icon-animation: repair-icon-led; --repair-icon-duration: 1000ms; }
+.repair-directions [data-section-icon='tablet'] { --repair-icon-animation: repair-icon-tablet-tilt; }
+.repair-directions [data-icon-part='book-leaf'] { --repair-icon-animation: repair-icon-page-turn; --repair-icon-duration: 1100ms; opacity: 0; transform-origin: 12px 13px; }
+.repair-directions :is([data-icon-part='gpu-fan-left'], [data-icon-part='gpu-fan-right']) { --repair-icon-animation: repair-icon-spin; --repair-icon-duration: 960ms; }
+.repair-directions [data-icon-part='gpu-fan-left'] { transform-origin: 7.7px 11.5px; }
+.repair-directions [data-icon-part='gpu-fan-right'] { transform-origin: 15.3px 11.5px; }
+.repair-directions [data-icon-part='tv-signal'] { --repair-icon-animation: repair-icon-signal; --repair-icon-duration: 1000ms; opacity: 0; }
+.repair-directions [data-icon-part='monitor-screen'] { --repair-icon-animation: repair-icon-screen; transform-origin: 12px 10px; }
+.repair-directions [data-icon-part='camera-lens'] { --repair-icon-animation: repair-icon-focus; transform-origin: 12px 14px; }
+.repair-directions [data-icon-part='washer-drum'] { --repair-icon-animation: repair-icon-spin; --repair-icon-duration: 1000ms; transform-origin: 12px 13.8px; }
+.repair-directions [data-icon-part='stereo-display'] { --repair-icon-animation: repair-icon-audio; transform-origin: 9px 11px; }
+.repair-directions [data-icon-part='stereo-knob'] { --repair-icon-animation: repair-icon-focus; transform-origin: 17.2px 12px; }
+.repair-directions [data-icon-part='console-dpad'] { --repair-icon-animation: repair-icon-press; transform-origin: 7.7px 11.5px; }
+.repair-directions [data-icon-part='console-button-a'] { --repair-icon-animation: repair-icon-focus; transform-origin: 16px 10.8px; }
+.repair-directions [data-icon-part='console-button-b'] { --repair-icon-animation: repair-icon-focus; --repair-icon-duration: 1000ms; transform-origin: 18.2px 13px; }
+.repair-directions [data-icon-part='printer-paper'] { --repair-icon-animation: repair-icon-print; --repair-icon-duration: 1000ms; }
+.repair-directions [data-icon-part='radiator-heat'] { --repair-icon-animation: repair-icon-heat; --repair-icon-duration: 1100ms; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .repair-directions .repair-directions__link:hover :is(.site-category-icon, [data-icon-part]) { animation: var(--repair-icon-animation) var(--repair-icon-duration) cubic-bezier(.4, 0, .2, 1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .repair-directions .repair-directions__link:focus-visible :is(.site-category-icon, [data-icon-part]) { animation: var(--repair-icon-animation) var(--repair-icon-duration) cubic-bezier(.4, 0, .2, 1); }
+}
+@keyframes repair-icon-vibrate {
+  0%, 100% { transform: none; }
+  16%, 48% { transform: translateX(-.7px) rotate(-8deg); }
+  32%, 64% { transform: translateX(.7px) rotate(8deg); }
+  82% { transform: rotate(-3deg); }
+}
+@keyframes repair-icon-phone-fan {
+  0%, 100% { transform: none; }
+  38% { transform: translate(1px, -.5px) rotate(13deg); }
+  70% { transform: rotate(-4deg); }
+}
+@keyframes repair-icon-type {
+  0%, 100% { opacity: 0; stroke-dashoffset: 18; }
+  15% { opacity: 1; stroke-dashoffset: 18; }
+  65%, 85% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes repair-icon-boot {
+  0%, 100% { opacity: 0; stroke-dashoffset: 7; }
+  15% { opacity: 1; stroke-dashoffset: 7; }
+  65%, 85% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes repair-icon-led {
+  0%, 100% { opacity: 1; }
+  20%, 55% { opacity: .25; }
+  40%, 75% { opacity: 1; }
+}
+@keyframes repair-icon-tablet-tilt {
+  0%, 100% { transform: none; }
+  35% { transform: translateY(-1px) rotate(-13deg); }
+  72% { transform: rotate(4deg); }
+}
+@keyframes repair-icon-page-turn {
+  0% { opacity: 0; transform: scaleX(1); }
+  15% { opacity: 1; transform: scaleX(.9); }
+  48% { opacity: 1; transform: scaleX(.08); }
+  80% { opacity: 1; transform: scaleX(-.95); }
+  100% { opacity: 0; transform: scaleX(-1); }
+}
+@keyframes repair-icon-spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(720deg); }
+}
+@keyframes repair-icon-signal {
+  0% { opacity: 0; transform: translateY(0); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes repair-icon-screen {
+  0%, 100% { transform: none; opacity: 1; }
+  34% { transform: scaleX(.88) scaleY(.97); opacity: .5; }
+  66% { transform: scale(1.04); opacity: 1; }
+}
+@keyframes repair-icon-focus {
+  0%, 100% { transform: none; }
+  32% { transform: scale(.78); }
+  66% { transform: scale(1.12); }
+}
+@keyframes repair-icon-audio {
+  0%, 100% { transform: none; opacity: 1; }
+  25%, 65% { transform: scaleY(.65); opacity: .5; }
+  45%, 80% { transform: scaleY(1.1); opacity: 1; }
+}
+@keyframes repair-icon-press {
+  0%, 100% { transform: none; }
+  30% { transform: translateY(.7px) rotate(-12deg) scale(.88); }
+  65% { transform: rotate(6deg); }
+}
+@keyframes repair-icon-print {
+  0%, 100% { transform: none; }
+  25% { transform: translateY(-1.5px); }
+  65% { transform: translateY(1.2px); }
+}
+@keyframes repair-icon-heat {
+  0%, 100% { opacity: 1; transform: none; }
+  45% { opacity: .25; transform: translateY(-1.2px); }
+  65% { opacity: .25; transform: translateY(.7px); }
+}
+.repair-directions .repair-directions__label { min-width: 0; font-size: 15px; font-weight: 400; line-height: 1.45; overflow-wrap: anywhere; }
+.repair-directions .repair-directions__arrow { display: block; width: 18px; height: 18px; color: rgb(255 255 255 / .65); }
+.repair-directions .repair-directions__link:hover { border-color: #fff; background: #fff; color: #026c78; text-decoration: none; }
+.repair-directions .repair-directions__link:hover .repair-directions__icon { background: #edf5f5; }
+.repair-directions .repair-directions__link:hover .repair-directions__arrow { color: #fe6c55; }
+.repair-directions .repair-directions__link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-color: #fe6c55; }
+@media (max-width: 1100px) {
+  .repair-directions .repair-directions__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .repair-directions .repair-directions__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 550px) {
+  .repair-directions { padding: 30px 0; }
+  .repair-directions .repair-directions__title { margin-bottom: 22px; font-size: 27px; }
+  .repair-directions .repair-directions__grid { gap: 12px; }
+  .repair-directions .repair-directions__link { grid-template-columns: minmax(0, 1fr) 18px; align-content: start; align-items: start; gap: 12px 8px; min-height: 118px; padding: 15px; border-radius: 10px; }
+  .repair-directions .repair-directions__icon { width: 36px; height: 36px; border-radius: 8px; }
+  .repair-directions .repair-directions__icon > svg { width: 26px; height: 26px; }
+  .repair-directions .repair-directions__label { grid-column: 1 / -1; grid-row: 2; font-size: 14px; line-height: 1.4; }
+  .repair-directions .repair-directions__arrow { grid-column: 2; grid-row: 1; align-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .repair-directions .repair-directions__link, .repair-directions .repair-directions__icon, .repair-directions .repair-directions__arrow { transition: none; }
+  .repair-directions .repair-directions__icon :is(svg, [data-icon-part]) { animation: none; transform: none; }
+}

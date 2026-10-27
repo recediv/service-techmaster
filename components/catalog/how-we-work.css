@@ -1,0 +1,43 @@
+.how-we-work { --scroll-reveal-duration: 900ms; --scroll-reveal-distance: 28px; box-sizing: border-box; display: flow-root; clear: both; width: 100%; min-width: 0; padding: 56px 0; background: linear-gradient(#fff, #f7fbfa); color: #29474e; }
+.how-we-work *, .how-we-work *::before, .how-we-work *::after { box-sizing: border-box; }
+.how-we-work .how-we-work__container { width: 100%; max-width: 1140px; min-width: 0; margin: 0 auto; padding: 0 20px; }
+.how-we-work .how-we-work__title { float: none; width: auto; margin: 0 0 46px; padding: 0; color: #29474e; font: 600 34px/1.25 'Open Sans', sans-serif; letter-spacing: -.025em; text-align: left; }
+.how-we-work .how-we-work__title::after { content: ''; display: block; width: 46px; height: 2px; margin-top: 16px; background: #fe6c55; }
+.how-we-work .how-we-work__journey { position: relative; width: 100%; min-width: 0; isolation: isolate; }
+.how-we-work .how-we-work__journey::before { content: ''; position: absolute; z-index: -1; left: 79px; top: 60px; bottom: 60px; width: 2px; background: #d7e7e8; }
+.how-we-work .how-we-work__journey[data-work-motion='ready']::before { display: none; }
+.how-we-work .how-we-work__route { position: absolute; z-index: -1; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; opacity: 0; pointer-events: none; }
+.how-we-work .how-we-work__journey[data-work-motion='ready'] .how-we-work__route { opacity: 1; }
+.how-we-work .how-we-work__track, .how-we-work .how-we-work__progress { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.how-we-work .how-we-work__track { stroke: #d7e7e8; stroke-dasharray: 3 8; }
+.how-we-work .how-we-work__progress { stroke: #028291; }
+.how-we-work .how-we-work__traveller { fill: #fe6c55; stroke: #fff; stroke-width: 3; }
+.how-we-work .how-we-work__steps { position: relative; display: grid; gap: 56px; width: 100%; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.how-we-work .how-we-work__step { position: relative; display: grid; grid-template-columns: 160px minmax(0, 1fr); align-items: center; gap: 40px; float: none; width: auto; min-width: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; list-style: none; }
+.how-we-work .how-we-work__node { position: relative; grid-column: 1; grid-row: 1; display: grid; place-items: center; justify-self: center; width: 120px; height: 120px; border-radius: 50%; background: #eaf5f3; color: #028291; box-shadow: 0 0 0 12px #fff; }
+.how-we-work .how-we-work__number { position: absolute; top: -4px; left: -4px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #028291; color: #fff; font: 600 17px/1 'Open Sans', sans-serif; font-variant-numeric: tabular-nums; }
+.how-we-work .how-we-work__icon { display: block; width: 80px; height: 80px; }
+.how-we-work .how-we-work__copy { grid-column: 2; grid-row: 1; float: none; width: auto; min-width: 0; margin: 0; padding: 0; color: #46636a; font: 400 16px/1.85 'Open Sans', sans-serif; overflow-wrap: anywhere; }
+.how-we-work .how-we-work__copy p { margin: 0 0 12px; }
+.how-we-work .how-we-work__copy > :last-child { margin-bottom: 0; }
+.how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) { grid-template-columns: minmax(0, 1fr) 160px; }
+.how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) .how-we-work__node { grid-column: 2; }
+.how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) .how-we-work__copy { grid-column: 1; text-align: right; }
+.how-we-work__journey[data-work-motion='ready'] .how-we-work__step[data-work-active='false'] .how-we-work__number { background: #b7cece; }
+.how-we-work .how-we-work__fallback { min-width: 0; }
+@media (max-width: 700px) {
+  .how-we-work { padding: 36px 0; }
+  .how-we-work .how-we-work__container { padding: 0 15px; }
+  .how-we-work .how-we-work__title { margin-bottom: 34px; font-size: 28px; }
+  .how-we-work .how-we-work__steps { gap: 40px; }
+  .how-we-work .how-we-work__step, .how-we-work .how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) { grid-template-columns: 76px minmax(0, 1fr); align-items: start; gap: 18px; }
+  .how-we-work .how-we-work__node, .how-we-work .how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) .how-we-work__node { grid-column: 1; width: 72px; height: 72px; box-shadow: 0 0 0 7px #fff; }
+  .how-we-work .how-we-work__copy, .how-we-work .how-we-work__journey[data-work-motion] .how-we-work__step:nth-child(even) .how-we-work__copy { grid-column: 2; color: #46636a; font-size: 14px; line-height: 1.85; text-align: left; }
+  .how-we-work .how-we-work__number { width: 27px; height: 27px; top: -5px; left: -3px; font-size: 14px; }
+  .how-we-work .how-we-work__icon { width: 52px; height: 52px; }
+  .how-we-work .how-we-work__journey::before { left: 37px; top: 36px; bottom: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .how-we-work .how-we-work__route { display: none; }
+  .how-we-work .how-we-work__icon, .how-we-work .how-we-work__icon * { animation: none !important; transition: none !important; }
+}

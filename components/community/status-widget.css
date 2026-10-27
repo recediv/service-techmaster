@@ -1,0 +1,33 @@
+.site-status-widget {
+  box-sizing: border-box;
+  display: block;
+  width: var(--status-widget-width, 300px);
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  color: #526b70;
+  font: 400 13px/1.5 'Open Sans', sans-serif;
+  text-align: center;
+}
+.site-status-widget *, .site-status-widget *::before, .site-status-widget *::after { box-sizing: border-box; }
+.site-status-widget .site-status-widget__enhanced { position: relative; width: 100%; height: var(--status-widget-height, 230px); }
+.site-status-widget .site-status-widget__frame, .site-status-widget .site-status-widget__fallback { display: block; width: 100%; max-width: 100%; height: var(--status-widget-height, 230px); margin: 0; padding: 0; border: 0; }
+.site-status-widget .site-status-widget__frame { visibility: hidden; opacity: 0; transition: opacity 180ms ease; }
+.site-status-widget .site-status-widget__enhanced[data-state="loaded"] .site-status-widget__frame { visibility: visible; opacity: 1; }
+.site-status-widget .site-status-widget__placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 0; padding: 18px; border: 1px solid #e1e9ea; border-radius: 12px; background: #f7f9f9; }
+.site-status-widget .site-status-widget__skeleton { display: grid; gap: 10px; width: 100%; min-width: 0; }
+.site-status-widget .site-status-widget__shape { display: block; border-radius: 7px; background: #e1e9eb; animation: site-status-widget-pulse 1.5s ease-in-out infinite; }
+.site-status-widget .site-status-widget__shape--heading { width: 57%; height: 12px; margin: 0 auto 3px; border-radius: 4px; }
+.site-status-widget .site-status-widget__shape--field { width: 100%; height: 31px; }
+.site-status-widget .site-status-widget__shape--button { width: 48%; height: 31px; margin: 1px auto 0; }
+.site-status-widget .site-status-widget__feedback { display: grid; justify-items: center; gap: 14px; width: 100%; min-width: 0; }
+.site-status-widget .site-status-widget__message { margin: 0; padding: 0; color: #647d82; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.site-status-widget .site-status-widget__retry { min-height: 40px; max-width: 100%; padding: 9px 13px; border-radius: 8px; font-size: 12px; line-height: 1.5; }
+@keyframes site-status-widget-pulse {
+  0%, 100% { opacity: .58; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-status-widget .site-status-widget__shape { animation: none; }
+  .site-status-widget .site-status-widget__frame { transition: none; }
+}

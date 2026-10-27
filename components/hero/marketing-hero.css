@@ -1,0 +1,64 @@
+.site-hero--home { padding-top: 42px; padding-bottom: 36px; }
+.site-hero .site-home-hero__top { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr); align-items: stretch; gap: 54px; }
+.site-hero .site-home-hero__copy { align-self: center; min-width: 0; padding: 10px 0; }
+.site-hero .site-home-hero__intro { float: none; margin-top: 24px; color: #5b6d71; font-size: 15px; line-height: 1.75; }
+.site-hero .site-home-hero__intro p { margin: 0 0 14px; }
+.site-hero .site-home-hero__intro p:last-child { margin-bottom: 0; }
+.site-hero .site-hero__button { display: inline-flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 46px; margin: 0; padding: 12px 18px; border: 0; border-radius: 8px; font-size: 14px; line-height: 1.4; }
+.site-hero .site-home-hero__advantages { position: static; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 10px 12px; float: none; width: 100%; margin: 24px 0 0; padding: 0; border: 0; }
+.site-hero .site-home-hero__advantages > .advantage { display: grid; grid-template-columns: 36px minmax(0, 1fr); grid-template-rows: auto auto; gap: 3px 12px; align-content: center; align-items: start; float: none; clear: none; width: auto; min-width: 0; min-height: 0; margin: 0; padding: 12px 14px; border: 1px solid #dce7e8; border-radius: 10px; background: #fff; }
+.site-hero .site-home-hero__advantages .site-home-hero__advantage-icon { grid-row: 1 / 3; align-self: center; display: block; width: 36px; height: 36px; overflow: hidden; margin: 0; border-radius: 8px; background: #a2cf68; }
+.site-hero .site-home-hero__advantages .site-home-hero__advantage-icon > img { display: block; float: none; width: 100%; max-width: none; height: auto; margin: 0; }
+.site-hero .site-home-hero__advantages .advantage > p { grid-column: 2; min-width: 0; margin: 0; color: var(--hero-ink); font-size: 14px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.site-hero .site-home-hero__advantages .advantage > p:last-child { grid-row: 1 / 3; align-self: center; }
+.site-hero .site-home-hero__advantages .advantage > span:not(.site-home-hero__advantage-icon) { grid-column: 2; min-width: 0; margin: 0; color: #61767b; font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+.site-hero--category { padding-bottom: 32px; }
+.site-hero .site-category-hero__top { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: stretch; gap: 48px; }
+.site-hero .site-category-hero__copy { align-self: center; min-width: 0; padding: 6px 0; }
+.site-hero .site-category-hero__visual { position: relative; min-width: 0; min-height: 290px; overflow: hidden; border-radius: 20px; background: #d9e4e5; }
+.site-hero .site-category-hero__visual > img { position: absolute; inset: 0; display: block; width: 100%; max-width: none; height: 100%; object-fit: cover; }
+.site-hero .site-category-hero__benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
+.site-hero .site-category-hero__benefit { min-width: 0; padding-left: 14px; border-left: 2px solid #a6ced1; color: #607277; font-size: 13px; line-height: 1.65; }
+.site-hero .site-category-hero__benefit > p { margin: 0 0 9px; color: #345157; font-size: 15px; font-weight: 600; line-height: 1.45; }
+.site-hero .site-category-hero__assurance { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 2fr); align-items: center; gap: 32px; margin-top: 30px; padding-top: 26px; border-top: 1px solid #dfe8e8; }
+.site-hero .site-category-hero__assurance-title { max-width: 260px; color: #496065; font-size: 16px; line-height: 1.5; }
+.site-hero .site-category-hero__advantages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+.site-hero .site-category-hero__advantage { display: flex; align-items: flex-start; gap: 13px; min-width: 0; }
+.site-hero .site-category-hero__advantage > img { display: block; flex: 0 0 42px; width: 42px; height: auto; margin: 0; }
+.site-hero .site-category-hero__advantage p { margin: 1px 0 5px; color: #345157; font-size: 14px; font-weight: 600; line-height: 1.45; }
+.site-hero .site-category-hero__note { color: #68797d; font-size: 12px; line-height: 1.5; }
+@media (max-width: 1040px) {
+  .site-hero .site-home-hero__top { gap: 30px; }
+  .site-hero .site-home-hero__advantages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-hero .site-category-hero__top { gap: 30px; }
+  .site-hero .site-category-hero__benefits { gap: 18px; }
+  .site-hero .site-category-hero__assurance { gap: 24px; }
+}
+@media (max-width: 850px) {
+  .site-hero .site-home-hero__top { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; }
+  .site-hero .site-home-hero__intro { margin-top: 20px; font-size: 14px; }
+  .site-hero .site-category-hero__top { grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); }
+  .site-hero .site-category-hero__benefits { grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 24px; }
+  .site-hero .site-category-hero__assurance { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .site-hero .site-category-hero__assurance-title { max-width: none; }
+}
+@media (max-width: 730px) {
+  .site-hero--home { padding-top: 28px; padding-bottom: 28px; }
+  .site-hero .site-home-hero__top { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .site-hero .site-home-hero__copy { display: contents; }
+  .site-hero .site-home-hero__top .site-hero__title { order: 0; }
+  .site-hero .site-home-hero__intro { order: 2; margin-top: 0; line-height: 1.7; }
+  .site-hero .site-home-hero__advantages { gap: 8px 10px; margin-top: 20px; }
+  .site-hero--category { padding-bottom: 28px; }
+  .site-hero .site-category-hero__top { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .site-hero .site-category-hero__copy { padding: 0; }
+  .site-hero .site-category-hero__visual { min-height: 0; aspect-ratio: 16 / 8; border-radius: 16px; }
+  .site-hero .site-category-hero__visual > img { height: 100%; max-height: none; }
+  .site-hero .site-category-hero__assurance { margin-top: 24px; padding-top: 22px; gap: 18px; }
+  .site-hero .site-category-hero__assurance-title { font-size: 15px; }
+  .site-hero .site-category-hero__advantages { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .site-hero .site-category-hero__advantage > img { flex-basis: 36px; width: 36px; }
+}
+@media (max-width: 600px) {
+  .site-hero .site-home-hero__advantages { grid-template-columns: minmax(0, 1fr); }
+}

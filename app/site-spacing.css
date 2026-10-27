@@ -1,0 +1,132 @@
+/* Shared section rhythm. Card, control and reading-text spacing stays local. */
+:root {
+  --site-section-space: 40px;
+  --site-heading-space: 24px;
+  --site-subsection-space: 24px;
+  --site-page-gutter: 15px;
+}
+
+@media (max-width: 730px) {
+  :root {
+    --site-section-space: 28px;
+    --site-heading-space: 20px;
+    --site-subsection-space: 20px;
+  }
+}
+
+/* One inset on each side of a section; no additional outer block margins. */
+.site-page-content .repair-directions,
+.site-page-content .community-panels,
+.site-page-content .common-problems,
+.site-page-content .service-overview,
+.site-page-content .how-we-work,
+.site-page-content .model-selection,
+.site-page-content .contacts-details,
+.site-page-content .catalog-source .call_cont.catalog-help,
+.site-page-content .catalog-source .catalog-description,
+.site-page-content .catalog-source .site-prose-section,
+.site-page-content .catalog-source .catalog-prices--standalone,
+.site-page-content .catalog-source > .center.site-detail-body,
+.site-page-content .catalog-source > .center.catalog-category-choices,
+.site-page-content .catalog-source > .center.catalog-category-reviews,
+.site-page-content main > .site-hero--compact + .center,
+.site-page-content .site-not-found {
+  margin-block: 0;
+  padding-block: var(--site-section-space);
+}
+
+/* The separately approved home hero and its advantages retain their own layout. */
+.site-page-content main .site-hero:not(.site-hero--home) {
+  margin-block: 0;
+  padding-block: var(--site-section-space);
+}
+
+/* Contain legacy floated article/payment/status content inside its section. */
+.site-page-content main > .site-hero--compact + .center,
+.site-page-content .catalog-source > .catalog-category-reviews {
+  display: flow-root;
+}
+.site-page-content main > .site-hero--compact + .center,
+.site-page-content .catalog-source > .center.site-detail-body,
+.site-page-content .catalog-source > .center.catalog-category-choices,
+.site-page-content .catalog-source > .center.catalog-category-reviews {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1220px;
+  margin-inline: auto;
+  padding-inline: var(--site-page-gutter);
+}
+.site-page-content .catalog-source .catalog-description,
+.site-page-content .catalog-source .site-prose-section,
+.site-page-content .catalog-help .catalog-help__card {
+  padding-inline: var(--site-page-gutter);
+}
+
+/* The section owns its bottom inset, rather than the last child adding another. */
+.site-page-content .community-page .consultation-explorer {
+  margin-bottom: 0;
+  padding-inline: 0;
+}
+.site-page-content .reviews-page__content .reviews.reviews-section,
+.site-page-content .catalog-category-reviews .reviews.reviews-section {
+  padding-bottom: 0;
+}
+.site-page-content main > .site-hero--compact + .center > .work_title {
+  margin-block: 0;
+}
+.site-page-content main > .site-hero--compact + .center:empty {
+  padding-block: 0;
+}
+.site-page-content .site-detail-body .price_info {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Section titles use the same distance to their own content. */
+.site-page-content .repair-directions .repair-directions__title,
+.site-page-content .community-panels .community-panels__heading,
+.site-page-content .common-problems .common-problems__title,
+.site-page-content .how-we-work .how-we-work__title,
+.site-page-content .catalog-prices .catalog-prices__title,
+.site-page-content .catalog-device-detail--refined .device-detail__section-title,
+.site-page-content .catalog-category-reviews > .produkt_title,
+.site-page-content .contacts-details .contacts-details__heading {
+  margin-block: 0 var(--site-heading-space);
+}
+
+.site-page-content .site-about .about-content {
+  gap: var(--site-section-space);
+}
+.site-page-content .site-about .about-content__section {
+  gap: var(--site-heading-space);
+}
+.site-page-content .site-privacy .privacy-document__contents {
+  margin-bottom: var(--site-subsection-space);
+}
+.site-page-content .site-editorial .creation-sell + .creation-sell {
+  margin-top: var(--site-subsection-space);
+}
+.site-page-content .contacts-details .contacts-details__legal {
+  margin-top: var(--site-subsection-space);
+  padding-top: var(--site-subsection-space);
+}
+.site-page-content .contacts-details .contacts-details__extra {
+  margin-top: var(--site-subsection-space);
+}
+.site-page-content .community-panels .community-panels__container {
+  row-gap: var(--site-section-space);
+}
+.site-page-content .common-problems .common-problems__group + .common-problems__group {
+  margin-top: var(--site-subsection-space);
+  padding-top: var(--site-subsection-space);
+}
+
+.site-page-content .model-selection .pagination,
+.site-page-content .site-editorial-index .editorial-list > .pagination,
+.site-page-content .reviews-explorer .reviews-explorer__pagination {
+  margin-block: var(--site-subsection-space) 0;
+}
+
+body > .info_cont.site-footer-info {
+  padding-block: var(--site-section-space);
+}

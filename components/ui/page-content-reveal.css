@@ -1,0 +1,6 @@
+/* Match About's entrance without changing nested ScrollReveal consumers,
+   the persistent footer, or sections explicitly excluded from page reveal. */
+[data-scroll-reveal-scope='page'] {
+  --scroll-reveal-duration: 900ms;
+  --scroll-reveal-distance: 36px;
+}

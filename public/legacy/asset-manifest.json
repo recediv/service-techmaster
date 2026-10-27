@@ -1,0 +1,973 @@
+{
+  "assets": [
+    {
+      "originalPath": "/assets/components/easycomm/css/web/ec.default.css",
+      "path": "/legacy/assets/components/easycomm/css/web/ec.default.css",
+      "bytes": 1423,
+      "sha256": "6a7b8a2ba1385c582da1a54758491a57ad691c301c1989fb87d33a547c9850e4"
+    },
+    {
+      "originalPath": "/assets/components/easycomm/img/web/ec-stars.png",
+      "path": "/legacy/assets/components/easycomm/img/web/ec-stars.png",
+      "bytes": 932,
+      "sha256": "da70d884b168556c50296466716eb5c8d2d05b5c9e81b28f328998067a59a721"
+    },
+    {
+      "originalPath": "/assets/components/minishop2/css/web/default.css",
+      "path": "/legacy/assets/components/minishop2/css/web/default.css",
+      "bytes": 1789,
+      "sha256": "29ea41e29afc4563d7ae6b43b9f941ed16f519d3f00f15f920be5db845bd6b79"
+    },
+    {
+      "originalPath": "/assets/components/minishop2/css/web/lib/jquery.jgrowl.css",
+      "path": "/legacy/assets/components/minishop2/css/web/lib/jquery.jgrowl.css",
+      "bytes": 1750,
+      "sha256": "45e2c056cfc89512d86bd8be18d20fa702f921b0eaa72f3beffefed415ba94a0"
+    },
+    {
+      "originalPath": "/assets/components/star_rating/themes/default/alt_star.gif",
+      "path": "/legacy/assets/components/star_rating/themes/default/alt_star.gif",
+      "bytes": 1465,
+      "sha256": "cfa50055b7fcf383872f35c2f5659d75cdc1ac88d7aa30bff28f10673889a0c9"
+    },
+    {
+      "originalPath": "/assets/components/star_rating/themes/default/star.css",
+      "path": "/legacy/assets/components/star_rating/themes/default/star.css",
+      "bytes": 1266,
+      "sha256": "f4e8dc4be17fffd1e9b10e3d69898d66a88287cfb5357edfb60f8761b81451d3"
+    },
+    {
+      "originalPath": "/assets/components/tickets/css/web/default.css",
+      "path": "/legacy/assets/components/tickets/css/web/default.css",
+      "bytes": 7433,
+      "sha256": "9d0565d3cf7724f3b7b5a39ed2d99033e94c5c9f3c901f3f362e931eaf00fb4a"
+    },
+    {
+      "originalPath": "/assets/components/tickets/css/web/lib/jquery.jgrowl.css",
+      "path": "/legacy/assets/components/tickets/css/web/lib/jquery.jgrowl.css",
+      "bytes": 1750,
+      "sha256": "45e2c056cfc89512d86bd8be18d20fa702f921b0eaa72f3beffefed415ba94a0"
+    },
+    {
+      "originalPath": "/assets/components/tickets/img/web/loading.gif",
+      "path": "/legacy/assets/components/tickets/img/web/loading.gif",
+      "bytes": 3908,
+      "sha256": "49fccf7a7ed476ab38503837623f5a12aa7d3bec942a5afc27852339a6ba6a70"
+    },
+    {
+      "originalPath": "/assets/components/tickets/img/web/refresh.gif",
+      "path": "/legacy/assets/components/tickets/img/web/refresh.gif",
+      "bytes": 528,
+      "sha256": "65e0105e851308a98c2d4328b6b75d6923d6fa98b611411eca977db88e37d8e0"
+    },
+    {
+      "originalPath": "/assets/images/products/12932/66678690-13dd-4ee9-874a-1bf4dda9aff5.jpg",
+      "path": "/legacy/assets/images/products/12932/66678690-13dd-4ee9-874a-1bf4dda9aff5.jpg",
+      "bytes": 6853,
+      "sha256": "5491e25817e24bd0dfeaf0cedc6bba0ef5d2b51c47a63521c2911f4b70d1ceef"
+    },
+    {
+      "originalPath": "/favicon.ico",
+      "path": "/legacy/favicon.ico",
+      "bytes": 15086,
+      "sha256": "bb2d32f7299ff0fc4e3b2c6d684939b92f61b552f947f037c9de518018b73372"
+    },
+    {
+      "originalPath": "/template/fonts/opensans.ttf",
+      "path": "/legacy/template/fonts/opensans.ttf",
+      "bytes": 52472,
+      "sha256": "3d827b9e8ca09855c5a0bc2edc63a6cf3ad994102a8f4db8aff0af440728fea1"
+    },
+    {
+      "originalPath": "/template/fonts/opensans.woff",
+      "path": "/legacy/template/fonts/opensans.woff",
+      "bytes": 31836,
+      "sha256": "6298d6b65aad8ba42fc9124d645756a7f76de64901a501fb74d7a9f2086de63a"
+    },
+    {
+      "originalPath": "/template/fonts/opensans.woff2",
+      "path": "/legacy/template/fonts/opensans.woff2",
+      "bytes": 24908,
+      "sha256": "2c003703a07bac02b8e42b49562a2cdb95b9b68ef4bd669b6c9c7e9919f7dbe7"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbold.ttf",
+      "path": "/legacy/template/fonts/opensansbold.ttf",
+      "bytes": 54044,
+      "sha256": "d75f716f0f1f86595e8bb6d74e021b25bc6d15679274251b99c79be40e469a91"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbold.woff",
+      "path": "/legacy/template/fonts/opensansbold.woff",
+      "bytes": 31512,
+      "sha256": "5bb2fa5c94560c2724ed976dc1c09816cc21ecb7b771e204356a31405b4fc5a2"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbold.woff2",
+      "path": "/legacy/template/fonts/opensansbold.woff2",
+      "bytes": 24448,
+      "sha256": "8c9fba713be2ea7e35b6e266736a713c00328d61759e401890794831b6db525e"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbolditalic.ttf",
+      "path": "/legacy/template/fonts/opensansbolditalic.ttf",
+      "bytes": 58552,
+      "sha256": "b7efb94e10fc3132984646d4a016bb32349c116baed964d2c15c4aaec8de2698"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbolditalic.woff",
+      "path": "/legacy/template/fonts/opensansbolditalic.woff",
+      "bytes": 34396,
+      "sha256": "24cd317d2c699e72f337199d82cd22d94b46ab14b2cae247e9128e7037b29b45"
+    },
+    {
+      "originalPath": "/template/fonts/opensansbolditalic.woff2",
+      "path": "/legacy/template/fonts/opensansbolditalic.woff2",
+      "bytes": 26832,
+      "sha256": "ae1d0189c82fcb794a877d848654386ffabebd0b1793bee2b01fd0620f6cd72d"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabold.ttf",
+      "path": "/legacy/template/fonts/opensansextrabold.ttf",
+      "bytes": 55792,
+      "sha256": "d76553f1f860707aa9ac5dd3999c48f6e955701507c1fed2245ba041b4b186e0"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabold.woff",
+      "path": "/legacy/template/fonts/opensansextrabold.woff",
+      "bytes": 32324,
+      "sha256": "de4a5397e2e3fa9c584aec4451b8211e07f736d9f2656564f8b0c32278324415"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabold.woff2",
+      "path": "/legacy/template/fonts/opensansextrabold.woff2",
+      "bytes": 25148,
+      "sha256": "1f699a930e7de14fb6b431d96ecd4ec3d3958fb17153df9bf40f50df339a92bf"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabolditalic.ttf",
+      "path": "/legacy/template/fonts/opensansextrabolditalic.ttf",
+      "bytes": 59760,
+      "sha256": "3aaaea25b3778b261b64c24e3d54ec8a7f4b90ff08e752ca6fee814398a316a8"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabolditalic.woff",
+      "path": "/legacy/template/fonts/opensansextrabolditalic.woff",
+      "bytes": 34776,
+      "sha256": "9f85ee87e7c24683045e7d583c8cf9084ca8b60e370da0e8d8013b47bb556b1c"
+    },
+    {
+      "originalPath": "/template/fonts/opensansextrabolditalic.woff2",
+      "path": "/legacy/template/fonts/opensansextrabolditalic.woff2",
+      "bytes": 26948,
+      "sha256": "c129b6c1ff90f33f82c9a89a932abfd83a40cd5b277785dc5576e41118374634"
+    },
+    {
+      "originalPath": "/template/fonts/opensansitalic.ttf",
+      "path": "/legacy/template/fonts/opensansitalic.ttf",
+      "bytes": 57568,
+      "sha256": "668916329f05f981972b0b9c9f3154e85eca2d4bcd5237ade9dee6afc0a444ed"
+    },
+    {
+      "originalPath": "/template/fonts/opensansitalic.woff",
+      "path": "/legacy/template/fonts/opensansitalic.woff",
+      "bytes": 35020,
+      "sha256": "b30f905e416bdd8d716ed02a113319786aca4ca0d4766f177a755b5117f26d89"
+    },
+    {
+      "originalPath": "/template/fonts/opensansitalic.woff2",
+      "path": "/legacy/template/fonts/opensansitalic.woff2",
+      "bytes": 27416,
+      "sha256": "176b11b86aade3f9617bb9dbe6610ab5f7733774bf80b38d7ad3220fb826b49b"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslight.ttf",
+      "path": "/legacy/template/fonts/opensanslight.ttf",
+      "bytes": 51592,
+      "sha256": "d19a2f7836ba390ff140e67e0ffe9edf1a108354726fe76538f0f05246ca61dd"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslight.woff",
+      "path": "/legacy/template/fonts/opensanslight.woff",
+      "bytes": 30708,
+      "sha256": "d2e997a365fea7f49b5b22a0453606856c388c9a6642688ba0d1f0aab8810f47"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslight.woff2",
+      "path": "/legacy/template/fonts/opensanslight.woff2",
+      "bytes": 23936,
+      "sha256": "a5f9f1a504fff8ac0bca6d79eb2a33ece7d3365b65881cade19799bbd1dcda1f"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslightitalic.ttf",
+      "path": "/legacy/template/fonts/opensanslightitalic.ttf",
+      "bytes": 56404,
+      "sha256": "bae51731bdafe73060d25a85a3d63879dfcd4b1fc1248c0aec5578f0d671c827"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslightitalic.woff",
+      "path": "/legacy/template/fonts/opensanslightitalic.woff",
+      "bytes": 33720,
+      "sha256": "c851574bbff7970c1c494db5e992f049283ad9420ad5ff67b1a65c9cfeccbf80"
+    },
+    {
+      "originalPath": "/template/fonts/opensanslightitalic.woff2",
+      "path": "/legacy/template/fonts/opensanslightitalic.woff2",
+      "bytes": 26256,
+      "sha256": "0b89c1207d4810fcc97073b481d37ece92dca8f667f780e3539f8f14cec8bc9e"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibold.ttf",
+      "path": "/legacy/template/fonts/opensanssemibold.ttf",
+      "bytes": 53300,
+      "sha256": "8248a8d1a0a7e9ef221205fb63ceb5ab00d5daa03c52d92644b6ad6aefe5113a"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibold.woff",
+      "path": "/legacy/template/fonts/opensanssemibold.woff",
+      "bytes": 32108,
+      "sha256": "9832998dc1cb17e5c2a27fb4c8107cd687de022672bb0df1c5823e2cecab4f74"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibold.woff2",
+      "path": "/legacy/template/fonts/opensanssemibold.woff2",
+      "bytes": 25028,
+      "sha256": "c461ff90a396b258ae4a9ae5707588aeb2af074537683ce3fba9de5160dd62f9"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibolditalic.ttf",
+      "path": "/legacy/template/fonts/opensanssemibolditalic.ttf",
+      "bytes": 58676,
+      "sha256": "fc1ce14e02bb1acab2a59498da57be5cf4ef432a8d874e91a5d3897334e29662"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibolditalic.woff",
+      "path": "/legacy/template/fonts/opensanssemibolditalic.woff",
+      "bytes": 35360,
+      "sha256": "6f369e762810bf27ac01f3681f856c9cdb7a13bb4d140c9a825cba5234e7d3f3"
+    },
+    {
+      "originalPath": "/template/fonts/opensanssemibolditalic.woff2",
+      "path": "/legacy/template/fonts/opensanssemibolditalic.woff2",
+      "bytes": 27796,
+      "sha256": "e4d581a2c0cb65f2a13e277c4e5747f561e671e775fcb39218bc1ff14e79bc27"
+    },
+    {
+      "originalPath": "/template/images/0_ainol_logo.png",
+      "path": "/legacy/template/images/0_ainol_logo.png",
+      "bytes": 8357,
+      "sha256": "e17582138f390208b6fd100cd14d18ac53dd22d7e85fc56510f9567257bc1f4d"
+    },
+    {
+      "originalPath": "/template/images/0_archos_logo.png",
+      "path": "/legacy/template/images/0_archos_logo.png",
+      "bytes": 6143,
+      "sha256": "c12f9173edeb399388ac2ccf511b90843a0692a90573eff2e0cbb87a45dd11de"
+    },
+    {
+      "originalPath": "/template/images/118.jpg",
+      "path": "/legacy/template/images/118.jpg",
+      "bytes": 24528,
+      "sha256": "4ce3a6b75b20d141b7f98f2033076fec4c65fe630d05062638aab0a5f713a248"
+    },
+    {
+      "originalPath": "/template/images/17056.png",
+      "path": "/legacy/template/images/17056.png",
+      "bytes": 6950,
+      "sha256": "0d9cf3a959e354798b5ccbd62f6d9098ef3428a862bfd64c0af6f646885f20d5"
+    },
+    {
+      "originalPath": "/template/images/2456.png",
+      "path": "/legacy/template/images/2456.png",
+      "bytes": 3137,
+      "sha256": "0a30bd3d22c37419299918231bd70eb7af1ec6a76c965b090172ce96aedd95ca"
+    },
+    {
+      "originalPath": "/template/images/25dc2cb3d8cec6c0458a04e307c11c13.png",
+      "path": "/legacy/template/images/25dc2cb3d8cec6c0458a04e307c11c13.png",
+      "bytes": 6730,
+      "sha256": "d9f23fe71f3d2706f3d1428031a584db62f3bf567b98f8d6a694beba8c3d1105"
+    },
+    {
+      "originalPath": "/template/images/29615wexler_logotype.png",
+      "path": "/legacy/template/images/29615wexler_logotype.png",
+      "bytes": 9922,
+      "sha256": "9f2b761da0acf7a8cacb97c56bd5632d604882feb9b872492d07ad0c65fce5be"
+    },
+    {
+      "originalPath": "/template/images/3_Prestigio_logo.png",
+      "path": "/legacy/template/images/3_Prestigio_logo.png",
+      "bytes": 5732,
+      "sha256": "8faf7d431486fa1dcc6a05bc34d2f17113e3a1930a2fdf482ff63194e34d45a9"
+    },
+    {
+      "originalPath": "/template/images/3Q_official_logo_(violet).svg.png",
+      "path": "/legacy/template/images/3Q_official_logo_(violet).svg.png",
+      "bytes": 6331,
+      "sha256": "542608bff3aeb732f366ab3c8290331176942a17b05bed34faeb32e8c81a375c"
+    },
+    {
+      "originalPath": "/template/images/гугляша.png",
+      "path": "/legacy/template/images/гугляша.png",
+      "bytes": 5858,
+      "sha256": "e2c9be312ce728ec8d50605706407bc8abc83cdfad940412d95af67823db5f19"
+    },
+    {
+      "originalPath": "/template/images/мегафон.png",
+      "path": "/legacy/template/images/мегафон.png",
+      "bytes": 4080,
+      "sha256": "e13973f62ae1b2a4a6e1d527e2dbd83f07dd70ce4c1da2c0ba65e608b922ba80"
+    },
+    {
+      "originalPath": "/template/images/устрицы.png",
+      "path": "/legacy/template/images/устрицы.png",
+      "bytes": 5278,
+      "sha256": "bc2a070dfaf79a46fceddf758c0336da180e648645febf2552429ee70fdc86aa"
+    },
+    {
+      "originalPath": "/template/images/advantage_cont_tab.png",
+      "path": "/legacy/template/images/advantage_cont_tab.png",
+      "bytes": 144390,
+      "sha256": "11c0636a4201b511e563ebbd33e231a89f435870f6279f728075112aae21be58"
+    },
+    {
+      "originalPath": "/template/images/advantage_cont.png",
+      "path": "/legacy/template/images/advantage_cont.png",
+      "bytes": 87725,
+      "sha256": "1a483b15ae03d3943e2ef5ab1ad63c7050f327b250473a2673aaa6fd4f9d857e"
+    },
+    {
+      "originalPath": "/template/images/advantage1.png",
+      "path": "/legacy/template/images/advantage1.png",
+      "bytes": 2558,
+      "sha256": "4019bbd46e5649c66a41e45de49a84ead5d51246417dc17e6bb79c30ab77a531"
+    },
+    {
+      "originalPath": "/template/images/advantage2.png",
+      "path": "/legacy/template/images/advantage2.png",
+      "bytes": 3108,
+      "sha256": "14f4190678e99ed2dc248588d01812a411ac88037d2ae574c3ce24884f9d2dc0"
+    },
+    {
+      "originalPath": "/template/images/advantage3.png",
+      "path": "/legacy/template/images/advantage3.png",
+      "bytes": 3945,
+      "sha256": "96b64fbb7000b59986331f8be136c2a0cc9a1ac29872a40ffeab1d96e0fe460e"
+    },
+    {
+      "originalPath": "/template/images/advantage4.png",
+      "path": "/legacy/template/images/advantage4.png",
+      "bytes": 3822,
+      "sha256": "fce8a9c831f404a1879a9663e5e2e17d97d232d3f3cf144aa1c089bf939c76f7"
+    },
+    {
+      "originalPath": "/template/images/advantage5.png",
+      "path": "/legacy/template/images/advantage5.png",
+      "bytes": 3588,
+      "sha256": "c2b049aff0431b4b51a554bf86ef42a8f6d487e23146d32a3ac175edf2084d15"
+    },
+    {
+      "originalPath": "/template/images/advantage6.png",
+      "path": "/legacy/template/images/advantage6.png",
+      "bytes": 3461,
+      "sha256": "f2c813cc52cf6249bf9881abfbfa7acd1c0b5b6fc30287da13b83b7a40a2a314"
+    },
+    {
+      "originalPath": "/template/images/bq-logo.png",
+      "path": "/legacy/template/images/bq-logo.png",
+      "bytes": 20921,
+      "sha256": "d38004fd22b2d4fd21ab861ffcf147dbc1b324c19470c655b37c35bc6b90eca2"
+    },
+    {
+      "originalPath": "/template/images/call.webp",
+      "path": "/legacy/template/images/call.webp",
+      "bytes": 10916,
+      "sha256": "d1f08e87b50afca220b4e485e0c0760ca71749de0d664436a9b8a6da2be3deaa"
+    },
+    {
+      "originalPath": "/template/images/cash1.png",
+      "path": "/legacy/template/images/cash1.png",
+      "bytes": 2878,
+      "sha256": "e719147177e5f2847c7c6fe5f97c98511d14f0b32fc26c37674888319749b792"
+    },
+    {
+      "originalPath": "/template/images/cash2.png",
+      "path": "/legacy/template/images/cash2.png",
+      "bytes": 2208,
+      "sha256": "a8876864f706268a7338e2620d32b13841a7bffb662ebb6cbd81b2fb5d255ca9"
+    },
+    {
+      "originalPath": "/template/images/cash3.png",
+      "path": "/legacy/template/images/cash3.png",
+      "bytes": 2792,
+      "sha256": "8482ced4c996d30f8b7b823938f64a6d1c0519270fd4a84bdd6160fdc84a36a5"
+    },
+    {
+      "originalPath": "/template/images/cash4.png",
+      "path": "/legacy/template/images/cash4.png",
+      "bytes": 3494,
+      "sha256": "616e1e8c638fe6d2eb9cce2005c8eb95d332fabe6647f449bf64e19f6fa459d7"
+    },
+    {
+      "originalPath": "/template/images/chair-655413_640.jpg",
+      "path": "/legacy/template/images/chair-655413_640.jpg",
+      "bytes": 40800,
+      "sha256": "0615fe80b34dcb98f77d2eb66442b420fb762b18a6515ad9567104a84df91d01"
+    },
+    {
+      "originalPath": "/template/images/Chuwi-PNG.png",
+      "path": "/legacy/template/images/Chuwi-PNG.png",
+      "bytes": 13602,
+      "sha256": "e3756dd47acb92f08d667d84b8fdfbc3fcb860eda639a4d4a918656e5715f0a2"
+    },
+    {
+      "originalPath": "/template/images/close.png",
+      "path": "/legacy/template/images/close.png",
+      "bytes": 1545,
+      "sha256": "8df9333b33865e68ab059eb5a78b258533a44766cce65d870deb40ce4f2bfe9f"
+    },
+    {
+      "originalPath": "/template/images/comp.png",
+      "path": "/legacy/template/images/comp.png",
+      "bytes": 7503,
+      "sha256": "b47a118239c73811cf735a3f8ef6772e6b972c3c18e831bd9e6bec6be96f2638"
+    },
+    {
+      "originalPath": "/template/images/completing_arrow.png",
+      "path": "/legacy/template/images/completing_arrow.png",
+      "bytes": 1304,
+      "sha256": "a284f1902794a958d358ac1d599e77a2bd70ec08d51d7c6ba6e3922e2da8eb36"
+    },
+    {
+      "originalPath": "/template/images/console2.png",
+      "path": "/legacy/template/images/console2.png",
+      "bytes": 12490,
+      "sha256": "bf6ebf1a578004606a5685df0734f8dfa522f6291de391411788e6fe63eb29d7"
+    },
+    {
+      "originalPath": "/template/images/consultation_feedback.png",
+      "path": "/legacy/template/images/consultation_feedback.png",
+      "bytes": 8129,
+      "sha256": "596288aa916c3ad973121b5ca9cc87539d1f9851c2981fecb91fa1f1ae0504b4"
+    },
+    {
+      "originalPath": "/template/images/consultation.png",
+      "path": "/legacy/template/images/consultation.png",
+      "bytes": 1768,
+      "sha256": "2946bf29b32acbad82d4558e2d697cd3d9df9580663e46a31118094e25f41eea"
+    },
+    {
+      "originalPath": "/template/images/contacts.png",
+      "path": "/legacy/template/images/contacts.png",
+      "bytes": 3607,
+      "sha256": "2ae917cbc292a5378854c46041c8b4bc5ef102f8038df6a4847a9babc5a3a7aa"
+    },
+    {
+      "originalPath": "/template/images/cooperation.jpg",
+      "path": "/legacy/template/images/cooperation.jpg",
+      "bytes": 47304,
+      "sha256": "95e66f88c953f6698765d6ced3a9aa54d6e97d59a533731040669bc7682eff03"
+    },
+    {
+      "originalPath": "/template/images/cube-logo.png",
+      "path": "/legacy/template/images/cube-logo.png",
+      "bytes": 3027,
+      "sha256": "edefdc3f23981db4117769d06be1fddf0f66b1a1c791eda257e826885779e430"
+    },
+    {
+      "originalPath": "/template/images/cubot_png.png",
+      "path": "/legacy/template/images/cubot_png.png",
+      "bytes": 2151,
+      "sha256": "829cd29f976dce4ab4ca1a7d072dc5b3652d575368949afffee7c5da909a7245"
+    },
+    {
+      "originalPath": "/template/images/DEXP_logo_logotype2.png",
+      "path": "/legacy/template/images/DEXP_logo_logotype2.png",
+      "bytes": 6931,
+      "sha256": "8855e5f6f7c3b098098f6f69c93de521b0a5b392a496602ce905c6452f4f4d08"
+    },
+    {
+      "originalPath": "/template/images/display-272270_640.jpg",
+      "path": "/legacy/template/images/display-272270_640.jpg",
+      "bytes": 34100,
+      "sha256": "659f25091cf3616ac1785a53de8ee0cea347ec5b777386b5d44958a5fa7b0567"
+    },
+    {
+      "originalPath": "/template/images/DNS.png",
+      "path": "/legacy/template/images/DNS.png",
+      "bytes": 2490,
+      "sha256": "b69a18ae95cd62ac42bdef3100e3a4d449188a824eba0a6d7111217ca46f7c7d"
+    },
+    {
+      "originalPath": "/template/images/doogee-logo2-300x3002.png",
+      "path": "/legacy/template/images/doogee-logo2-300x3002.png",
+      "bytes": 2605,
+      "sha256": "40a1440bf0a17ba54b2d2a2c451cb22eebe64d4efa2fba6ebac81773697405a4"
+    },
+    {
+      "originalPath": "/template/images/dvd-1242016_640.png",
+      "path": "/legacy/template/images/dvd-1242016_640.png",
+      "bytes": 34125,
+      "sha256": "853742722d770e18fbbe41d2854bd8862067ac28665199ff7713ec827e28029a"
+    },
+    {
+      "originalPath": "/template/images/ebook2.png",
+      "path": "/legacy/template/images/ebook2.png",
+      "bytes": 18427,
+      "sha256": "aeb059226b842da0b364390dff8f627fc170ceca2f0b362baf055fc1f5034caa"
+    },
+    {
+      "originalPath": "/template/images/elephone-logo.png",
+      "path": "/legacy/template/images/elephone-logo.png",
+      "bytes": 4311,
+      "sha256": "9dd0eb442d9e29a8d17d23497df43c0f7671a6bb04b456e773f23ab972530403"
+    },
+    {
+      "originalPath": "/template/images/explay.png",
+      "path": "/legacy/template/images/explay.png",
+      "bytes": 2445,
+      "sha256": "da20f734709782f335f7442872fad62de98edc87f14bb8d7b75c221429f8c98d"
+    },
+    {
+      "originalPath": "/template/images/feedback.png",
+      "path": "/legacy/template/images/feedback.png",
+      "bytes": 1847,
+      "sha256": "0196d5978e438a90d9fa7fc0e636fcd40a93619617b3a67add73974cfc0c7274"
+    },
+    {
+      "originalPath": "/template/images/freelander-2.png",
+      "path": "/legacy/template/images/freelander-2.png",
+      "bytes": 1951,
+      "sha256": "7811af22e8b05acad380bdf9a30f5a177ec55a518beaabc8f33a156abc8a9bc9"
+    },
+    {
+      "originalPath": "/template/images/gigabyte-technology-logo-vector-free.png",
+      "path": "/legacy/template/images/gigabyte-technology-logo-vector-free.png",
+      "bytes": 8106,
+      "sha256": "6cea1dff1ca0a4f7d8644919ce7c944d9ca991324fd50cd746e5dbe6771b8300"
+    },
+    {
+      "originalPath": "/template/images/goclever_logo.png",
+      "path": "/legacy/template/images/goclever_logo.png",
+      "bytes": 16263,
+      "sha256": "934a2f1920055734829e1aba7a556880afa3c2ef131e036c6cc6fbbd7052ca0e"
+    },
+    {
+      "originalPath": "/template/images/HTB1BLhGMFXXXXbtXFXX760XFXXXo.png",
+      "path": "/legacy/template/images/HTB1BLhGMFXXXXbtXFXX760XFXXXo.png",
+      "bytes": 3177,
+      "sha256": "f3b65a00ac6eca4c396164da78d4d4dfe51a13ce4b193376b5efc5fe0ca32268"
+    },
+    {
+      "originalPath": "/template/images/Huawei-Honor-Logo2.png",
+      "path": "/legacy/template/images/Huawei-Honor-Logo2.png",
+      "bytes": 2284,
+      "sha256": "01775f952cc639faa6e62d17b4a327c8d2801ca2a1ee590959fe360399754a9b"
+    },
+    {
+      "originalPath": "/template/images/icon_basket.png",
+      "path": "/legacy/template/images/icon_basket.png",
+      "bytes": 1594,
+      "sha256": "0f157b3a0db428efcdd3950296de0195bdf6419fb36f1f0d46be9bec18ed4c9e"
+    },
+    {
+      "originalPath": "/template/images/icon_cancel.png",
+      "path": "/legacy/template/images/icon_cancel.png",
+      "bytes": 3534,
+      "sha256": "809e913ba38ae6ee20ce6271d85ff9f933c9336d2d924a808de7d08cdff9ecda"
+    },
+    {
+      "originalPath": "/template/images/icon_cash.png",
+      "path": "/legacy/template/images/icon_cash.png",
+      "bytes": 1601,
+      "sha256": "7343f63b107697d2bf6a9bb0b11fc800efd35273269bebc57d2c8149572906fe"
+    },
+    {
+      "originalPath": "/template/images/icon_fix.png",
+      "path": "/legacy/template/images/icon_fix.png",
+      "bytes": 2116,
+      "sha256": "4a4a8cd93b188390da5858cfa44b01c1e75bcd11dcf1c7bf1b41f3f5643051bb"
+    },
+    {
+      "originalPath": "/template/images/icon_phone.png",
+      "path": "/legacy/template/images/icon_phone.png",
+      "bytes": 3219,
+      "sha256": "ade9b5f78be2d19a5656b569ec8d6fac44e0489b2eb5d84eb9834b0f60f66da1"
+    },
+    {
+      "originalPath": "/template/images/icon_search.png",
+      "path": "/legacy/template/images/icon_search.png",
+      "bytes": 3427,
+      "sha256": "f8d86dad093f1dc4474d47264a454d822ea1a2eb862caba218350ec0ac50972a"
+    },
+    {
+      "originalPath": "/template/images/icon_spare.png",
+      "path": "/legacy/template/images/icon_spare.png",
+      "bytes": 1921,
+      "sha256": "73b730a4415eb5552f8463dfe7e8b88b0364e938c53cb97da0acbff65a3a00f1"
+    },
+    {
+      "originalPath": "/template/images/icon_status.png",
+      "path": "/legacy/template/images/icon_status.png",
+      "bytes": 3254,
+      "sha256": "8a5585f0c1f4560047bf57cf331ee481b697385c1495b805d9094f0ddb1da88a"
+    },
+    {
+      "originalPath": "/template/images/icon_tab.png",
+      "path": "/legacy/template/images/icon_tab.png",
+      "bytes": 5070,
+      "sha256": "4ca9fcf3a0a3936920b87346200cea2f8f5626d2d632a2975cbcc54689bdb773"
+    },
+    {
+      "originalPath": "/template/images/infinix-logo.png",
+      "path": "/legacy/template/images/infinix-logo.png",
+      "bytes": 18037,
+      "sha256": "ee1ff3f219bae9e34cf70b908ccc6aadb9c7d961e64dd1cea616d6deca2678bc"
+    },
+    {
+      "originalPath": "/template/images/inoi-logo.jpg",
+      "path": "/legacy/template/images/inoi-logo.jpg",
+      "bytes": 35478,
+      "sha256": "e1f76047220818a3b411d39a60677e642902a8fc475c9d50c3ee4e83ada72679"
+    },
+    {
+      "originalPath": "/template/images/ipad-916394_1280.jpg",
+      "path": "/legacy/template/images/ipad-916394_1280.jpg",
+      "bytes": 50526,
+      "sha256": "71aca7c70f9e24719877a0a1deef7d12b9e2539b02b4c3b2697922e797d22201"
+    },
+    {
+      "originalPath": "/template/images/iphone-248906_1920-min.jpg",
+      "path": "/legacy/template/images/iphone-248906_1920-min.jpg",
+      "bytes": 400154,
+      "sha256": "a1fd71ed5d26dbe11406ab50b4a705ca54a4c17fc97d7cd4b1181d879ffe7ec3"
+    },
+    {
+      "originalPath": "/template/images/iphone-410311_1280-min.jpg",
+      "path": "/legacy/template/images/iphone-410311_1280-min.jpg",
+      "bytes": 130702,
+      "sha256": "ce5834a35405a089014ff00aeb4d68e58ddbbd449304cac0fce5160f08feea0c"
+    },
+    {
+      "originalPath": "/template/images/Itel_Mobile_logo.png",
+      "path": "/legacy/template/images/Itel_Mobile_logo.png",
+      "bytes": 54223,
+      "sha256": "dd0861b098ab18c19fb0e9fdfa9ccf5c2816efc00184bfa03221ac2a3fd42b33"
+    },
+    {
+      "originalPath": "/template/images/joystick-1216816_1280.jpg",
+      "path": "/legacy/template/images/joystick-1216816_1280.jpg",
+      "bytes": 20803,
+      "sha256": "35589860a5ff824a456107ec2a6d561bd71ffbb9dda1055289d5a24eede37600"
+    },
+    {
+      "originalPath": "/template/images/logo2.png",
+      "path": "/legacy/template/images/logo2.png",
+      "bytes": 4702,
+      "sha256": "806f2d4119baa9eaff74bdc2c4085ccdffb8e12e461c9ec7d23d73904ba18089"
+    },
+    {
+      "originalPath": "/template/images/logoa.png",
+      "path": "/legacy/template/images/logoa.png",
+      "bytes": 18466,
+      "sha256": "84d007dd4118c36ba1d04e89e03475d59ab992ef2cc750cc83a37770262f05e3"
+    },
+    {
+      "originalPath": "/template/images/logos12.png",
+      "path": "/legacy/template/images/logos12.png",
+      "bytes": 4997,
+      "sha256": "83328170cac4914c74285c617b2f087f704c03db876e33ed72aa3fbfcd7d0592"
+    },
+    {
+      "originalPath": "/template/images/logos13.png",
+      "path": "/legacy/template/images/logos13.png",
+      "bytes": 11948,
+      "sha256": "8bca8586733c5fd7ee72c4d071c682ea72c29d23b6cb9307d6a4ed9e43f03ecc"
+    },
+    {
+      "originalPath": "/template/images/logos14.png",
+      "path": "/legacy/template/images/logos14.png",
+      "bytes": 3586,
+      "sha256": "cebb601742399a6d08f0c94d80295a3785f410d328d86a5c2a0ff9005e8e2020"
+    },
+    {
+      "originalPath": "/template/images/logos15.png",
+      "path": "/legacy/template/images/logos15.png",
+      "bytes": 5236,
+      "sha256": "1016d9736f5ad393653f119e1db0ede61a6c601a6cdab7054420922331ee136d"
+    },
+    {
+      "originalPath": "/template/images/logos16.png",
+      "path": "/legacy/template/images/logos16.png",
+      "bytes": 8163,
+      "sha256": "3e19bd7ce528f297dfce7a43837e610da6070bc22053c4fb5708c7e4dd8f5109"
+    },
+    {
+      "originalPath": "/template/images/logos19.png",
+      "path": "/legacy/template/images/logos19.png",
+      "bytes": 4021,
+      "sha256": "1f15c672b3631290334d904b1d1f2975ef7917bc7f1c83865682ad52cecd35b0"
+    },
+    {
+      "originalPath": "/template/images/logos21.png",
+      "path": "/legacy/template/images/logos21.png",
+      "bytes": 19835,
+      "sha256": "2e141202046f224368bba6efc21e6ffd7cc084bead1cb10754231bf299bb1339"
+    },
+    {
+      "originalPath": "/template/images/logos23.png",
+      "path": "/legacy/template/images/logos23.png",
+      "bytes": 6532,
+      "sha256": "0c1bb8fa5f0ca47c69a0629086c1db4f31fcd4c63abfe93a1b31499983dfac9b"
+    },
+    {
+      "originalPath": "/template/images/logos24.png",
+      "path": "/legacy/template/images/logos24.png",
+      "bytes": 9568,
+      "sha256": "78de420755d7ea809bb3d6e253cff2cfb3fed18ac541fed08752bce4d2c36fc9"
+    },
+    {
+      "originalPath": "/template/images/logos3.png",
+      "path": "/legacy/template/images/logos3.png",
+      "bytes": 11326,
+      "sha256": "d093f822aa20ba50d8b241d48a83552ce7cb1232f0066638b6e2e89f0ecba35f"
+    },
+    {
+      "originalPath": "/template/images/logos4.png",
+      "path": "/legacy/template/images/logos4.png",
+      "bytes": 13182,
+      "sha256": "57f4f908bdb48215a33c4c1234be4320db4f94b546cf5dc1c8c9a0797d4b99f4"
+    },
+    {
+      "originalPath": "/template/images/logos5.png",
+      "path": "/legacy/template/images/logos5.png",
+      "bytes": 2794,
+      "sha256": "029034324e5039d144781dcaf7a8a6fc8a892324e5ed78b2af1f8fdbb26aec9e"
+    },
+    {
+      "originalPath": "/template/images/logos6.png",
+      "path": "/legacy/template/images/logos6.png",
+      "bytes": 11308,
+      "sha256": "8d4e1a8c3e8c4e7c3a105cbe3185e36e6cbad4e788caadf3481d1c0f8c397f8f"
+    },
+    {
+      "originalPath": "/template/images/logos7.png",
+      "path": "/legacy/template/images/logos7.png",
+      "bytes": 4682,
+      "sha256": "636340487dbf336e82e20a93f820b73fa27baa9875681110bc1910e3c248b2cd"
+    },
+    {
+      "originalPath": "/template/images/logos8.png",
+      "path": "/legacy/template/images/logos8.png",
+      "bytes": 4155,
+      "sha256": "8f496388b7e61c567212c2814ac68fd5b5c65a0d63c1b702cee41c6b1fd2a6b7"
+    },
+    {
+      "originalPath": "/template/images/logos9.png",
+      "path": "/legacy/template/images/logos9.png",
+      "bytes": 3728,
+      "sha256": "5feb46967f1b529ae3b532584a38a8e01005ad4b8f4acaa9bcebc22346a3c339"
+    },
+    {
+      "originalPath": "/template/images/logotip.png",
+      "path": "/legacy/template/images/logotip.png",
+      "bytes": 7913,
+      "sha256": "74f2611c4d286d999ed58cc9357147561c1a9fd45280ed1259f6aebb36ae21da"
+    },
+    {
+      "originalPath": "/template/images/mac-665619_640.jpg",
+      "path": "/legacy/template/images/mac-665619_640.jpg",
+      "bytes": 18462,
+      "sha256": "836735931f4eb790c226f56954456ba76111e30f871628b9088b96f735053c22"
+    },
+    {
+      "originalPath": "/template/images/main.png",
+      "path": "/legacy/template/images/main.png",
+      "bytes": 1255,
+      "sha256": "aa800d2eb8ba7022c56fa819950ecf1a8b126f5daad7c74cd5cf0759e92ba613"
+    },
+    {
+      "originalPath": "/template/images/monitor.png",
+      "path": "/legacy/template/images/monitor.png",
+      "bytes": 10660,
+      "sha256": "92e3d757ab45a05cf795a08b482c25895a1de8b83512640f04ce24fe26040666"
+    },
+    {
+      "originalPath": "/template/images/Motorola_logo_2013.png",
+      "path": "/legacy/template/images/Motorola_logo_2013.png",
+      "bytes": 11853,
+      "sha256": "18b7e560b179b29b0061d7455f50d94dad160dd7e5d92595b3f58433c7128c14"
+    },
+    {
+      "originalPath": "/template/images/navigation-1726067_640.jpg",
+      "path": "/legacy/template/images/navigation-1726067_640.jpg",
+      "bytes": 15912,
+      "sha256": "4c4bb15f6570f496c5847fa2481841056ca36aa5173c3006b4a10ee15304a041"
+    },
+    {
+      "originalPath": "/template/images/nothing_logo.png",
+      "path": "/legacy/template/images/nothing_logo.png",
+      "bytes": 110073,
+      "sha256": "10c2e208573a95971f4cc06860dd3e45929cbca87a6e8d7a979db75382268a58"
+    },
+    {
+      "originalPath": "/template/images/oneplus_logo.png",
+      "path": "/legacy/template/images/oneplus_logo.png",
+      "bytes": 30115,
+      "sha256": "f3442072b556a75d5eee48bd2aecbbdcc8df62f0a9ac3a06f8f6e677905b7e80"
+    },
+    {
+      "originalPath": "/template/images/oppo-logo.png",
+      "path": "/legacy/template/images/oppo-logo.png",
+      "bytes": 36580,
+      "sha256": "adcd939c80da121b20b5e391061111a96b3e5de26612279a355d6817bdc4ff3f"
+    },
+    {
+      "originalPath": "/template/images/perfeo_logoзтп.png",
+      "path": "/legacy/template/images/perfeo_logoзтп.png",
+      "bytes": 4456,
+      "sha256": "a0e08d846b256a4858c524fa3874728cbbf8c5e8a71d72f1e439fc0e69fa08c1"
+    },
+    {
+      "originalPath": "/template/images/photocamera.png",
+      "path": "/legacy/template/images/photocamera.png",
+      "bytes": 14209,
+      "sha256": "91870a9ee1cc339ae9b3e307f46474a0e5b5da97fc30b29c7367aee8028d6a96"
+    },
+    {
+      "originalPath": "/template/images/pioneer-avh-3500dvd.jpg",
+      "path": "/legacy/template/images/pioneer-avh-3500dvd.jpg",
+      "bytes": 29604,
+      "sha256": "1b18c22a0a402509e5f969baea037170ae994f81ed9339e51327cff4789bfd1e"
+    },
+    {
+      "originalPath": "/template/images/pipo-logo-нр.png",
+      "path": "/legacy/template/images/pipo-logo-нр.png",
+      "bytes": 2472,
+      "sha256": "be9bb1af596d5cb8223405f7d985db8558f4347b72ba0b9a7b3c7a953008f549"
+    },
+    {
+      "originalPath": "/template/images/preview-logo-iconbit.png",
+      "path": "/legacy/template/images/preview-logo-iconbit.png",
+      "bytes": 2189,
+      "sha256": "e1ff726c5f0952e3ff8bc721dd3da0aab4df5bfc407e836e7f4fcba80513e508"
+    },
+    {
+      "originalPath": "/template/images/realme-logo__1_-removebg-preview-1169x350.png",
+      "path": "/legacy/template/images/realme-logo__1_-removebg-preview-1169x350.png",
+      "bytes": 155166,
+      "sha256": "56eb9ea87635c0493da49e708b291de7f39e5f64ef122d4b433a7e3b4cc70067"
+    },
+    {
+      "originalPath": "/template/images/recommend_sprite.png",
+      "path": "/legacy/template/images/recommend_sprite.png",
+      "bytes": 3468,
+      "sha256": "9aea99a2a79a5c6a250fa578b1a22e6b0861c58d379a4c0b05b8f217ca76c578"
+    },
+    {
+      "originalPath": "/template/images/samsung-galaxt-note-edge-1283897_640.jpg",
+      "path": "/legacy/template/images/samsung-galaxt-note-edge-1283897_640.jpg",
+      "bytes": 18636,
+      "sha256": "4a372fb45222a26d23610068d8d2e743314618be5f978244847624bb277030af"
+    },
+    {
+      "originalPath": "/template/images/screwdriver-608316_1280.jpg",
+      "path": "/legacy/template/images/screwdriver-608316_1280.jpg",
+      "bytes": 62201,
+      "sha256": "9a80ba11caa184bb3a09ef84e2c3d103795c3367be38113f9a1d0c399e7d773b"
+    },
+    {
+      "originalPath": "/template/images/service_info.webp",
+      "path": "/legacy/template/images/service_info.webp",
+      "bytes": 69968,
+      "sha256": "5f0f6e3d6226b8b275e0c62a11bb895c0ea8f3b8b0777aac4eb83dddd8e93c5d"
+    },
+    {
+      "originalPath": "/template/images/sety.gif",
+      "path": "/legacy/template/images/sety.gif",
+      "bytes": 3578,
+      "sha256": "5dc54c1c925e1684baab1d273cc56f7c356ad5fefe1223483e83b828959effe6"
+    },
+    {
+      "originalPath": "/template/images/skimn-ipad.png",
+      "path": "/legacy/template/images/skimn-ipad.png",
+      "bytes": 18730,
+      "sha256": "516943023d8f52750bf76963dd94ca64e39fe9c46cd66dc45ecd3ab36f770b56"
+    },
+    {
+      "originalPath": "/template/images/slide_img1.png",
+      "path": "/legacy/template/images/slide_img1.png",
+      "bytes": 7653,
+      "sha256": "3533f7896cf070f1d06fc8dbad49f87c8e58cd6e4951e44f3af4537368b7d702"
+    },
+    {
+      "originalPath": "/template/images/slide_img2.png",
+      "path": "/legacy/template/images/slide_img2.png",
+      "bytes": 16960,
+      "sha256": "e1ad8370ede1b0469fa40bf210e2290d813155e087efabd1dc8be115fff431c5"
+    },
+    {
+      "originalPath": "/template/images/slider_arrows.png",
+      "path": "/legacy/template/images/slider_arrows.png",
+      "bytes": 1301,
+      "sha256": "366cce83c226c31733f532586400ecd99f07a2511f8777fb40e44eceac5bd326"
+    },
+    {
+      "originalPath": "/template/images/sprite_menu.png",
+      "path": "/legacy/template/images/sprite_menu.png",
+      "bytes": 4002,
+      "sha256": "e6389c3a1fb2e90beeeffa909ea2e791474a23782ad7682d03d0d6fea0ec0620"
+    },
+    {
+      "originalPath": "/template/images/Supra_Logo_web1.png",
+      "path": "/legacy/template/images/Supra_Logo_web1.png",
+      "bytes": 5437,
+      "sha256": "29d2e231b0ab7ef5abdedc98b2088e6134fdba739ec7cf2585c482e0b1866289"
+    },
+    {
+      "originalPath": "/template/images/texet_logo-300x177.png",
+      "path": "/legacy/template/images/texet_logo-300x177.png",
+      "bytes": 11978,
+      "sha256": "4871edf0c5b171478235857db236984dc8ed506cb4792d7c756186e274611d79"
+    },
+    {
+      "originalPath": "/template/images/tv.png",
+      "path": "/legacy/template/images/tv.png",
+      "bytes": 8673,
+      "sha256": "bd11458de59de5f4d3c05a749fb5386299fc3b2129affdca060ebf04cacf0ca7"
+    },
+    {
+      "originalPath": "/template/images/Umidigi-logo.png",
+      "path": "/legacy/template/images/Umidigi-logo.png",
+      "bytes": 25769,
+      "sha256": "26ff9e946f9f23410fcfb4675c41b3b4b39f01dba4838ba988730e0722fd4a20"
+    },
+    {
+      "originalPath": "/template/images/vivo-logo.png",
+      "path": "/legacy/template/images/vivo-logo.png",
+      "bytes": 10193,
+      "sha256": "4c0db6850bd8caefc42442f8bb7e7b741345f0da22450994914982b10223b67c"
+    },
+    {
+      "originalPath": "/template/js/form/jquery.formstyler.css",
+      "path": "/legacy/template/js/form/jquery.formstyler.css",
+      "bytes": 2068,
+      "sha256": "7ca5a273fc0864c92ab38c48523f4c61caca72bc70d1869672e3eebb7fe69cc9"
+    },
+    {
+      "originalPath": "/template/style.css",
+      "path": "/legacy/template/style.css",
+      "bytes": 86887,
+      "sha256": "663b27f77f624071c89c44936e6ef21b0710360df9348177eee699830c7adeb1"
+    }
+  ],
+  "missing": [
+    "/Tecno.png",
+    "/Videocard.png",
+    "/checklist-2077022_1280.jpg",
+    "/digma_logo.jpg",
+    "/images/tap_act.png",
+    "/ritmix_logo.jpg"
+  ],
+  "blockedExternalReferences": 0
+}

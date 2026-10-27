@@ -1,0 +1,32 @@
+/* Only client-marked elements animate; initial entry is opt-in. SSR stays visible. */
+.scroll-reveal [data-scroll-reveal-state='pending'] {
+  opacity: 0;
+  transform: translateY(var(--scroll-reveal-distance, 28px));
+}
+.scroll-reveal [data-scroll-reveal-state='visible'] {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--scroll-reveal-duration, 650ms) cubic-bezier(.22, 1, .36, 1), transform var(--scroll-reveal-duration, 650ms) cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+.scroll-reveal [data-scroll-reveal-state='initial'] {
+  animation: scroll-reveal-enter var(--scroll-reveal-duration, 650ms) cubic-bezier(.22, 1, .36, 1) var(--scroll-reveal-delay, 0ms) both;
+}
+@keyframes scroll-reveal-enter {
+  from { opacity: 0; transform: translateY(var(--scroll-reveal-distance, 28px)); }
+  to { opacity: 1; transform: none; }
+}
+.scroll-reveal [data-scroll-reveal-state]:focus-within {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal [data-scroll-reveal-state] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+}

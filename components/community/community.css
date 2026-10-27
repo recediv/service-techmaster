@@ -1,0 +1,20 @@
+.community-page > .center { display: flow-root; }
+.community-page .consultations_cont { display: flow-root; min-width: 0; }
+/* Match the original formstyler wrapper and contain its transparent select. */
+.source-select { position: relative; display: inline-block; }
+.source-select > select {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.source-select:focus-within { outline: 2px solid #028291; outline-offset: 2px; }
+.source-select .jq-selectbox__select { box-sizing: border-box; }
+.source-select .jq-selectbox__trigger { pointer-events: none; }
+.community-page .сonsultation > div { width: 100%; float: left; }
+.community-page .dialog_rext .site-rich-text { float: none; }
+.community-page .consult-answer, .community-page .dialog_wrap { clear: both; }

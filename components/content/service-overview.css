@@ -1,0 +1,9 @@
+.service-overview { box-sizing: border-box; display: flow-root; clear: both; width: 100%; min-width: 0; padding: 52px 0; background: #fff; }
+.service-overview *, .service-overview *::before, .service-overview *::after { box-sizing: border-box; }
+.service-overview .service-overview__container { width: 100%; max-width: 1220px; min-width: 0; margin: 0 auto; padding: 0 15px; }
+.service-overview .center { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; float: none; width: 100%; max-width: none; min-width: 0; margin: 0; padding: 0; }
+.service-overview .center .service_text { float: none; width: auto; min-width: 0; margin: 0; padding: 0; }
+@media (max-width: 800px) { .service-overview .center { grid-template-columns: minmax(0, 1fr); gap: 17px; } }
+@media (max-width: 550px) {
+  .service-overview { padding: 30px 0; }
+}

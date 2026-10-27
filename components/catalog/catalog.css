@@ -1,0 +1,29 @@
+/* Shared catalog layout; dedicated component styles handle redesigned blocks. */
+.catalog-source { width: 100%; min-width: 0; display: flow-root; clear: both; }
+.catalog-source .clearfix { clear: both; }
+.catalog-source .ceni { display: flow-root; clear: both; }
+.catalog-price__scroll { max-width: 100%; overflow-x: auto; }
+.catalog-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.catalog-source .table[hidden] { display: none; }
+.catalog-source .quest_cont:hover .quest_block, .catalog-source .quest_cont:focus .quest_block { display: block; }
+.catalog-source a:focus-visible, .catalog-source button:focus-visible, .catalog-source select:focus-visible { outline: 2px solid #028291; outline-offset: 3px; }
+.catalog-source .choice_form select { max-width: 100%; }
+.catalog-source .catalog-detail-content { clear: both; }
+.catalog-source .catalog-category-reviews .reviews-explorer__filter { justify-content: center; }
+.catalog-source .catalog-category-reviews .consultation-facet__label { text-align: center; }
+@media (min-width: 971px) {
+  .catalog-service-detail > .center { display: flow-root; }
+}
+@media (max-width: 970px) {
+  .catalog-source .price_info { height: auto; min-height: 50px; line-height: 1.5; padding-block: 12px; box-sizing: border-box; }
+}
+@media (max-width: 695px) {
+  /* Contain the source block's side margin within the mobile viewport. */
+  .catalog-source .recommend_li { max-width: calc(100vw - 20px); }
+  .catalog-source .call_cont { overflow: hidden; }
+}
+@media (max-width: 730px) {
+  /* The source article offset otherwise widens a service page past a small phone. */
+  .catalog-service-detail .service_cont.white_usluga { width: 100%; left: 0; }
+  .catalog-service-detail .context_usluga { box-sizing: border-box; width: 100%; min-width: 0; }
+}

@@ -1,0 +1,51 @@
+
+
+.star-rating-default, .star-rating-default a:hover, .star-rating-default a:active, .star-rating-default a:focus, .star-rating-default .current-rating {
+    background: url("./alt_star.gif") left -1000px repeat-x !important;
+}
+
+.star-rating-default a:hover, .star-rating-default a:active, .star-rating-default a:focus {
+    background-position: left bottom !important;
+}
+
+.star-rating-default {
+    position: relative;
+    
+    height: 25px !important;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-position: left top !important;
+}
+
+.star-rating-default li.star {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    display: inline !important;
+    list-style: none;
+}
+
+.star-rating-default li.star span {
+    display:none;   
+}
+
+.star-rating-default a, .star-rating-default .current-rating {
+    padding: 0 !important;
+    margin: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -1000em !important;
+    height: 25px !important;
+    line-height: 25px !important;
+    outline: none;
+    overflow: hidden;
+    border: none;
+}
+
+.star-rating-default .current-rating {
+    z-index: 1;
+    background-position: left center !important;
+}

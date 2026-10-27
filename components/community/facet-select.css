@@ -1,0 +1,54 @@
+.consultation-facet {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  color: #29474e;
+  font: 400 14px/1.45 'Open Sans', sans-serif;
+}
+.consultation-facet *, .consultation-facet *::before, .consultation-facet *::after { box-sizing: border-box; }
+.consultation-facet:focus-within { z-index: 4; }
+.consultation-facet .consultation-facet__label { display: block; float: none; margin: 0 0 8px; color: #526b70; font-size: 12px; font-weight: 400; line-height: 1.5; }
+.consultation-facet .consultation-facet__select { width: 100%; min-width: 0; overflow: visible; }
+.consultation-facet .facet-select__control { min-height: 46px; border: 1px solid #d6e3e5; border-radius: 12px; background: #fff; color: #29474e; cursor: pointer; box-shadow: none; transition: border-color 170ms ease, box-shadow 170ms ease, background-color 170ms ease; }
+.consultation-facet .facet-select__control:hover { border-color: #97bfc4; }
+.consultation-facet .facet-select__control--is-focused, .consultation-facet .facet-select__control--menu-is-open { border-color: #028291; box-shadow: 0 0 0 3px rgb(2 130 145 / .1); }
+.consultation-facet .facet-select__control--is-disabled { border-color: #e1e9ea; background: #f3f7f7; color: #8a9a9e; cursor: not-allowed; }
+.consultation-facet .facet-select__value-container { min-width: 0; padding: 10px 0 10px 13px; }
+.consultation-facet .facet-select__single-value { margin: 0; color: inherit; }
+.consultation-facet .facet-select__placeholder { min-width: 0; margin: 0; overflow: hidden; color: #71868b; text-overflow: ellipsis; white-space: nowrap; }
+.consultation-facet .facet-select__input-container { margin: 0; padding: 0; color: #29474e; }
+.consultation-facet .facet-select__input-container input { float: none; height: auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit; font: inherit; box-shadow: none; }
+.consultation-facet .facet-select__indicators { gap: 0; align-self: stretch; padding: 0 5px; color: #718b90; }
+.consultation-facet .facet-select__dropdown-indicator, .consultation-facet .facet-select__clear-indicator { align-items: center; justify-content: center; min-width: 30px; padding: 0 5px; color: inherit; cursor: pointer; }
+.consultation-facet .facet-select__dropdown-indicator:hover, .consultation-facet .facet-select__clear-indicator:hover { color: #028291; }
+.consultation-facet .facet-select__dropdown-indicator > svg, .consultation-facet .facet-select__clear-indicator > svg { display: block; width: 17px; height: 17px; }
+.consultation-facet .facet-select__loading-indicator { margin-right: 4px; padding: 0 5px; color: #028291; }
+.consultation-facet .facet-select__menu-portal { z-index: 20; }
+.consultation-facet .facet-select__menu { z-index: 20; margin: 7px 0; padding: 0; overflow: hidden; border: 1px solid #d6e5e7; border-radius: 12px; background: #fff; color: #29474e; box-shadow: 0 12px 30px rgb(26 65 72 / .13); }
+.consultation-facet .facet-select__menu-list { padding: 5px; }
+.consultation-facet .facet-select__option { margin: 0; padding: 10px 11px; border-radius: 8px; background: transparent; color: #29474e; font-size: 13px; line-height: 1.5; cursor: pointer; }
+.consultation-facet .facet-select__option--is-focused { background: #eef7f7; color: #026f7c; }
+.consultation-facet .facet-select__option--is-selected { background: #e0f0f1; color: #026f7c; }
+.consultation-facet .facet-select__option--is-disabled { background: transparent; color: #98a7aa; cursor: not-allowed; }
+.consultation-facet .consultation-facet__option-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-width: 0; }
+.consultation-facet .consultation-facet__option-copy { display: grid; gap: 2px; min-width: 0; }
+.consultation-facet .consultation-facet__option-label { min-width: 0; overflow-wrap: anywhere; }
+.consultation-facet .consultation-facet__description { min-width: 0; color: #7a8f94; font-size: 12px; font-weight: 400; line-height: 1.45; overflow-wrap: anywhere; }
+.consultation-facet .consultation-facet__count { min-width: 27px; padding: 1px 7px; border-radius: 6px; background: #edf3f4; color: #647e83; font-size: 11px; line-height: 1.6; font-variant-numeric: tabular-nums; text-align: center; }
+.consultation-facet .facet-select__option--is-selected .consultation-facet__count { background: #cce5e8; color: #026f7c; }
+.consultation-facet .facet-select__option--is-disabled .consultation-facet__count { background: #f3f6f6; color: #98a7aa; }
+.consultation-facet .facet-select__option--is-disabled .consultation-facet__description { color: #a2b0b3; }
+.consultation-facet .facet-select__menu-notice { padding: 16px 12px; color: #71868b; font-size: 13px; line-height: 1.5; text-align: center; }
+@media (max-width: 730px) {
+  .consultation-facet { font-size: 16px; }
+  .consultation-facet .facet-select__control { min-height: 46px; }
+  .consultation-facet .facet-select__value-container { padding-top: 9px; padding-bottom: 9px; }
+  .consultation-facet .facet-select__option { padding-top: 11px; padding-bottom: 11px; font-size: 14px; }
+  .consultation-facet .consultation-facet__description { font-size: 10.5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consultation-facet .facet-select__control, .consultation-facet .facet-select__dropdown-indicator, .consultation-facet .facet-select__clear-indicator { transition: none; }
+  .consultation-facet .facet-select__loading-indicator > span { animation: none; }
+}

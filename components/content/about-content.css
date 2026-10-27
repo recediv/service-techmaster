@@ -1,0 +1,14 @@
+.site-about > .about-page__content { box-sizing: border-box; width: 100%; max-width: 1220px; min-width: 0; margin: 0 auto; padding: 0 15px 56px; }
+.site-about .about-reveal { --scroll-reveal-duration: 900ms; --scroll-reveal-distance: 36px; }
+.site-about .about-content { box-sizing: border-box; display: grid; gap: 42px; float: none; width: 100%; max-width: 1000px; min-width: 0; text-align: left; }
+.site-about .about-content *, .site-about .about-content *::before, .site-about .about-content *::after { box-sizing: border-box; }
+.site-about .about-content .site-rich-text { display: block; float: none; width: auto; min-width: 0; margin: 0; padding: 0; overflow-wrap: anywhere; }
+.site-about .about-content .site-rich-text p:last-child { margin-bottom: 0; }
+.site-about .about-content__section { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; float: none; min-width: 0; }
+.site-about .about-content .about-content__heading { margin: 0; }
+.site-about .about-content__section-copy { min-width: 0; }
+.site-about .about-content__section--advantages .about-content__list { margin-bottom: 0; }
+@media (max-width: 600px) {
+  .site-about > .about-page__content { padding-bottom: 36px; }
+  .site-about .about-content { gap: 32px; }
+}

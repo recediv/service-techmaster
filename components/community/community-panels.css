@@ -1,0 +1,27 @@
+.community-panels { box-sizing: border-box; display: flow-root; clear: both; width: 100%; min-width: 0; padding: 52px 0; background: #fff; }
+.community-panels *, .community-panels *::before, .community-panels *::after { box-sizing: border-box; }
+.community-panels .community-panels__container { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 40px; width: 100%; max-width: 1220px; min-width: 0; margin: 0 auto; padding: 0 15px; }
+.community-panels .community-panels__column { min-width: 0; }
+.community-panels .community-panels__heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 18px; margin: 0 0 24px; }
+.community-panels .community-panels__heading > h2 { float: none; width: auto; margin: 0; padding: 0; color: #29474e; font: 400 30px/1.25 'Open Sans', sans-serif; letter-spacing: -.025em; }
+.community-panels .community-panels__all { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 40px; padding: 9px 12px; border-radius: 8px; font-size: 12px; line-height: 1.5; }
+.community-panels .community-panels__all svg { display: block; flex: 0 0 18px; }
+.community-panels .community-panels__list { display: grid; align-content: start; gap: 24px; }
+.community-panels.community-panels--reviews-only .community-panels__list { display: block; column-count: 2; column-gap: 24px; column-fill: balance; }
+.community-panels.community-panels--reviews-only .community-panels__list > .review-card { break-inside: avoid; margin-bottom: 24px; }
+.community-panels.community-panels--reviews-only .community-panels__list > .review-card:last-child { margin-bottom: 0; }
+.community-panels .community-panels__list > .question-card { margin: 0; }
+.community-panels :is(a, summary):focus-visible { outline: 2px solid #028291; outline-offset: 4px; }
+@media (max-width: 1000px) { .community-panels .community-panels__container { gap: 26px; } }
+@media (max-width: 800px) {
+  .community-panels .community-panels__container { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+}
+@media (max-width: 730px) {
+  .community-panels.community-panels--reviews-only .community-panels__list { column-count: 1; }
+}
+@media (max-width: 550px) {
+  .community-panels { padding: 30px 0; }
+  .community-panels .community-panels__heading { margin-bottom: 20px; gap: 12px; }
+  .community-panels .community-panels__heading > h2 { font-size: 26px; }
+  .community-panels .community-panels__all { gap: 7px; padding: 8px 10px; font-size: 11px; }
+}

@@ -1,0 +1,59 @@
+.consultation-sidebar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  min-width: 0;
+  max-height: calc(100svh - 48px);
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.consultation-sidebar .consultation-sidebar__solutions {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid #dde7e8;
+  border-radius: 14px;
+  background: #fff;
+}
+.consultation-sidebar .consultation-sidebar__title {
+  flex: none;
+  float: none;
+  width: auto;
+  margin: 0 0 9px;
+  padding: 0;
+  color: #29474e;
+  font: 400 22px/1.35 'Open Sans', sans-serif;
+  text-align: left;
+}
+.consultation-sidebar .consultation-sidebar__links { display: block; flex: 1 1 auto; min-width: 0; min-height: 0; overflow: auto; }
+.consultation-sidebar .consultation-sidebar__links > a {
+  display: block;
+  float: none;
+  clear: none;
+  width: auto;
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid #e8eeee;
+  color: #027d8b;
+  font: 400 13px/1.6 'Open Sans', sans-serif;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.consultation-sidebar .consultation-sidebar__links > a:last-child { border-bottom: 0; }
+.consultation-sidebar .consultation-sidebar__links > a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.consultation-sidebar .consultation-sidebar__links > a:focus-visible { outline: 2px solid #028291; outline-offset: 3px; }
+@media (max-width: 730px) {
+  .consultation-sidebar { position: static; max-height: none; overflow: visible; }
+  .consultation-sidebar .consultation-sidebar__solutions { flex: none; min-height: 0; overflow: visible; }
+  .consultation-sidebar .consultation-sidebar__links { overflow: visible; }
+}

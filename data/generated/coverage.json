@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 1,
+  "counts": {
+    "resources": 12906,
+    "routes": 13223,
+    "paginationRoutes": 317,
+    "aliases": 134,
+    "excluded": 182,
+    "originalImageRecords": 11120,
+    "assets": 9990,
+    "missingAssets": 126,
+    "prices": 28,
+    "priceTabs": 54,
+    "blocks": 7,
+    "unknownTagGroups": 0,
+    "unknownInternalPaths": 0,
+    "skippedUnsafeRedirects": 0,
+    "repairWithoutImage": 130
+  },
+  "byTemplate": {
+    "2": 1,
+    "4": 1,
+    "5": 11134,
+    "6": 13,
+    "7": 1,
+    "8": 1,
+    "9": 33,
+    "10": 805,
+    "11": 1,
+    "13": 744,
+    "14": 1,
+    "15": 150,
+    "16": 2,
+    "17": 1,
+    "18": 18
+  },
+  "unknownModxTags": [],
+  "suppressedTags": {
+    "!city": 6,
+    "!instagram": 1,
+    "+wrapper": 3,
+    "+classes": 1,
+    "+link": 1,
+    "+attributes": 1,
+    "+menutitle": 1,
+    "pdoMenu": 2,
+    "pdoResources": 4,
+    "!host": 2,
+    "!TicketForm": 1,
+    "unparsed": 1,
+    "$breadcrumbs_mail": 1,
+    "AjaxForm": 1,
+    "!ecForm": 1,
+    "+uri": 2,
+    "+tv.category-logo": 1,
+    "+pagetitle": 2,
+    "+tv.article-pic": 1
+  },
+  "missingAssets": [
+    {
+      "sourcePath": "assets/images/products/2815/ca483ed1cf6dc8f74013e380b0153cb68ac61266da6dfe2536e042edc04d3b33.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2816/48e6ce34e56b99d1b12be8a3b65610233b9fba3bd7496d7530b0791403056473.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2820/012ecec17356e072c1ce8bc77ab32df6a8afe552cd525eb9e076dbeca6d4b679.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2817/48e6ce34e56b99d1b12be8a3b65610233b9fba3bd7496d7530b0791403056473-715.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2819/89761a30e1644aa3e817a6bb2fcb0488bd6e84c4ff923c93ae8da429a18dc0d2.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2818/7b938b35cbca0cfc347f2278bda5caff896cddad2499bfbc9d08ccaa95ddddd2.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2821/d875ca7037c5a8493333989648f64e25352dba1c94143363346e07e91b298358.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2822/b42bf94c48c1b20eb8f6105b33132b2a5d45deebceedddef3a215802f6652cc3.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2823/af366dafe9f1da224d062b2f5055ef169c239de73266c1f78a58ec5b71c27c4a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2833/0436dc68ca3f728a9d83825b35bd5e7c3a1d917b7be9c4924730e2dfef58bb3b.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2824/753f95df6298e229228802034eace4d166ddbd8c5997a14420b16017845fcea9.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2825/302664b787930017b5bc8402b4c63a628f259ae0621af7e4008bfce0a90e4b57.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2826/69602c6d38705cce6d8d969099bd1d9890743f867ee70599e48ce7a83694c306.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2827/1fd58d8d61213979d3e1532b49dd60dc3fc12890010235076fafe7fb1bb5b27c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2828/b334af88918ff51cb8531ad0a347d20e3ae7e28071158663b8108cc4ccf40ed1.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2829/9be9fc30133e341338f60b0a7c7528460a167aaa2bffef1572695e0d3e7acec0.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2842/087a3b4c9522c975cab961e8c726b098932d8e236c98c20f0f308f7ca0020a11.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2844/097e7358618d45f9baf136e7ef612ba7cae9d817706d81c14bceb078a869c0da.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2831/2d9be79a08b1cbd087b055bd5ece0f41e39069284f7a90c8daa7051a9306bcd3.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2830/ad1fb71634af5eac36b2e29987db7b750b7df25cc1084351c4131b965d2072d5.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2832/e38aae78b50926bc601cfa99fec3f9d4ded1e66444d1b62ec349b8da1b35f3e8.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2834/e54f9d4f973e9db47e18afbdf8206597fe0d2687663b93a1b7261a6ccb6544c4.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2835/d7f547fd0583230ed08388efdc4f27fc474445cad7da74c623d1424b005d1ec1.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2836/443d2d9fc1ceb26cb62da58488bf85a631bc0611fb21cdb58d71f73e85c35664.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2837/e90075c97432a261457141173d177023400f5fb7055bddfc3ff8e339787ed5f7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2838/bbb5f2cb9fb0b66f84e6311a5d049fb6c1be0a2ef64e3b5fc64e12360d3124c7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2839/e9d101e7a75efcccb01055c166d6b4792e0de026159a0249e4e04ab1f9fe12ec.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2840/a0abea581d478291aabd7b655501ff620399cc3e4a397c257b43f4c2331640ac.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2841/d6aa88b2328c9971e50dec7868d9a492f012066db6ebaefe28991e2fc2e99ff5-830.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2843/d6aa88b2328c9971e50dec7868d9a492f012066db6ebaefe28991e2fc2e99ff5.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2845/a943908290c90e6843b8929b0508c132fa6925555f91e529d23328de96cd5402.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2846/25831c4f38e5515bb1cfb00e4234f3341792faedf44c7385e4f5f8fd9a5ed14e.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2847/b45e82651cd8ccc828ffcf243493fa4db4bcf1312b1ce844a2a9ab841598c1a7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2848/6461b814f21d13fd3ea75b4b956987c3678fc9285be18decd3db4b42a166397d.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2849/b93881b2fbd7d4d484914583095b4faed989e7dac6daf69c8182f69c62e0da75.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2850/8d443181ec7b78b948a4fdc45f4826fb4492d190ab6209735b5942597eb728e6.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2851/e29ff569c9f00315e23c65ab39f6292022d6dc6bc3bcdff7031a0f6471413bde.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2852/df66d018a50479b21013090cc5a2ffdae5ce3c6bd9c813d03daf4f83a873635a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2854/c0a8ccfed4dcb078e6bcf5210b11dc0ef3fa17c2f5b143fb6d108a458f1e9154.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2853/558808b06bf6081ead4f4891fd79d5fe95b9859d06bcb703e2d9823bc9b619f7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2855/8e70c9c45c985fadb1a7c879ade360da9a389caff9925cfe9bbaf2b6c48181d4.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2856/9211029d5eba224e4a98741f8cc6d70302f915c475944cf4efc3db475a041995.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2857/6b125595ccbeb2306dee7744e3cc346ae02c7162570eb4baf08135115b22e21b.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2858/77bf13f9fd11b5a5b1f07b7c32dd08b2a7243d9002309c53466a1fb8951af1b5.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2859/d9119050876ab0f2cd816df4bae08f3c701c8991791de3896a920f791a0ab5ca-851.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2860/d7fecdfb411b5368666b5eeda8d375761b1ba16b57ccdff8943d9eefbcc323f0.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2861/c4eb5ddfbcfd099d717a14cd3c1f19d4437ad3fb5a40189f55a7c2d2c845bef5.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2862/df1c0d8359429fa61146fc333278457ec48ea618aab67992a20bbe50165d3ece.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2863/c1ac13cc2ef4a31c740ab7e91d003a5ba23f6dddf503996bb4a80c09d3ebcb56.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2864/150f70c6a43b62908c31e9650c35bf9382dd38f2e0071d21b14762c83a0a162c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2865/4ca4a4b999979eb86c7f8922beff28cb84101a0e8750fce3b690f91c8e89b5b3.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2866/d9119050876ab0f2cd816df4bae08f3c701c8991791de3896a920f791a0ab5ca.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2867/b699f9b06ca00deb31db938a951d931bdcb32fab06586cbb6a40b0b2252e38fc.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2869/da45de1ca0a2d022a0cdf1a33411ce2c92015b4702b251e840ea532bb5614707.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2868/a62d4a257638f67a0eaf2eb64b3a4fb982a0fc31e0292723cacde795327c51bf.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2870/a89345f3bc4866bcfae3305144f5eb275ce0d7536ccef8b6e57187a1c9c5455e.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2871/91a5ae4d75c4859273f541f33f2d14ab5d99aaa7a78fcd9c9076f0ba55e73f5a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2872/befaccca6eab294ae9efa671b0b14994659fbd0113c7ca7858b63daa104ee84b.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2885/0748843aca48381e833eae842fa6888082a4e40e24e9c3e648ff38d822020d1e.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2873/d30646ca27e986b5c21de1c5040b699d2d77de2176161e0d16d68886ec3bdaf8.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2874/150f70c6a43b62908c31e9650c35bf9382dd38f2e0071d21b14762c83a0a162c-806.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2875/61415999c0441269739c638b9982d27294bc9f77c3c4a32a2109a414a025defb.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2876/16ff9a968391bc904f24f2a01f9e520c5b20ff387c4b8d6d75edc17359af193b.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2879/1a3251d2e10c3566e127053e687fa28c60d0e54b1b7d3c04f1e2e7fdd8c9f21a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2877/34dd4e396a29c2d33290874472d9ab600ef4d85633ab689264c041c4b47fb4e0.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2878/7f8e3262820e800cf9ea4e015894362d7ef234f49280775cd9cbafb441fb3564.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2880/b4e6ec00c2c95c1f31c4c19e81fcdea64ef95f6ca03e13d8eb25a88ffac7ab34.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2881/f47980f460d054d8762e01a21972afb4dd8c1abe1bed97c6ceead26ba659d36c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2882/241b0f56b4d3b70b06741dcce014d1c4377f85aa543941e1eeb738a816baa595.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2883/5e115941e99b35ab4a0e9ede5d0805300dec7029b2a2bd239e3d4718f0a399ad.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2884/c2693ebbc500bb2b335753c0c71c5130c69776edba2fa2cb32831358f4fadc9f.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2886/e11a0cc8de12c8a6086a839cf63465e1ba0134b8756a59969a40dd57b828287d.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2887/68de5fd18d63df546ab0a7266e319bf7a72894bafadd6bc0061e25f46c5e4808.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2888/b06b9b9d579105f2b639a9b11496f2d514c48325cc6e2b9d1a2627bf1400a14d.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2889/8a5070ff2bcf8c49d17f05193fe9cb1ef384780edf4d3ddfd6adea0720b0f75b.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2890/6a39169e618cb745f8ea176d628c4177d8252138f82340ec1b7c7c7283257463.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2892/6a867235c4988ca0daa10fb36c749be09cd7457acccdbce645ff2e6410df63d7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2891/ec622f755544d1eec94ede970f2d91402ef79f39a2612dcce3b41873b82eccbb.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2893/e8463476eaa072a2b0debe60bb536122ba9f99d2e2ff976128c070ac9b7dbf7c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2895/7e49ceb8f1a04850411d93d19ef212eb3f72ebb3adc64018257907d3bd62695c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2894/d2c93f7845876acc60b29356bc1f9affbd859b8a24950aee41e678c99b27c4ef.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2896/f88ab013803811f9241ee4ef74d5f1b23d81e864ede36d8b8817e3549d5fb1d7.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2898/7ddaa0c4dd483f0bc3bc871a2c995fc24ed847933dcc7397a6453fc1f859ea18.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2897/bbded78f171fcb6bc5c91c472c1743babacaea2c6162c71d20ba11144966416a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2899/311dea6f2cf143d4e3d2b3554dbae3adbeadfc863fe40a59c1a64df85cc7680e.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2913/04bb4c5bd75d19446d128b2ca727b8a1bbf3749c2d1bda728841c0799b300c37.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2900/5be779f74cdb8a6e6a64c02226d1a00d2cd24a296ed7c8ddad8aee439f2fe51a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2901/aa207b964f106bd2da9620f95a5748a261f2412e6e4ffc0cb1927ae580e3bc7a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2902/7cf000518356d4f4ed383754a23ccd8d0f391aca7dec1b5baf278f7f259b130c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2903/da93645af67ee5b48ccfd1459d740eb42c7396001a7e9460a96a3ca83337173c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2904/53081da85cacf05e2610cad213579b1ef7b0e5fb4b6d096c2e45f6d73f698f8a.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2915/08ce511b0862b179cf9ae056bcf7b292fdb02c630985688af16680995d2745cd.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2906/a7043cfc919774663be56967aa2462a36e0815955c0a00c57c07fc84bebdbcae.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2905/343f91c82b79300aea2d749c9f705cdb8f99b0480a0e93157fe9a0232ea3f650.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2908/a098fe3487f493f8cdcb3b1cf7f52d98b9258cca3911948591abf3cffa50541b.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2909/bbcf7323989dfd7974ca50931c51388281f8df688b138fbb702dbe07e9875fc5.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2907/411ba8358d7e31372dc500538c5341290d204a74df152150c6b9cfb9c18b0c54.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2910/5bba45c6cedb397a29c118ee37c8fdc625a2587f803f1b104caa8fa1eee5c9e8.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2911/f9fb4ad49ca4c3c56acfb4cafbf283e1cba5970519b3266a16a43f7134ad5a14.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2912/4ab4588311b6c0ff2ac021292e6e0e690265c3632fe5d35f00bf37e4858cf0d1.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2927/0273f3c62f849d08574a969fd8be022b98ad207d510555977332ebf81699e307.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "assets/images/products/2914/3316292e6ca4285d506f0026453214007b175058f92d1bc5dbf55110ab459173.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2916/7695d547d8d16b7522b6c6c1e66fd560fb3f804ff57ce231d939a8fd75c56c87.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2917/79354c35313d046dfca1a64529a34c0bbcc8066f73ed6a3a2e3836b02241ad40.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2919/9f04cbc5470bc8027c25b89ffb20dc0fe2c3bf8294fb11e9eaea49017651fd4e.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2918/453c8b047cf5466943df0cc0d45851b4e1466ca812f903ce2351fda87e3512ed.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2920/343f91c82b79300aea2d749c9f705cdb8f99b0480a0e93157fe9a0232ea3f650-829.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2922/5ffee3f7ef1cbc3be7f3cacef5e445115bd3850189db9305d59853b5bb3058b6.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2921/df005c1415b30809ec1f76a18e1ebb2d93da150f73e564582f94c8577650c849.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2923/7c21ed443e350a18b252ec093f6cba85207a42ef5f2597699ba025824783846c.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2924/c1d1b3bccfee8cb943ace5a7a1e16d02c98079bd74f52474cdca597d8a08eb86.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2925/aa1bdb08ad7950fa94a75cf6492d82c866241b26716c218410bc04b1b16c6725-823.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2926/49003bea8e6e742762e40b04e6b3f622710731be1fd5b828d90c0d622b2f8f64.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2929/4f78a6a8234b36f41ab29c07fe873ed57c1ea2ec68e3c3dc4facdd9b7ce63021.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "assets/images/products/2928/aa1bdb08ad7950fa94a75cf6492d82c866241b26716c218410bc04b1b16c6725.jpg",
+      "reason": "empty"
+    },
+    {
+      "sourcePath": "digma_logo.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "ritmix_logo.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "MYSTERY.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "midea.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "checklist-2077022_1280.jpg",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "Videocard.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "Tecno.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "Pioneer-Logo.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "HAIER-LOGO-1024x576.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "fslogo.png",
+      "reason": "missing"
+    },
+    {
+      "sourcePath": "template/images/Ark_logo.png",
+      "reason": "invalid-format"
+    }
+  ],
+  "removedLinks": {
+    "excluded": 3,
+    "unknown": 0,
+    "external": 2,
+    "unsafe": 0
+  },
+  "unknownInternalPaths": [],
+  "sourceDefects": [
+    {
+      "source": "resource:13",
+      "field": "longtitle",
+      "reason": "missing-preposition-before-city"
+    }
+  ],
+  "privacy": {
+    "users": false,
+    "orders": false,
+    "submissions": false,
+    "ugc": true,
+    "cities": false,
+    "phpSourceCopied": false,
+    "authorEmails": false,
+    "orderRecords": false,
+    "authorPhones": false
+  },
+  "defaultCity": {
+    "resourceId": 344,
+    "slug": "tomsk",
+    "name": "Томск",
+    "prepositional": "Томске"
+  },
+  "uriNormalizations": [
+    {
+      "resourceId": 9493,
+      "from": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/vc-3-floor-*ru/",
+      "to": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/vc-3-floor--ru/",
+      "rule": "legacy-star-to-hyphen-portable-filename"
+    },
+    {
+      "resourceId": 9636,
+      "from": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/t-11/1-classic-*eu/",
+      "to": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/t-11/1-classic--eu/",
+      "rule": "legacy-star-to-hyphen-portable-filename"
+    },
+    {
+      "resourceId": 10057,
+      "from": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/ds-6-*eu/",
+      "to": "/services/remont-byitovoj-texniki/remont-pyilesosov/karcher/ds-6--eu/",
+      "rule": "legacy-star-to-hyphen-portable-filename"
+    }
+  ],
+  "priceCoverage": {
+    "repair": 11134,
+    "repairWithPrice": 10392,
+    "service": 150,
+    "serviceWithPrice": 150,
+    "serviceInheritedParentPrices": 137,
+    "unpricedHeatingBranch": 742,
+    "correction": "Existing category price chunks for appliance groups7006-7016 are reused by their device/service descendants. Service records with missing legacy depth rules inherit only their actual parent category priceKey. No new prices introduced."
+  },
+  "pagination": {
+    "pageVariable": "page",
+    "canonicalPattern": "/resource-path/page-N/",
+    "categoryPageSize": 20,
+    "editorialPageSize": 12,
+    "source": "modx_site_plugins[id=15].plugincode"
+  },
+  "community": {
+    "schemaVersion": 1,
+    "source": "reviewed-local-sql-snapshot",
+    "sourceSha256": "0a5df7d14d8d754aacb37db50d8928015f756d76b2131f95a437d63eb5a7dc75",
+    "resources": 747,
+    "consultations": 744,
+    "reviews": 62,
+    "comments": 81,
+    "moderationExcluded": {
+      "resources": [
+        {
+          "id": 4089,
+          "reason": "explicit-keyboard-test"
+        },
+        {
+          "id": 4087,
+          "reason": "explicit-test"
+        },
+        {
+          "id": 3609,
+          "reason": "explicit-test"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 121,
+          "reason": "empty-review-with-test-reply"
+        },
+        {
+          "id": 122,
+          "reason": "empty-review-with-test-reply"
+        }
+      ],
+      "comments": [
+        {
+          "id": 110,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 108,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 109,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 107,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 106,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 102,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 99,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 105,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 103,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 104,
+          "reason": "literal-zero-placeholder"
+        },
+        {
+          "id": 84,
+          "reason": "exact-duplicate-comment-of-83"
+        },
+        {
+          "id": 86,
+          "reason": "punctuation-placeholder"
+        },
+        {
+          "id": 87,
+          "reason": "punctuation-placeholder"
+        },
+        {
+          "id": 98,
+          "reason": "literal-zero-placeholder"
+        }
+      ]
+    },
+    "inlineImageIssues": [
+      {
+        "resourceId": 3991,
+        "reason": "malformed-empty-http-origin"
+      }
+    ],
+    "redactedEmails": 1,
+    "redactedPhones": 4,
+    "removedUnmappedImages": 2
+  }
+}

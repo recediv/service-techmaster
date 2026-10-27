@@ -1,0 +1,15 @@
+.react-carousel { --carousel-slide-size: 20%; box-sizing: border-box; display: block; width: 100%; min-width: 0; }
+.react-carousel *, .react-carousel *::before, .react-carousel *::after { box-sizing: border-box; }
+.react-carousel .react-carousel__viewport { overflow-x: auto; scrollbar-width: none; }
+.react-carousel .react-carousel__viewport::-webkit-scrollbar { display: none; }
+.react-carousel[data-embla-ready="true"] .react-carousel__viewport { overflow: hidden; }
+.react-carousel .react-carousel__track { display: flex; align-items: stretch; }
+.react-carousel[data-embla-ready="true"] .react-carousel__track { touch-action: pan-y pinch-zoom; }
+.react-carousel .react-carousel__slide { display: flex; flex: 0 0 var(--carousel-slide-size); min-width: 0; padding: 0 8px; }
+.react-carousel .react-carousel__controls { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.react-carousel[data-embla-ready="false"] .react-carousel__controls { visibility: hidden; }
+.react-carousel .react-carousel__controls button { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin: 0; padding: 0; border-radius: 8px; }
+@media (max-width: 1189px) { .react-carousel { --carousel-slide-size: 25%; } }
+@media (max-width: 969px) { .react-carousel { --carousel-slide-size: 33.333333%; } }
+@media (max-width: 729px) { .react-carousel { --carousel-slide-size: 50%; } }
+@media (max-width: 519px) { .react-carousel { --carousel-slide-size: 100%; } }

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "resources": [
+    {
+      "id": 4089,
+      "reason": "explicit-keyboard-test"
+    },
+    {
+      "id": 4087,
+      "reason": "explicit-test"
+    },
+    {
+      "id": 3609,
+      "reason": "explicit-test"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 121,
+      "reason": "empty-review-with-test-reply"
+    },
+    {
+      "id": 122,
+      "reason": "empty-review-with-test-reply"
+    }
+  ],
+  "comments": [
+    {
+      "id": 110,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 108,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 109,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 107,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 106,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 102,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 99,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 105,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 103,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 104,
+      "reason": "literal-zero-placeholder"
+    },
+    {
+      "id": 84,
+      "reason": "exact-duplicate-comment-of-83"
+    },
+    {
+      "id": 86,
+      "reason": "punctuation-placeholder"
+    },
+    {
+      "id": 87,
+      "reason": "punctuation-placeholder"
+    },
+    {
+      "id": 98,
+      "reason": "literal-zero-placeholder"
+    }
+  ]
+}

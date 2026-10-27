@@ -1,0 +1,65 @@
+name: Tomsk GitHub Pages preview
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tomsk-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NEXT_PUBLIC_BASE_PATH: /service-techmaster
+      SITE_ORIGIN: https://recediv.github.io
+      SITE_INDEXABLE: 'false'
+    outputs:
+      path: ${{ steps.package.outputs.path }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Make room for the complete temporary Next export
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Check the Pages packager
+        run: node --test scripts/pack-pages.test.mjs
+      - name: Build, validate and package the full Tomsk site
+        id: package
+        run: |
+          npm run build:pages
+          node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('.local/pages-package-report.json','utf8'));fs.appendFileSync(process.env.GITHUB_OUTPUT,'path='+r.output+'\n');"
+      - name: Upload the checked Pages site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ steps.package.outputs.path }}
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check repository Pages configuration
+        uses: actions/configure-pages@v5
+      - name: Publish the Tomsk preview
+        id: deployment
+        uses: actions/deploy-pages@v4

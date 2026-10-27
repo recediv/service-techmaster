@@ -1,0 +1,34 @@
+/* Hero redesign authorised by the user; page content and the shell stay scoped. */
+.site-hero {
+  --hero-teal: #028291;
+  --hero-coral: #fe6c55;
+  --hero-ink: #253d42;
+  --hero-background: #f5f8f8;
+  box-sizing: border-box;
+  position: relative;
+  display: flow-root;
+  clear: both;
+  width: 100%;
+  margin: 0;
+  padding: 32px 0 40px;
+  background: var(--hero-background);
+  color: var(--hero-ink);
+}
+.site-hero *, .site-hero *::before, .site-hero *::after { box-sizing: border-box; }
+.site-hero .site-hero__container { width: 100%; max-width: 1220px; min-width: 0; margin: 0 auto; padding: 0 15px; }
+.site-hero .site-hero__title { display: block; float: none; width: auto; max-width: 100%; margin: 0; padding: 0; color: var(--hero-ink); font: 600 clamp(30px, 3.4vw, 48px)/1.15 'Open Sans', sans-serif; letter-spacing: -.035em; overflow-wrap: anywhere; text-align: left; }
+.site-hero .breadcrumbs { position: static; display: flex; flex-wrap: wrap; align-items: center; gap: 5px 0; float: none; width: 100%; height: auto; margin: 0 0 28px; padding: 0; color: #718184; font-size: 12px; line-height: 1.65; }
+.site-hero .breadcrumbs > span { float: none; margin: 0; }
+.site-hero .breadcrumbs a { color: #65777b; text-decoration: none; }
+.site-hero .breadcrumbs a:hover { color: var(--hero-teal); }
+.site-hero .breadcrumbs > span:last-child { color: #40595e; }
+.site-hero :is(a, button):focus-visible { outline: 2px solid var(--hero-teal); outline-offset: 4px; }
+.site-hero--compact { padding-bottom: 36px; margin-bottom: 30px; border-bottom: 1px solid #e6eded; }
+.site-hero--compact .site-hero__title { max-width: 1000px; font-size: clamp(28px, 3vw, 40px); }
+@media (max-width: 730px) {
+  .site-hero { padding: 24px 0 28px; }
+  .site-hero .breadcrumbs { margin-bottom: 22px; font-size: 11px; }
+  .site-hero .site-hero__title { font-size: 30px; line-height: 1.2; letter-spacing: -.025em; }
+  .site-hero--compact { margin-bottom: 22px; }
+  .site-hero--compact .site-hero__title { font-size: 28px; }
+}

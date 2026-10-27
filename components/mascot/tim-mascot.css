@@ -1,0 +1,69 @@
+﻿.tim-mascot {
+  --tim-x: calc(100vw - 100px);
+  --tim-top: calc(100dvh - 150px);
+  --tim-size: 125px;
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  overflow: clip;
+  padding: 0 0 env(safe-area-inset-bottom, 0px);
+  pointer-events: none;
+  font: 13px/1.45 var(--font-family, Arial, sans-serif);
+  color: #355358;
+}
+.tim-mascot *, .tim-mascot *::before, .tim-mascot *::after { box-sizing: border-box; }
+.tim-mascot:has(.tim-mascot__actor:is([data-motion=held], [data-motion=air])) { z-index: 35; }
+.tim-mascot__actor { position: absolute; top: 0; left: 0; z-index: 5; will-change: transform; touch-action: none; user-select: none; -webkit-user-select: none; pointer-events: none; outline: none; }
+.tim-mascot__actor canvas { display: block; max-width: none; pointer-events: none; }
+.tim-mascot__actor:focus-visible:not([data-pointer-focus=true]) { outline: 2px dashed #028291; outline-offset: 1px; border-radius: 15px; }
+.tim-mascot__hit { position: absolute; left: -50%; top: 0; width: 200%; height: 100%; overflow: visible; pointer-events: none; }
+.tim-mascot__shape { pointer-events: fill; cursor: grab; }
+.tim-mascot__actor[data-pressed=true] .tim-mascot__shape { cursor: grabbing; }
+html[data-tim-grabbing], html[data-tim-grabbing] * { cursor: grabbing !important; user-select: none !important; -webkit-user-select: none !important; }
+.tim-mascot__shadow { position: absolute; left: 0; top: 0; z-index: 2; border-radius: 50%; background: #24484c; pointer-events: none; will-change: transform; }
+.tim-mascot:not([data-ready=true]) > :is(.tim-mascot__actor, .tim-mascot__shadow, .tim-mascot__jets) { visibility: hidden; }
+.tim-mascot[data-suspended=true] > :not(.tim-mascot__sr) { visibility: hidden; pointer-events: none; }
+.tim-mascot .tim-mascot__order {
+  position: absolute; z-index: 7; left: clamp(8px, calc(var(--tim-x) - var(--tim-size) * .45 - 208px), calc(100% - 208px));
+  top: clamp(8px, calc(var(--tim-top) + var(--tim-size) * .32), calc(100% - 66px));
+  width: 200px; min-width: 0; min-height: 58px; margin: 0; padding: 9px 12px 9px 9px; gap: 10px; border-radius: 16px 16px 4px 16px;
+  background: #fff; color: #254b52; border-color: #c1ddde; box-shadow: 0 5px 18px #214f591a; font-size: 12px; line-height: 1.4;
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(5px);
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(.2,.75,.25,1), visibility 180ms;
+}
+.tim-mascot__order-icon { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; border-radius: 12px; background: #e8f4f2; color: #028291; }
+.tim-mascot__order-icon svg { overflow: visible; }
+.tim-mascot__order-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; white-space: nowrap; }
+.tim-mascot__order-copy strong { font-size: 13px; font-weight: 600; line-height: 1.35; }
+.tim-mascot__order-copy > span { font-size: 12px; font-weight: 400; color: #526b71; }
+.tim-mascot[data-side=left] .tim-mascot__order { left: clamp(8px, calc(var(--tim-x) + var(--tim-size) * .45 + 8px), calc(100% - 208px)); border-radius: 16px 16px 16px 4px; }
+.tim-mascot[data-order-offer=true] .tim-mascot__order,
+.tim-mascot .tim-mascot__order:is(:hover,:focus-visible),
+.tim-mascot:has(.tim-mascot__actor:focus-visible:not([data-pointer-focus=true])) .tim-mascot__order { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.tim-mascot[data-projecting=true] .tim-mascot__order,
+.tim-mascot:has(.tim-mascot__actor:is([data-motion=held],[data-motion=air])) .tim-mascot__order { opacity: 0; visibility: hidden; pointer-events: none; }
+.tim-mascot__sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.tim-mascot .tim-mascot__thought {
+  --tim-thought-tail: 50%;
+  position: absolute; z-index: 6; display: grid; grid-template-columns: minmax(0,1fr) 80px; align-items: center; gap: 12px;
+  width: 232px; max-width: calc(100vw - 24px); height: 128px;
+  margin: 0; padding: 24px 28px; color: #29474e; text-align: center; text-decoration: none;
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(5px) scale(.96);
+  transform-origin: var(--tim-thought-tail) bottom;
+  transition: opacity 180ms ease, transform 360ms cubic-bezier(.16,1,.3,1), visibility 180ms;
+}
+.tim-mascot__thought-cloud { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: -1; filter: drop-shadow(0 4px 7px #214f591c); }
+.tim-mascot__thought-cloud path { fill: #fff; stroke: #c1ddde; stroke-width: 1.2px; }
+.tim-mascot__thought::before, .tim-mascot__thought::after { content: ''; position: absolute; border: 1px solid #c1ddde; border-radius: 50%; background: #fff; pointer-events: none; }
+.tim-mascot__thought::before { width: 12px; height: 12px; left: calc(var(--tim-thought-tail) - 12px); bottom: -7px; }
+.tim-mascot__thought::after { width: 6px; height: 6px; left: calc(var(--tim-thought-tail) + 2px); bottom: -19px; }
+.tim-mascot__thought-action { display: block; font-size: 14px; font-weight: 600; line-height: 1.2; text-wrap: balance; }
+.tim-mascot__thought-image { display: grid; place-items: center; width: 80px; height: 80px; min-width: 0; }
+.tim-mascot__thought-image > img { display: block; width: 80px; height: 80px; margin: 0; object-fit: contain; }
+.tim-mascot__thought-image > .model-card__placeholder { display: block; width: 42px; height: 42px; margin: 0; color: #526b70; }
+.tim-mascot .tim-mascot__thought[data-visible=true] { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.tim-mascot__thought:is(:hover,:focus-visible) .tim-mascot__thought-cloud path { stroke: #028291; }
+.tim-mascot .tim-mascot__thought:focus-visible { outline: 2px solid #028291; outline-offset: 3px; border-radius: 42%; }
+.tim-mascot:is([data-suspended=true],[data-order-open=true],[data-projecting=true]) .tim-mascot__thought { opacity: 0; visibility: hidden; pointer-events: none; }
+@media (hover: none), (pointer: coarse) { .tim-mascot[data-controls-visible=true]:not([data-walking=true]):not([data-projecting=true]) .tim-mascot__order { opacity: 1; visibility: visible; pointer-events: auto; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .tim-mascot .site-button { transition: none; } .tim-mascot .tim-mascot__thought { transform: none; transition: opacity 150ms ease, visibility 150ms; } }

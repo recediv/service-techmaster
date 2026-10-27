@@ -1,0 +1,2012 @@
+{
+  "schemaVersion": 1,
+  "brand": {
+    "name": "Сервисный центр «ТехМастер»",
+    "logoUrl": "/legacy/template/images/logotip.png"
+  },
+  "navigation": [
+    {
+      "label": "Услуги",
+      "path": "/services/",
+      "children": [
+        {
+          "label": "Ремонт автомагнитол",
+          "path": "/services/remont-avtomagnitol/",
+          "iconClass": "menu_icon10",
+          "children": [
+            {
+              "label": "Acv",
+              "path": "/services/remont-avtomagnitol/acv/"
+            },
+            {
+              "label": "Alpine",
+              "path": "/services/remont-avtomagnitol/alpine/"
+            },
+            {
+              "label": "Centurion",
+              "path": "/services/remont-avtomagnitol/centurion/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-avtomagnitol/digma/"
+            },
+            {
+              "label": "Incar",
+              "path": "/services/remont-avtomagnitol/incar/"
+            },
+            {
+              "label": "Jbl",
+              "path": "/services/remont-avtomagnitol/jbl/"
+            },
+            {
+              "label": "Jvc",
+              "path": "/services/remont-avtomagnitol/jvc/"
+            },
+            {
+              "label": "Kenwood",
+              "path": "/services/remont-avtomagnitol/kenwood/"
+            },
+            {
+              "label": "Nakamichi",
+              "path": "/services/remont-avtomagnitol/nakamichi/"
+            },
+            {
+              "label": "Navitel",
+              "path": "/services/remont-avtomagnitol/navitel/"
+            },
+            {
+              "label": "Pioneer",
+              "path": "/services/remont-avtomagnitol/pioneer/"
+            },
+            {
+              "label": "Prology",
+              "path": "/services/remont-avtomagnitol/prology/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-avtomagnitol/sony/"
+            },
+            {
+              "label": "Soundmax",
+              "path": "/services/remont-avtomagnitol/soundmax/"
+            },
+            {
+              "label": "Sunwind",
+              "path": "/services/remont-avtomagnitol/sunwind/"
+            },
+            {
+              "label": "Swat",
+              "path": "/services/remont-avtomagnitol/swat/"
+            },
+            {
+              "label": "Ural",
+              "path": "/services/remont-avtomagnitol/ural/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт айфонов",
+          "path": "/services/remont-iphone/",
+          "iconClass": "menu_icon5"
+        },
+        {
+          "label": "Ремонт бытовой техники",
+          "path": "/services/remont-byitovoj-texniki/",
+          "iconClass": "menu_icon9",
+          "children": [
+            {
+              "label": "Ремонт видеонаблюдения",
+              "path": "/services/remont-byitovoj-texniki/remont-videonablyudeniya/"
+            },
+            {
+              "label": "Ремонт микроволновых печей",
+              "path": "/services/remont-byitovoj-texniki/mikrovolnovyie-pechi/"
+            },
+            {
+              "label": "Ремонт мультиварок",
+              "path": "/services/remont-byitovoj-texniki/remont-multivarok/"
+            },
+            {
+              "label": "Ремонт отпаривателей",
+              "path": "/services/remont-byitovoj-texniki/remont-otparivatelej/"
+            },
+            {
+              "label": "Ремонт парогенераторов",
+              "path": "/services/remont-byitovoj-texniki/remont-parogeneratorov/"
+            },
+            {
+              "label": "Ремонт пылесосов",
+              "path": "/services/remont-byitovoj-texniki/remont-pyilesosov/"
+            },
+            {
+              "label": "Ремонт роботов-пылесосов",
+              "path": "/services/remont-byitovoj-texniki/remont-robot-pyilesosov/"
+            },
+            {
+              "label": "Ремонт увлажнителей",
+              "path": "/services/remont-byitovoj-texniki/remont-uvlazhnitelej/"
+            },
+            {
+              "label": "Ремонт утюгов",
+              "path": "/services/remont-byitovoj-texniki/remont-utyugov/"
+            },
+            {
+              "label": "Ремонт хлебопечек",
+              "path": "/services/remont-byitovoj-texniki/remont-xlebopechek/"
+            },
+            {
+              "label": "Ремонт чайника",
+              "path": "/services/remont-byitovoj-texniki/remont-chajnika/"
+            },
+            {
+              "label": "Ремонт электрогрилей",
+              "path": "/services/remont-byitovoj-texniki/remont-elektrogrilej/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт видеокарт",
+          "path": "/services/remont-videokart/",
+          "iconClass": "menu_icon12",
+          "children": [
+            {
+              "label": "Afox",
+              "path": "/services/remont-videokart/afox/"
+            },
+            {
+              "label": "Asrock",
+              "path": "/services/remont-videokart/asrock/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-videokart/asus/"
+            },
+            {
+              "label": "Biostar",
+              "path": "/services/remont-videokart/biostar/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-videokart/gigabyte/"
+            },
+            {
+              "label": "Inno3d",
+              "path": "/services/remont-videokart/inno3d/"
+            },
+            {
+              "label": "Msi",
+              "path": "/services/remont-videokart/msi/"
+            },
+            {
+              "label": "Ninja",
+              "path": "/services/remont-videokart/ninja/"
+            },
+            {
+              "label": "Palit",
+              "path": "/services/remont-videokart/palit/"
+            },
+            {
+              "label": "Pny",
+              "path": "/services/remont-videokart/pny/"
+            },
+            {
+              "label": "Powercolor",
+              "path": "/services/remont-videokart/powercolor/"
+            },
+            {
+              "label": "Sapphire",
+              "path": "/services/remont-videokart/sapphire/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт компьютеров",
+          "path": "/services/remont-kompyuterov/",
+          "iconClass": "menu_icon3",
+          "children": [
+            {
+              "label": "Acer",
+              "path": "/services/remont-kompyuterov/acer/"
+            },
+            {
+              "label": "Apple",
+              "path": "/services/remont-kompyuterov/apple/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-kompyuterov/asus/"
+            },
+            {
+              "label": "B4com",
+              "path": "/services/remont-kompyuterov/b4com/"
+            },
+            {
+              "label": "Dell",
+              "path": "/services/remont-kompyuterov/dell/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-kompyuterov/digma/"
+            },
+            {
+              "label": "Digma pro",
+              "path": "/services/remont-kompyuterov/digma-pro/"
+            },
+            {
+              "label": "Eglobal",
+              "path": "/services/remont-kompyuterov/eglobal/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-kompyuterov/gigabyte/"
+            },
+            {
+              "label": "Hiper",
+              "path": "/services/remont-kompyuterov/hiper/"
+            },
+            {
+              "label": "Hp",
+              "path": "/services/remont-kompyuterov/hp/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-kompyuterov/huawei/"
+            },
+            {
+              "label": "Hyperpc",
+              "path": "/services/remont-kompyuterov/hyperpc/"
+            },
+            {
+              "label": "Iru",
+              "path": "/services/remont-kompyuterov/iru/"
+            },
+            {
+              "label": "Lenovo",
+              "path": "/services/remont-kompyuterov/lenovo/"
+            },
+            {
+              "label": "Msi",
+              "path": "/services/remont-kompyuterov/msi/"
+            },
+            {
+              "label": "Raskat",
+              "path": "/services/remont-kompyuterov/raskat/"
+            },
+            {
+              "label": "Rdw computers",
+              "path": "/services/remont-kompyuterov/rdw-computers/"
+            },
+            {
+              "label": "Rombica",
+              "path": "/services/remont-kompyuterov/rombica/"
+            },
+            {
+              "label": "Teclast",
+              "path": "/services/remont-kompyuterov/teclast/"
+            },
+            {
+              "label": "Tecno",
+              "path": "/services/remont-kompyuterov/tecno/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт консолей",
+          "path": "/services/konsoli/",
+          "iconClass": "menu_icon12",
+          "children": [
+            {
+              "label": "Asus",
+              "path": "/services/konsoli/asus/"
+            },
+            {
+              "label": "Dendy",
+              "path": "/services/konsoli/dendy/"
+            },
+            {
+              "label": "Nintendo",
+              "path": "/services/konsoli/nintendo/"
+            },
+            {
+              "label": "Noname",
+              "path": "/services/konsoli/noname/"
+            },
+            {
+              "label": "Pgp aio",
+              "path": "/services/konsoli/pgp-aio/"
+            },
+            {
+              "label": "Playstation",
+              "path": "/services/konsoli/playstation/"
+            },
+            {
+              "label": "Retro genesis",
+              "path": "/services/konsoli/retro-genesis/"
+            },
+            {
+              "label": "Sony ps 2",
+              "path": "/services/konsoli/sony-ps-2/"
+            },
+            {
+              "label": "Sony Ps3",
+              "path": "/services/konsoli/ps3/"
+            },
+            {
+              "label": "Sony Ps4",
+              "path": "/services/konsoli/ps4/"
+            },
+            {
+              "label": "Sony PSP",
+              "path": "/services/konsoli/psp/"
+            },
+            {
+              "label": "Xbox 360",
+              "path": "/services/konsoli/xbox-360/"
+            },
+            {
+              "label": "Xbox ONE",
+              "path": "/services/konsoli/xbox-one/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт лазерных принтеров и МФУ",
+          "path": "/services/remont-lazernyix-printerov-i-mfu/",
+          "children": [
+            {
+              "label": "Avision",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/avision/"
+            },
+            {
+              "label": "Brother",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/brother/"
+            },
+            {
+              "label": "Cactus",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/cactus/"
+            },
+            {
+              "label": "Canon",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/canon/"
+            },
+            {
+              "label": "Deli",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/deli/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/digma/"
+            },
+            {
+              "label": "Epson",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/epson/"
+            },
+            {
+              "label": "G&g",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/gandg/"
+            },
+            {
+              "label": "Hiper",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/hiper/"
+            },
+            {
+              "label": "Hp",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/hp/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/huawei/"
+            },
+            {
+              "label": "Iru",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/iru/"
+            },
+            {
+              "label": "Kyocera",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/kyocera/"
+            },
+            {
+              "label": "Pantum",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/pantum/"
+            },
+            {
+              "label": "Ricoh",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/ricoh/"
+            },
+            {
+              "label": "Xerox",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/xerox/"
+            },
+            {
+              "label": "Катюша",
+              "path": "/services/remont-lazernyix-printerov-i-mfu/katyusha/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт мониторов",
+          "path": "/services/remont-monitorov/",
+          "iconClass": "menu_icon7",
+          "children": [
+            {
+              "label": "Acer",
+              "path": "/services/remont-monitorov/acer/"
+            },
+            {
+              "label": "AOC",
+              "path": "/services/remont-monitorov/aoc/"
+            },
+            {
+              "label": "Aopen",
+              "path": "/services/remont-monitorov/aopen/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-monitorov/asus/"
+            },
+            {
+              "label": "BenQ",
+              "path": "/services/remont-monitorov/benq/"
+            },
+            {
+              "label": "Dahua",
+              "path": "/services/remont-monitorov/dahua/"
+            },
+            {
+              "label": "Dell",
+              "path": "/services/remont-monitorov/dell/"
+            },
+            {
+              "label": "Delta computers",
+              "path": "/services/remont-monitorov/delta-computers/"
+            },
+            {
+              "label": "Dexp",
+              "path": "/services/remont-monitorov/dexp/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-monitorov/digma/"
+            },
+            {
+              "label": "Digma pro",
+              "path": "/services/remont-monitorov/digma-pro/"
+            },
+            {
+              "label": "Fujitsu",
+              "path": "/services/remont-monitorov/fujitsu/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-monitorov/gigabyte/"
+            },
+            {
+              "label": "Gmng",
+              "path": "/services/remont-monitorov/gmng/"
+            },
+            {
+              "label": "Hikvision",
+              "path": "/services/remont-monitorov/hikvision/"
+            },
+            {
+              "label": "Hiper",
+              "path": "/services/remont-monitorov/hiper/"
+            },
+            {
+              "label": "Hisense",
+              "path": "/services/remont-monitorov/hisense/"
+            },
+            {
+              "label": "Hkc",
+              "path": "/services/remont-monitorov/hkc/"
+            },
+            {
+              "label": "HP",
+              "path": "/services/remont-monitorov/hp/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-monitorov/huawei/"
+            },
+            {
+              "label": "Iiyama",
+              "path": "/services/remont-monitorov/iiyama/"
+            },
+            {
+              "label": "Iru",
+              "path": "/services/remont-monitorov/iru/"
+            },
+            {
+              "label": "Lenovo",
+              "path": "/services/remont-monitorov/lenovo/"
+            },
+            {
+              "label": "LG",
+              "path": "/services/remont-monitorov/lg/"
+            },
+            {
+              "label": "Lightcom",
+              "path": "/services/remont-monitorov/lightcom/"
+            },
+            {
+              "label": "Msi",
+              "path": "/services/remont-monitorov/msi/"
+            },
+            {
+              "label": "Nec",
+              "path": "/services/remont-monitorov/nec/"
+            },
+            {
+              "label": "Noname",
+              "path": "/services/remont-monitorov/noname/"
+            },
+            {
+              "label": "Npc",
+              "path": "/services/remont-monitorov/npc/"
+            },
+            {
+              "label": "Philips",
+              "path": "/services/remont-monitorov/philips/"
+            },
+            {
+              "label": "Pinebro",
+              "path": "/services/remont-monitorov/pinebro/"
+            },
+            {
+              "label": "Rdw computers",
+              "path": "/services/remont-monitorov/rdw-computers/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-monitorov/samsung/"
+            },
+            {
+              "label": "Sunwind",
+              "path": "/services/remont-monitorov/sunwind/"
+            },
+            {
+              "label": "ViewSonic",
+              "path": "/services/remont-monitorov/viewsonic/"
+            },
+            {
+              "label": "Xiaomi",
+              "path": "/services/remont-monitorov/xiaomi/"
+            },
+            {
+              "label": "Гравитон",
+              "path": "/services/remont-monitorov/graviton/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт ноутбуков",
+          "path": "/services/remont-noutbukov/",
+          "iconClass": "menu_icon2",
+          "children": [
+            {
+              "label": "Acer",
+              "path": "/services/remont-noutbukov/acer/"
+            },
+            {
+              "label": "Adata xpg",
+              "path": "/services/remont-noutbukov/adata-xpg/"
+            },
+            {
+              "label": "Apple",
+              "path": "/services/remont-noutbukov/apple/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-noutbukov/asus/"
+            },
+            {
+              "label": "Chuwi",
+              "path": "/services/remont-noutbukov/chuwi/"
+            },
+            {
+              "label": "Clevo",
+              "path": "/services/remont-noutbukov/clevo/"
+            },
+            {
+              "label": "Colorful",
+              "path": "/services/remont-noutbukov/colorful/"
+            },
+            {
+              "label": "Dell",
+              "path": "/services/remont-noutbukov/dell/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-noutbukov/digma/"
+            },
+            {
+              "label": "Digma pro",
+              "path": "/services/remont-noutbukov/digma-pro/"
+            },
+            {
+              "label": "DNS",
+              "path": "/services/remont-noutbukov/dns/"
+            },
+            {
+              "label": "Echips",
+              "path": "/services/remont-noutbukov/echips/"
+            },
+            {
+              "label": "Fujitsu",
+              "path": "/services/remont-noutbukov/fujitsu/"
+            },
+            {
+              "label": "Gateway",
+              "path": "/services/remont-noutbukov/gateway/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-noutbukov/gigabyte/"
+            },
+            {
+              "label": "Gmng",
+              "path": "/services/remont-noutbukov/gmng/"
+            },
+            {
+              "label": "Hasee",
+              "path": "/services/remont-noutbukov/hasee/"
+            },
+            {
+              "label": "Hiper",
+              "path": "/services/remont-noutbukov/hiper/"
+            },
+            {
+              "label": "Honor",
+              "path": "/services/remont-noutbukov/honor/"
+            },
+            {
+              "label": "HP",
+              "path": "/services/remont-noutbukov/hp/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-noutbukov/huawei/"
+            },
+            {
+              "label": "Infinix",
+              "path": "/services/remont-noutbukov/infinix/"
+            },
+            {
+              "label": "Iru",
+              "path": "/services/remont-noutbukov/iru/"
+            },
+            {
+              "label": "Lenovo",
+              "path": "/services/remont-noutbukov/lenovo/"
+            },
+            {
+              "label": "Machenike",
+              "path": "/services/remont-noutbukov/machenike/"
+            },
+            {
+              "label": "Maibenben",
+              "path": "/services/remont-noutbukov/maibenben/"
+            },
+            {
+              "label": "Microsoft",
+              "path": "/services/remont-noutbukov/microsoft/"
+            },
+            {
+              "label": "MSI",
+              "path": "/services/remont-noutbukov/msi/"
+            },
+            {
+              "label": "Osio",
+              "path": "/services/remont-noutbukov/osio/"
+            },
+            {
+              "label": "Packard Bell",
+              "path": "/services/remont-noutbukov/packard-bell/"
+            },
+            {
+              "label": "Razer",
+              "path": "/services/remont-noutbukov/razer/"
+            },
+            {
+              "label": "Realme",
+              "path": "/services/remont-noutbukov/realme/"
+            },
+            {
+              "label": "Rikor",
+              "path": "/services/remont-noutbukov/rikor/"
+            },
+            {
+              "label": "Rombica",
+              "path": "/services/remont-noutbukov/rombica/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-noutbukov/samsung/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-noutbukov/sony/"
+            },
+            {
+              "label": "Tcl",
+              "path": "/services/remont-noutbukov/tcl/"
+            },
+            {
+              "label": "Tecno",
+              "path": "/services/remont-noutbukov/tecno/"
+            },
+            {
+              "label": "Toshiba",
+              "path": "/services/remont-noutbukov/toshiba/"
+            },
+            {
+              "label": "Xiaomi",
+              "path": "/services/remont-noutbukov/xiaomi/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт обогревателей",
+          "path": "/services/remont-obogrevatelej/",
+          "children": [
+            {
+              "label": "Ремонт инфракрасных обогревателей",
+              "path": "/services/remont-obogrevatelej/remont-infrakrasnyix-obogrevatelej/"
+            },
+            {
+              "label": "Ремонт конвекторов",
+              "path": "/services/remont-obogrevatelej/remont-konvektorov/"
+            },
+            {
+              "label": "Ремонт масляных радиаторов",
+              "path": "/services/remont-obogrevatelej/remont-maslyanyix-radiatorov/"
+            },
+            {
+              "label": "Ремонт тепловентиляторов",
+              "path": "/services/remont-obogrevatelej/remont-teploventilyatorov/"
+            },
+            {
+              "label": "Ремонт тепловых завес",
+              "path": "/services/remont-obogrevatelej/remont-teplovyix-zaves/"
+            },
+            {
+              "label": "Ремонт тепловых пушек",
+              "path": "/services/remont-obogrevatelej/remont-teplovyix-pushek/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт планшетов",
+          "path": "/services/remont-planshetov/",
+          "iconClass": "menu_icon4",
+          "children": [
+            {
+              "label": "3Q",
+              "path": "/services/remont-planshetov/3q/"
+            },
+            {
+              "label": "Acer",
+              "path": "/services/remont-planshetov/acer/"
+            },
+            {
+              "label": "Ainol",
+              "path": "/services/remont-planshetov/ainol/"
+            },
+            {
+              "label": "Alcatel",
+              "path": "/services/remont-planshetov/alcatel/"
+            },
+            {
+              "label": "Alldocube",
+              "path": "/services/remont-planshetov/alldocube/"
+            },
+            {
+              "label": "Apple",
+              "path": "/services/remont-planshetov/apple/"
+            },
+            {
+              "label": "Archos",
+              "path": "/services/remont-planshetov/archos/"
+            },
+            {
+              "label": "Ark",
+              "path": "/services/remont-planshetov/ark/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-planshetov/asus/"
+            },
+            {
+              "label": "Blackview",
+              "path": "/services/remont-planshetov/blackview/"
+            },
+            {
+              "label": "Chuwi",
+              "path": "/services/remont-planshetov/chuwi/"
+            },
+            {
+              "label": "Cube",
+              "path": "/services/remont-planshetov/cube/"
+            },
+            {
+              "label": "Cubot",
+              "path": "/services/remont-planshetov/cubot/"
+            },
+            {
+              "label": "DEXP",
+              "path": "/services/remont-planshetov/dexp/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-planshetov/digma/"
+            },
+            {
+              "label": "Digma pro",
+              "path": "/services/remont-planshetov/digma-pro/"
+            },
+            {
+              "label": "DNS",
+              "path": "/services/remont-planshetov/dns/"
+            },
+            {
+              "label": "Doogee",
+              "path": "/services/remont-planshetov/doogee/"
+            },
+            {
+              "label": "Elephone",
+              "path": "/services/remont-planshetov/elephone/"
+            },
+            {
+              "label": "Explay",
+              "path": "/services/remont-planshetov/explay/"
+            },
+            {
+              "label": "Fly",
+              "path": "/services/remont-planshetov/fly/"
+            },
+            {
+              "label": "Freelander",
+              "path": "/services/remont-planshetov/freelander/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-planshetov/gigabyte/"
+            },
+            {
+              "label": "GoClever",
+              "path": "/services/remont-planshetov/goclever/"
+            },
+            {
+              "label": "Google",
+              "path": "/services/remont-planshetov/google/"
+            },
+            {
+              "label": "Highscreen",
+              "path": "/services/remont-planshetov/highscreen/"
+            },
+            {
+              "label": "Honor",
+              "path": "/services/remont-planshetov/honor/"
+            },
+            {
+              "label": "HTC",
+              "path": "/services/remont-planshetov/htc/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-planshetov/huawei/"
+            },
+            {
+              "label": "Infinix",
+              "path": "/services/remont-planshetov/infinix/"
+            },
+            {
+              "label": "Itel",
+              "path": "/services/remont-planshetov/itel/"
+            },
+            {
+              "label": "Jiavu",
+              "path": "/services/remont-planshetov/jiavu/"
+            },
+            {
+              "label": "Jumper",
+              "path": "/services/remont-planshetov/jumper/"
+            },
+            {
+              "label": "Kvadra",
+              "path": "/services/remont-planshetov/kvadra/"
+            },
+            {
+              "label": "Lenovo",
+              "path": "/services/remont-planshetov/lenovo/"
+            },
+            {
+              "label": "LG",
+              "path": "/services/remont-planshetov/lg/"
+            },
+            {
+              "label": "Meizu",
+              "path": "/services/remont-planshetov/meizu/"
+            },
+            {
+              "label": "Microsoft lumia",
+              "path": "/services/remont-planshetov/microsoft-lumia/"
+            },
+            {
+              "label": "Motorola",
+              "path": "/services/remont-planshetov/motorola/"
+            },
+            {
+              "label": "Oscal",
+              "path": "/services/remont-planshetov/oscal/"
+            },
+            {
+              "label": "Oysters",
+              "path": "/services/remont-planshetov/oysters/"
+            },
+            {
+              "label": "Perfeo",
+              "path": "/services/remont-planshetov/perfeo/"
+            },
+            {
+              "label": "Philips",
+              "path": "/services/remont-planshetov/philips/"
+            },
+            {
+              "label": "PiPO",
+              "path": "/services/remont-planshetov/pipo/"
+            },
+            {
+              "label": "Prestigio",
+              "path": "/services/remont-planshetov/prestigio/"
+            },
+            {
+              "label": "Realme",
+              "path": "/services/remont-planshetov/realme/"
+            },
+            {
+              "label": "RoverPad",
+              "path": "/services/remont-planshetov/roverpad/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-planshetov/samsung/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-planshetov/sony/"
+            },
+            {
+              "label": "Sunwind",
+              "path": "/services/remont-planshetov/sunwind/"
+            },
+            {
+              "label": "Supra",
+              "path": "/services/remont-planshetov/supra/"
+            },
+            {
+              "label": "Tcl",
+              "path": "/services/remont-planshetov/tcl/"
+            },
+            {
+              "label": "Teclast",
+              "path": "/services/remont-planshetov/teclast/"
+            },
+            {
+              "label": "teXet",
+              "path": "/services/remont-planshetov/texet/"
+            },
+            {
+              "label": "Thl",
+              "path": "/services/remont-planshetov/thl/"
+            },
+            {
+              "label": "ViewSonic",
+              "path": "/services/remont-planshetov/viewsonic/"
+            },
+            {
+              "label": "Wexler",
+              "path": "/services/remont-planshetov/wexler/"
+            },
+            {
+              "label": "Xiaomi",
+              "path": "/services/remont-planshetov/xiaomi/"
+            },
+            {
+              "label": "Zopo",
+              "path": "/services/remont-planshetov/zopo/"
+            },
+            {
+              "label": "ZTE",
+              "path": "/services/remont-planshetov/zte/"
+            },
+            {
+              "label": "МегаФон",
+              "path": "/services/remont-planshetov/megafon/"
+            },
+            {
+              "label": "МТС",
+              "path": "/services/remont-planshetov/mts/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт телевизоров",
+          "path": "/services/remont-televizorov/",
+          "iconClass": "menu_icon6",
+          "children": [
+            {
+              "label": "Asano",
+              "path": "/services/remont-televizorov/asano/"
+            },
+            {
+              "label": "Baff",
+              "path": "/services/remont-televizorov/baff/"
+            },
+            {
+              "label": "BBK",
+              "path": "/services/remont-televizorov/bbk/"
+            },
+            {
+              "label": "Blackton",
+              "path": "/services/remont-televizorov/blackton/"
+            },
+            {
+              "label": "Bq",
+              "path": "/services/remont-televizorov/bq/"
+            },
+            {
+              "label": "Centek",
+              "path": "/services/remont-televizorov/centek/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-televizorov/digma/"
+            },
+            {
+              "label": "Digma pro",
+              "path": "/services/remont-televizorov/digma-pro/"
+            },
+            {
+              "label": "DNS",
+              "path": "/services/remont-televizorov/dns/"
+            },
+            {
+              "label": "Fusion",
+              "path": "/services/remont-televizorov/fusion/"
+            },
+            {
+              "label": "Grundig",
+              "path": "/services/remont-televizorov/grundig/"
+            },
+            {
+              "label": "Haier",
+              "path": "/services/remont-televizorov/haier/"
+            },
+            {
+              "label": "Hisense",
+              "path": "/services/remont-televizorov/hisense/"
+            },
+            {
+              "label": "Hyundai",
+              "path": "/services/remont-televizorov/hyundai/"
+            },
+            {
+              "label": "Kivi",
+              "path": "/services/remont-televizorov/kivi/"
+            },
+            {
+              "label": "Leff",
+              "path": "/services/remont-televizorov/leff/"
+            },
+            {
+              "label": "LG",
+              "path": "/services/remont-televizorov/lg/"
+            },
+            {
+              "label": "Maunfeld",
+              "path": "/services/remont-televizorov/maunfeld/"
+            },
+            {
+              "label": "Mystery",
+              "path": "/services/remont-televizorov/mystery/"
+            },
+            {
+              "label": "Panasonic",
+              "path": "/services/remont-televizorov/panasonic/"
+            },
+            {
+              "label": "Philips",
+              "path": "/services/remont-televizorov/philips/"
+            },
+            {
+              "label": "Polarline",
+              "path": "/services/remont-televizorov/polarline/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-televizorov/samung/"
+            },
+            {
+              "label": "Sber",
+              "path": "/services/remont-televizorov/sber/"
+            },
+            {
+              "label": "Sharp",
+              "path": "/services/remont-televizorov/sharp/"
+            },
+            {
+              "label": "Shivaki",
+              "path": "/services/remont-televizorov/shivaki/"
+            },
+            {
+              "label": "Skyworth",
+              "path": "/services/remont-televizorov/skyworth/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-televizorov/sony/"
+            },
+            {
+              "label": "Starwind",
+              "path": "/services/remont-televizorov/starwind/"
+            },
+            {
+              "label": "Sunwind",
+              "path": "/services/remont-televizorov/sunwind/"
+            },
+            {
+              "label": "Supra",
+              "path": "/services/remont-televizorov/supra/"
+            },
+            {
+              "label": "Tcl",
+              "path": "/services/remont-televizorov/tcl/"
+            },
+            {
+              "label": "Telefunken",
+              "path": "/services/remont-televizorov/telefunken/"
+            },
+            {
+              "label": "Thomson",
+              "path": "/services/remont-televizorov/thomson/"
+            },
+            {
+              "label": "Toshiba",
+              "path": "/services/remont-televizorov/toshiba/"
+            },
+            {
+              "label": "Xiaomi",
+              "path": "/services/remont-televizorov/xiaomi/"
+            },
+            {
+              "label": "Yuno",
+              "path": "/services/remont-televizorov/yuno/"
+            },
+            {
+              "label": "Яндекс",
+              "path": "/services/remont-televizorov/yandeks/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт телефонов",
+          "path": "/services/remont-sotovyh/",
+          "iconClass": "menu_icon1",
+          "children": [
+            {
+              "label": "3Q",
+              "path": "/services/remont-sotovyh/3q/"
+            },
+            {
+              "label": "Acer",
+              "path": "/services/remont-sotovyh/acer/"
+            },
+            {
+              "label": "Ainol",
+              "path": "/services/remont-sotovyh/ainol/"
+            },
+            {
+              "label": "Alcatel",
+              "path": "/services/remont-sotovyh/alcatel/"
+            },
+            {
+              "label": "Archos",
+              "path": "/services/remont-sotovyh/archos/"
+            },
+            {
+              "label": "Asus",
+              "path": "/services/remont-sotovyh/asus/"
+            },
+            {
+              "label": "Bq",
+              "path": "/services/remont-sotovyh/bq/"
+            },
+            {
+              "label": "Chuwi",
+              "path": "/services/remont-sotovyh/chuwi/"
+            },
+            {
+              "label": "Cube",
+              "path": "/services/remont-sotovyh/cube/"
+            },
+            {
+              "label": "Cubot",
+              "path": "/services/remont-sotovyh/cubot/"
+            },
+            {
+              "label": "DEXP",
+              "path": "/services/remont-sotovyh/dexp/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-sotovyh/digma/"
+            },
+            {
+              "label": "DNS",
+              "path": "/services/remont-sotovyh/dns/"
+            },
+            {
+              "label": "Doogee",
+              "path": "/services/remont-sotovyh/doogee/"
+            },
+            {
+              "label": "Elephone",
+              "path": "/services/remont-sotovyh/elephone/"
+            },
+            {
+              "label": "Explay",
+              "path": "/services/remont-sotovyh/explay/"
+            },
+            {
+              "label": "Fly",
+              "path": "/services/remont-sotovyh/fly/"
+            },
+            {
+              "label": "Freelander",
+              "path": "/services/remont-sotovyh/freelander/"
+            },
+            {
+              "label": "Gigabyte",
+              "path": "/services/remont-sotovyh/gigabyte/"
+            },
+            {
+              "label": "GoClever",
+              "path": "/services/remont-sotovyh/goclever/"
+            },
+            {
+              "label": "Google",
+              "path": "/services/remont-sotovyh/google/"
+            },
+            {
+              "label": "Highscreen",
+              "path": "/services/remont-sotovyh/highscreen/"
+            },
+            {
+              "label": "Honor",
+              "path": "/services/remont-sotovyh/honor/"
+            },
+            {
+              "label": "HTC",
+              "path": "/services/remont-sotovyh/htc/"
+            },
+            {
+              "label": "Huawei",
+              "path": "/services/remont-sotovyh/huawei/"
+            },
+            {
+              "label": "iconBit",
+              "path": "/services/remont-sotovyh/iconbit/"
+            },
+            {
+              "label": "Infinix",
+              "path": "/services/remont-sotovyh/infinix/"
+            },
+            {
+              "label": "Inoi",
+              "path": "/services/remont-sotovyh/inoi/"
+            },
+            {
+              "label": "Itel",
+              "path": "/services/remont-sotovyh/itel/"
+            },
+            {
+              "label": "Jiavu",
+              "path": "/services/remont-sotovyh/jiavu/"
+            },
+            {
+              "label": "Lenovo",
+              "path": "/services/remont-sotovyh/lenovo/"
+            },
+            {
+              "label": "LG",
+              "path": "/services/remont-sotovyh/lg/"
+            },
+            {
+              "label": "Meizu",
+              "path": "/services/remont-sotovyh/meizu/"
+            },
+            {
+              "label": "Microsoft lumia",
+              "path": "/services/remont-sotovyh/microsoft-lumia/"
+            },
+            {
+              "label": "Motorola",
+              "path": "/services/remont-sotovyh/motorola/"
+            },
+            {
+              "label": "Nokia",
+              "path": "/services/remont-sotovyh/nokia/"
+            },
+            {
+              "label": "Nothing",
+              "path": "/services/remont-sotovyh/nothing/"
+            },
+            {
+              "label": "ONDA",
+              "path": "/services/remont-sotovyh/onda/"
+            },
+            {
+              "label": "Oneplus",
+              "path": "/services/remont-sotovyh/oneplus/"
+            },
+            {
+              "label": "Oppo",
+              "path": "/services/remont-sotovyh/oppo/"
+            },
+            {
+              "label": "Oysters",
+              "path": "/services/remont-sotovyh/oysters/"
+            },
+            {
+              "label": "Perfeo",
+              "path": "/services/remont-sotovyh/perfeo/"
+            },
+            {
+              "label": "Philips",
+              "path": "/services/remont-sotovyh/philips/"
+            },
+            {
+              "label": "PiPO",
+              "path": "/services/remont-sotovyh/pipo/"
+            },
+            {
+              "label": "Prestigio",
+              "path": "/services/remont-sotovyh/prestigio/"
+            },
+            {
+              "label": "Realme",
+              "path": "/services/remont-sotovyh/realme/"
+            },
+            {
+              "label": "Ritmix",
+              "path": "/services/remont-sotovyh/ritmix/"
+            },
+            {
+              "label": "RoverPhone",
+              "path": "/services/remont-sotovyh/roverphone/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-sotovyh/samsung/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-sotovyh/sony/"
+            },
+            {
+              "label": "Supra",
+              "path": "/services/remont-sotovyh/supra/"
+            },
+            {
+              "label": "Teclast",
+              "path": "/services/remont-sotovyh/teclast/"
+            },
+            {
+              "label": "Tecno",
+              "path": "/services/remont-sotovyh/tecno/"
+            },
+            {
+              "label": "teXet",
+              "path": "/services/remont-sotovyh/texet/"
+            },
+            {
+              "label": "Umidigi",
+              "path": "/services/remont-sotovyh/umidigi/"
+            },
+            {
+              "label": "Vivo",
+              "path": "/services/remont-sotovyh/vivo/"
+            },
+            {
+              "label": "Wexler",
+              "path": "/services/remont-sotovyh/wexler/"
+            },
+            {
+              "label": "Xiaomi",
+              "path": "/services/remont-sotovyh/xiaomi/"
+            },
+            {
+              "label": "Zopo",
+              "path": "/services/remont-sotovyh/zopo/"
+            },
+            {
+              "label": "ZTE",
+              "path": "/services/remont-sotovyh/zte/"
+            },
+            {
+              "label": "МегаФон",
+              "path": "/services/remont-sotovyh/megafon/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт фотоаппаратов",
+          "path": "/services/remont-fotoapparatov/",
+          "iconClass": "menu_icon8",
+          "children": [
+            {
+              "label": "Canon",
+              "path": "/services/remont-fotoapparatov/canon/"
+            },
+            {
+              "label": "DEXP",
+              "path": "/services/remont-fotoapparatov/dexp/"
+            },
+            {
+              "label": "Falcon Eye",
+              "path": "/services/remont-fotoapparatov/falcon-eye/"
+            },
+            {
+              "label": "Fujifilm",
+              "path": "/services/remont-fotoapparatov/fujifilm/"
+            },
+            {
+              "label": "Kodak",
+              "path": "/services/remont-fotoapparatov/kodak/"
+            },
+            {
+              "label": "Levenhuk",
+              "path": "/services/remont-fotoapparatov/levenhuk/"
+            },
+            {
+              "label": "Lytro illum",
+              "path": "/services/remont-fotoapparatov/lytro-illum/"
+            },
+            {
+              "label": "Nikon",
+              "path": "/services/remont-fotoapparatov/nikon/"
+            },
+            {
+              "label": "Olympus",
+              "path": "/services/remont-fotoapparatov/olympus/"
+            },
+            {
+              "label": "Panasonic",
+              "path": "/services/remont-fotoapparatov/panasonic/"
+            },
+            {
+              "label": "Pentax",
+              "path": "/services/remont-fotoapparatov/pentax/"
+            },
+            {
+              "label": "Polaroid",
+              "path": "/services/remont-fotoapparatov/polaroid/"
+            },
+            {
+              "label": "Rekam",
+              "path": "/services/remont-fotoapparatov/rekam/"
+            },
+            {
+              "label": "Ricoh",
+              "path": "/services/remont-fotoapparatov/ricoh/"
+            },
+            {
+              "label": "Samsung",
+              "path": "/services/remont-fotoapparatov/samsung/"
+            },
+            {
+              "label": "Sony",
+              "path": "/services/remont-fotoapparatov/sony/"
+            }
+          ]
+        },
+        {
+          "label": "Ремонт электронных книг",
+          "path": "/services/remont-elektronnyh-knig/",
+          "iconClass": "menu_icon5",
+          "children": [
+            {
+              "label": "Booken",
+              "path": "/services/remont-elektronnyh-knig/booken/"
+            },
+            {
+              "label": "BQ",
+              "path": "/services/remont-elektronnyh-knig/bq/"
+            },
+            {
+              "label": "Digma",
+              "path": "/services/remont-elektronnyh-knig/digma/"
+            },
+            {
+              "label": "gmini",
+              "path": "/services/remont-elektronnyh-knig/gmini/"
+            },
+            {
+              "label": "Onyx",
+              "path": "/services/remont-elektronnyh-knig/onyx/"
+            },
+            {
+              "label": "Onyx boox",
+              "path": "/services/remont-elektronnyh-knig/onyx-boox/"
+            },
+            {
+              "label": "PocketBook",
+              "path": "/services/remont-elektronnyh-knig/pocketbook/"
+            },
+            {
+              "label": "Ritmix",
+              "path": "/services/remont-elektronnyh-knig/ritmix/"
+            },
+            {
+              "label": "Rover Alpha",
+              "path": "/services/remont-elektronnyh-knig/rover-alpha/"
+            },
+            {
+              "label": "teXet",
+              "path": "/services/remont-elektronnyh-knig/texet/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "informationNavigation": [
+    {
+      "label": "Статус заказа",
+      "path": "/info/status/"
+    },
+    {
+      "label": "Статьи",
+      "path": "/info/articles/"
+    },
+    {
+      "label": "О компании",
+      "path": "/info/o-kompanii/"
+    },
+    {
+      "label": "Контакты",
+      "path": "/info/contacts/"
+    }
+  ],
+  "headerButtons": [
+    {
+      "label": "Магазин",
+      "path": "https://techmasterpro.ru/",
+      "className": "in_shop",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    },
+    {
+      "label": "Статус ремонта",
+      "path": "/status/",
+      "className": "status",
+      "rel": "nofollow"
+    }
+  ],
+  "contacts": {
+    "organization": "«ТехМастер»",
+    "address": "г.Томск, пр.Мира 48",
+    "email": "techmasterpro@yandex.ru",
+    "hours": [
+      "Пн-Пт: 9:00 до 18:00"
+    ],
+    "privacyPath": "/private-policy/",
+    "socialLinks": [
+      {
+        "label": "ВКонтакте",
+        "url": "https://vk.com/public134774671",
+        "iconClass": "sety_icon1",
+        "target": "_blank",
+        "rel": "nofollow noopener noreferrer"
+      },
+      {
+        "label": "Одноклассники",
+        "url": "https://ok.ru/techmasterpro",
+        "iconClass": "sety_icon2",
+        "target": "_blank",
+        "rel": "nofollow noopener noreferrer"
+      }
+    ],
+    "headerTime": {
+      "phone": {
+        "label": "+7 (3822) 96 03 95",
+        "href": "tel:+73822960395",
+        "imageUrl": "/legacy/template/images/telephone.png",
+        "alt": "Сервисный центр «ТехМастер»"
+      },
+      "hours": "ПН-ПТ 9:00-18:00",
+      "chatLabel": "Чат:",
+      "messengers": [
+        {
+          "url": "https://max.ru/u/f9LHodD0cOJjpEQlDaghpSFBo_ez9LcEl5BjyMMbzjX0lLdYRdR-zUDC7PE",
+          "title": "max",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "imageUrl": "/legacy/template/images/max.png",
+          "alt": "MAX",
+          "width": 25,
+          "height": 25
+        },
+        {
+          "url": "https://t.me/+79539234746",
+          "title": "Telegram",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "svgHtml": "<svg style=\"width: 25px;\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" xml:space=\"preserve\">\n\t\t\t\t\t\t\t\t<circle cx=\"256\" cy=\"256\" r=\"256\" fill=\"#59aae7\"></circle>\n\t\t\t\t\t\t\t\t<path d=\"M256 0c-11.317 0-22.461.744-33.391 2.167C348.216 18.53 445.217 125.933 445.217 256s-97.002 237.47-222.609 253.833C233.539 511.256 244.683 512 256 512c141.385 0 256-114.616 256-256S397.385 0 256 0z\" fill=\"#3d9ae3\"></path>\n\t\t\t\t\t\t\t\t<path d=\"M164.689 311.141 82.127 269.86c-2.263-1.132-2.285-4.353-.038-5.516L395.75 102.105c2.304-1.192 4.964.811 4.456 3.355l-54.004 270.017c-.385 1.927-2.446 3.011-4.253 2.237l-73.393-31.453c-.879-.377-1.884-.326-2.721.139l-94.839 52.688c-2.062 1.145-4.597-.345-4.597-2.705v-82.474c.001-1.173-.661-2.244-1.71-2.768z\" fill=\"#fcfcfc\"></path>\n\t\t\t\t\t\t\t\t<path d=\"m200.31 338.967-.513-82.428c-.003-.528.27-1.018.72-1.293l133.899-81.798c1.518-.927 3.106 1.083 1.852 2.345l-101.9 102.624c-.112.114-.207.244-.278.387l-17.43 34.858-13.509 25.988c-.725 1.395-2.831.888-2.841-.683z\" fill=\"#d8d7da\"></path>\n\t\t\t\t\t\t\t</svg>"
+        }
+      ]
+    },
+    "phone": {
+      "label": "8 (3822) 96 03 95",
+      "href": "tel:+73822960395"
+    }
+  },
+  "footer": {
+    "copyright": "©Сервисный центр «ТехМастер», 2025",
+    "legalName": "ИП Мещеряков Алексей Михайлович",
+    "paymentImages": [
+      {
+        "url": "/legacy/template/images/cash1.png",
+        "alt": ""
+      },
+      {
+        "url": "/legacy/template/images/cash2.png",
+        "alt": ""
+      },
+      {
+        "url": "/legacy/template/images/cash3.png",
+        "alt": ""
+      },
+      {
+        "url": "/legacy/template/images/cash4.png",
+        "alt": ""
+      }
+    ],
+    "articleItems": [
+      {
+        "path": "/info/articles/ekspluatacziya-czifrovyix-fotoapparatov-osnovnyie-rekomendaczii/",
+        "title": "Эксплуатация цифровых фотоаппаратов: основные рекомендации",
+        "dateLabel": "24 03 2017 13:58",
+        "imageUrl": "/legacy/template/images/display-272270_640.jpg"
+      },
+      {
+        "path": "/info/articles/xarakternyie-polomki-monitorov/",
+        "title": "Характерные поломки мониторов",
+        "dateLabel": "03 03 2017 13:56",
+        "imageUrl": "/legacy/template/images/mac-665619_640.jpg"
+      },
+      {
+        "path": "/info/articles/telefon-samsung-sam-perezagruzhaetsya/",
+        "title": "Телефон Samsung сам перезагружается",
+        "dateLabel": "26 02 2017 13:39",
+        "imageUrl": "/legacy/template/images/samsung-galaxt-note-edge-1283897_640.jpg"
+      }
+    ],
+    "newsItems": [
+      {
+        "path": "/info/news/korporacziya-samsung-predstavila-texnologicheskuyu-novinku-–-shlem-virtualnoj-realnosti-hmd-odyssey/",
+        "title": "Корпорация Samsung представила технологическую новинку – шлем виртуальной реальности HMD Odyssey+",
+        "dateLabel": "03 11 2018 12:53"
+      },
+      {
+        "path": "/info/news/novost-1/",
+        "title": "Обнародован прайс на ремонт сенсорного дисплея iPhone XR",
+        "dateLabel": "25 10 2018 13:02"
+      },
+      {
+        "path": "/info/news/novost-2/",
+        "title": "Сенсационное изобретение гиганта Panasonic",
+        "dateLabel": "25 10 2018 13:02"
+      }
+    ]
+  },
+  "home": {
+    "title": "Официальный сервисный центр в Томске «ТехМастер»",
+    "advantages": [
+      {
+        "title": "Диагностика – 0 Р",
+        "note": "* бесплатно на любую технику",
+        "imageUrl": "/legacy/template/images/advantage1.png"
+      },
+      {
+        "title": "На связи 24/7",
+        "note": "* проверьте статус ремонта в любое время",
+        "imageUrl": "/legacy/template/images/advantage2.png"
+      },
+      {
+        "title": "Ремонт за 30 минут",
+        "note": "* на простые модульные замены",
+        "imageUrl": "/legacy/template/images/advantage3.png"
+      },
+      {
+        "title": "Лучшее соотношение цена / качество",
+        "note": "",
+        "imageUrl": "/legacy/template/images/advantage4.png"
+      },
+      {
+        "title": "Собственный склад запчастей",
+        "note": "10.821 Позиций",
+        "imageUrl": "/legacy/template/images/advantage5.png"
+      },
+      {
+        "title": "Оригинальные запчасти и аналоги высокого качества",
+        "note": "",
+        "imageUrl": "/legacy/template/images/advantage6.png"
+      }
+    ],
+    "contactPrompt": {
+      "title": "Следите за ремонтом в реальном времени!",
+      "titleLines": [
+        "Следите за ремонтом в",
+        "реальном времени!"
+      ],
+      "label": "Проверить статус",
+      "path": "/status/"
+    },
+    "recommendationsTitle": "Что мы ремонтируем",
+    "recommendations": [
+      {
+        "path": "/services/remont-iphone/",
+        "label": "Ремонт iPhone",
+        "prefix": "Ремонт ",
+        "emphasis": "iPhone",
+        "iconClass": "rem_icon5"
+      },
+      {
+        "path": "/services/remont-sotovyh/",
+        "label": "Ремонт телефонов",
+        "prefix": "Ремонт ",
+        "emphasis": "телефонов",
+        "iconClass": "rem_icon1"
+      },
+      {
+        "path": "/services/remont-noutbukov/",
+        "label": "Ремонт ноутбуков",
+        "prefix": "Ремонт ",
+        "emphasis": "ноутбуков",
+        "iconClass": "rem_icon2"
+      },
+      {
+        "path": "/services/remont-kompyuterov/",
+        "label": "Ремонт компьютеров",
+        "prefix": "Ремонт ",
+        "emphasis": "компьютеров",
+        "iconClass": "rem_icon3"
+      },
+      {
+        "path": "/services/remont-planshetov/",
+        "label": "Ремонт планшетов",
+        "prefix": "Ремонт ",
+        "emphasis": "планшетов",
+        "iconClass": "rem_icon4"
+      },
+      {
+        "path": "/services/remont-elektronnyh-knig/",
+        "label": "Ремонт электронных книг",
+        "prefix": "Ремонт ",
+        "emphasis": "электронных книг",
+        "iconClass": "rem_icon5"
+      },
+      {
+        "path": "/services/remont-videokart/",
+        "label": "Ремонт видеокарт",
+        "prefix": "Ремонт ",
+        "emphasis": "видеокарт",
+        "iconClass": "rem_icon6"
+      },
+      {
+        "path": "/services/remont-televizorov/",
+        "label": "Ремонт телевизоров",
+        "prefix": "Ремонт ",
+        "emphasis": "телевизоров",
+        "iconClass": "rem_icon6"
+      },
+      {
+        "path": "/services/remont-monitorov/",
+        "label": "Ремонт мониторов",
+        "prefix": "Ремонт ",
+        "emphasis": "мониторов",
+        "iconClass": "rem_icon7"
+      },
+      {
+        "path": "/services/remont-fotoapparatov/",
+        "label": "Ремонт фотоаппаратов",
+        "prefix": "Ремонт ",
+        "emphasis": "фотоаппаратов",
+        "iconClass": "rem_icon8"
+      },
+      {
+        "path": "/services/remont-byitovoj-texniki/",
+        "label": "Ремонт бытовой техники",
+        "prefix": "Ремонт ",
+        "emphasis": "бытовой техники",
+        "iconClass": "rem_icon9"
+      },
+      {
+        "path": "/services/remont-avtomagnitol/",
+        "label": "Ремонт автомагнитол",
+        "prefix": "Ремонт ",
+        "emphasis": "автомагнитол",
+        "iconClass": "rem_icon10"
+      }
+    ],
+    "carousels": [
+      {
+        "id": "slider_main",
+        "title": "Частые проблемы",
+        "items": [
+          {
+            "label": "Ремонт телефонов",
+            "path": "/services/remont-sotovyh/",
+            "imageUrl": "/legacy/template/images/slide_img1.png"
+          },
+          {
+            "label": "Ремонт ноутбуков",
+            "path": "/services/remont-noutbukov/",
+            "imageUrl": "/legacy/template/images/slide_img2.png"
+          },
+          {
+            "label": "Ремонт компьютеров",
+            "path": "/services/remont-kompyuterov/",
+            "imageUrl": "/legacy/template/images/comp.png"
+          },
+          {
+            "label": "Ремонт телевизоров",
+            "path": "/services/remont-televizorov/",
+            "imageUrl": "/legacy/template/images/tv.png"
+          },
+          {
+            "label": "Ремонт автомагнитол",
+            "path": "/services/remont-avtomagnitol/",
+            "imageUrl": "/legacy/template/images/pioneer-avh-3500dvd.jpg"
+          },
+          {
+            "label": "Ремонт видеокарт",
+            "path": "/services/remont-videokart/",
+            "imageUrl": ""
+          },
+          {
+            "label": "Ремонт планшетов",
+            "path": "/services/remont-planshetov/",
+            "imageUrl": "/legacy/template/images/skimn-ipad.png"
+          },
+          {
+            "label": "Ремонт электронных книг",
+            "path": "/services/remont-elektronnyh-knig/",
+            "imageUrl": "/legacy/template/images/ebook2.png"
+          },
+          {
+            "label": "Ремонт мониторов",
+            "path": "/services/remont-monitorov/",
+            "imageUrl": "/legacy/template/images/monitor.png"
+          },
+          {
+            "label": "Ремонт фотоаппаратов",
+            "path": "/services/remont-fotoapparatov/",
+            "imageUrl": "/legacy/template/images/photocamera.png"
+          },
+          {
+            "label": "Ремонт консолей",
+            "path": "/services/konsoli/",
+            "imageUrl": "/legacy/template/images/console2.png"
+          },
+          {
+            "label": "Ремонт лазерных принтеров и МФУ",
+            "path": "/services/remont-lazernyix-printerov-i-mfu/",
+            "imageUrl": ""
+          }
+        ]
+      },
+      {
+        "id": "slider_slave",
+        "title": "",
+        "items": [
+          {
+            "label": "Эксплуатация цифровых фотоаппаратов: основные рекомендации",
+            "path": "/info/articles/ekspluatacziya-czifrovyix-fotoapparatov-osnovnyie-rekomendaczii/",
+            "imageUrl": "/legacy/template/images/display-272270_640.jpg"
+          },
+          {
+            "label": "Характерные поломки мониторов",
+            "path": "/info/articles/xarakternyie-polomki-monitorov/",
+            "imageUrl": "/legacy/template/images/mac-665619_640.jpg"
+          },
+          {
+            "label": "Телефон Samsung сам перезагружается",
+            "path": "/info/articles/telefon-samsung-sam-perezagruzhaetsya/",
+            "imageUrl": "/legacy/template/images/samsung-galaxt-note-edge-1283897_640.jpg"
+          },
+          {
+            "label": "Поломки и ремонт DVD-проигрывателей",
+            "path": "/info/articles/polomki-i-remont-dvd-proigryivatelej/",
+            "imageUrl": "/legacy/template/images/dvd-1242016_640.png"
+          },
+          {
+            "label": "Причины сбоя работы навигатора",
+            "path": "/info/articles/prichinyi-sboya-rabotyi-navigatora/",
+            "imageUrl": "/legacy/template/images/navigation-1726067_640.jpg"
+          },
+          {
+            "label": "Возможные проблемы и поломки пылесосов",
+            "path": "/info/articles/vozmozhnyie-problemyi-i-polomki-pyilesosov/",
+            "imageUrl": "/legacy/template/images/chair-655413_640.jpg"
+          },
+          {
+            "label": "Почему отказываются работать мультиварки",
+            "path": "/info/articles/pochemu-otkazyivayutsya-rabotat-multivarki/",
+            "imageUrl": "/legacy/template/images/118.jpg"
+          },
+          {
+            "label": "Правильная зарядка iPad и iPhone",
+            "path": "/info/articles/pravilnaya-zaryadka-ipad-i-iphone/",
+            "imageUrl": "/legacy/template/images/ipad-916394_1280.jpg"
+          },
+          {
+            "label": "5 самых частых поломок PlayStation 3",
+            "path": "/info/articles/5-samyh-chastyh-polomok-playstation-3/",
+            "imageUrl": "/legacy/template/images/joystick-1216816_1280.jpg"
+          },
+          {
+            "label": "5 правил подготовки к визиту в сервисный центр: чиним технику быстро и эффективно",
+            "path": "/info/articles/5-pravil-podgotovki-k-vizitu-v-servisnyij-czentr-chinim-texniku-byistro-i-effektivno/",
+            "imageUrl": ""
+          }
+        ]
+      }
+    ],
+    "introHtml": "\n\t\t\t<p>Предлагает услуги по ремонту и обслуживанию электроники и бытовой техники.</p>\n\t\t\t<p>Квалифицированные инженеры, передовое диагностическое оборудование, выгодная для клиентов ценовая политика и оперативность в выполнении работы – это принципы компании, которые позволяют оставаться на лидерских позициях среди сервисных центров Томска.</p>\n\t\t",
+    "contentTitle": "Ремонт сотовых телефонов и ноутбуков"
+  },
+  "categoryHero": {
+    "asideTitle": "Заказывая ремонт у нас, Вы получаете лучшие цену и качество",
+    "advantages": [
+      {
+        "title": "Диагностика – 0 Р",
+        "note": "На все виды техники в случае невозможности или отказа от ремонта",
+        "imageUrl": "/legacy/template/images/advantage1.png"
+      },
+      {
+        "title": "Огромный склад оригинальных запчастей и аналогов высокого качества",
+        "note": "",
+        "imageUrl": "/legacy/template/images/advantage5.png"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Гарантия бесплатной диагностики",
+        "note": "Главным преимуществом нашего сервиса является гарантия бесплатной диагностики при ремонте в нашем сервисном центре"
+      },
+      {
+        "title": "Справедливые цены",
+        "note": "У нас справедливые цены. Не низкие или высокие, а справедливые. Вы четко будете понимать, сколько заплатили за работу, а сколько за конкретную запчасть."
+      }
+    ],
+    "variants": {
+      "10": {
+        "advantages": [
+          {
+            "title": "Диагностика – 0 Р",
+            "note": "* на сотовые или при последующем ремонте техники у нас",
+            "imageUrl": "/legacy/template/images/advantage1.png"
+          },
+          {
+            "title": "Огромный склад оригинальных запчастей и качественных аналогов",
+            "note": "",
+            "imageUrl": "/legacy/template/images/advantage5.png"
+          }
+        ]
+      }
+    }
+  }
+}
