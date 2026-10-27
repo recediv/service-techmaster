@@ -2,7 +2,7 @@ import { smoothPhoneSurfaceNormals } from './phone-surface-normals.mjs';
 
 // A single authored electronics assembly. XY is the device surface, +Y is the camera end,
 // +Z is out of the phone. The caller owns the housing, glass, animation and lighting.
-export function createDeviceInternals({THREE,ownGeometry,materials,textures}){
+export function createDeviceInternals({THREE,ownGeometry,materials,textures,detail='high'}){
   if(!THREE||typeof ownGeometry!=='function'||!materials||!textures)throw new Error('Device internals require resource ownership.');
   const root=new THREE.Group();root.name='DeviceInternals';
   const cache=new Map(),batches=new Map(),dummy=new THREE.Object3D();
@@ -46,12 +46,12 @@ export function createDeviceInternals({THREE,ownGeometry,materials,textures}){
   function extrusion(shape,depth,bevel=.003,segments=3){
     const g=new THREE.ExtrudeGeometry(shape,{depth,steps:1,curveSegments:10,bevelEnabled:bevel>0,bevelSize:bevel,bevelThickness:bevel,bevelSegments:segments});smoothPhoneSurfaceNormals(g);g.translate(0,0,-depth/2);return own(g);
   }
-  function plate(w,h,d,r=.035,b=.003){return cached(`p:${w}:${h}:${d}:${r}:${b}`,()=>{
-    const g=new THREE.ExtrudeGeometry(rounded(w,h,r),{depth:d,steps:1,curveSegments:6,bevelEnabled:b>0,bevelSize:b,bevelThickness:b,bevelSegments:3});smoothPhoneSurfaceNormals(g);return g.translate(0,0,-d/2);
+  function plate(w,h,d,r=.035,b=.003,small=false){const low=small&&detail==='page';return cached(`p:${w}:${h}:${d}:${r}:${b}:${low}`,()=>{
+    const g=new THREE.ExtrudeGeometry(rounded(w,h,r),{depth:d,steps:1,curveSegments:low?2:6,bevelEnabled:b>0,bevelSize:b,bevelThickness:b,bevelSegments:low?1:3});smoothPhoneSurfaceNormals(g);return g.translate(0,0,-d/2);
   });}
   const box=cached('box',()=>new THREE.BoxGeometry(1,1,1));
-  const unitRounded=plate(1,1,1,.075,.025);
-  const unitPassive=plate(1,1,1,.10,.04);
+  const unitRounded=plate(1,1,1,.075,.025,true);
+  const unitPassive=plate(1,1,1,.10,.04,true);
   const cylinder=(r,h,n=20)=>cached(`c:${r}:${h}:${n}`,()=>new THREE.CylinderGeometry(r,r,h,n).rotateX(Math.PI/2));
   const annulus=(r,t,n=24)=>cached(`a:${r}:${t}:${n}`,()=>new THREE.TorusGeometry(r,t,6,n));
   function mesh(name,g,m,p=[0,0,0],parent=root,cast=true){const o=new THREE.Mesh(g,m);o.name=name;o.position.set(...p);o.castShadow=cast;o.receiveShadow=true;parent.add(o);return o;}
@@ -157,7 +157,7 @@ export function createDeviceInternals({THREE,ownGeometry,materials,textures}){
     mesh(`Camera ${i+1} insulated module body`,plate(w,h,.105,.045,.004),graphite,[x,y,.145]);
     const foldedWall=rounded(w-.014,h-.014,.040);
     slot(foldedWall,0,0,w-.060,h-.060,.026);
-    mesh(`Camera ${i+1} folded metal back wall`,extrusion(foldedWall,.080,.002),nickel,[x,y,.156]);
+    if(detail!=='page')mesh(`Camera ${i+1} folded metal back wall`,extrusion(foldedWall,.080,.002),nickel,[x,y,.156]);
     mesh(`Camera ${i+1} metal back cover`,plate(w-.014,h-.014,.012,.040,.003),nickel,[x,y,.202]);
     // The dark edge is the insulating tape wrapped around the module housing.
     instance(box,graphite,[x-w*.33,y,.214],[.026,h*.75,.006]);

@@ -6,7 +6,7 @@ const ease=v=>{v=clamp(v);return v*v*v*(v*(v*6-15)+10);};
 
 // An open device under diagnosis. The carrier rises for inspection; there is no
 // decorative glass layer between the components and the repair instrument.
-export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures}){
+export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures,detail='high'}){
   const root=new THREE.Group();root.name='Open device under diagnosis';scene.add(root);
   const frame=new THREE.Group(),carrier=new THREE.Group();
   frame.name='Machined enclosure';carrier.name='Internal carrier';root.add(frame,carrier);
@@ -18,7 +18,8 @@ export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures
   const gasket=standard({color:0x0b1116,metalness:0,roughness:.78});
   const graphite=standard({color:0x063451,metalness:.15,roughness:.58});
   const gold=standard({color:0xd7b16b,metalness:1,roughness:.23,envMapIntensity:.9});
-  const display=physical({color:0x020509,metalness:0,roughness:.12,clearcoat:.3,clearcoatRoughness:.12,envMapIntensity:.6});
+  const display=detail==='page'?new THREE.MeshBasicMaterial({color:0x07131a,toneMapped:false}):physical({color:0x020509,metalness:0,roughness:.12,clearcoat:.3,clearcoatRoughness:.12,envMapIntensity:.6});
+  if(detail==='page'){display.name='Unlit rear edge';materials.add(display);}
   const signal=new THREE.MeshBasicMaterial({color:0xff4d35,toneMapped:false});materials.add(signal);
   const signalCyan=new THREE.MeshBasicMaterial({color:0x00d9ec,toneMapped:false});materials.add(signalCyan);
   const signalHead=new THREE.MeshBasicMaterial({color:0xffffff,toneMapped:false});materials.add(signalHead);
@@ -110,18 +111,22 @@ export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures
   hole(portWall,.62,.118,.046,0,-.018);for(const sign of [-1,1])for(let i=0;i<5;i++){const path=new THREE.Path();path.absarc(sign*(.53+i*.13),-.014,.028,0,Math.PI*2,true);portWall.holes.push(path);}
   const lower=clipPortWallEnds(extrusion(cleanShellProfile(portWall),.15,.012),1.22);lower.rotateX(Math.PI/2);mesh(lower,silver,frame,[0,-3.395,0]).name='Port wall with open apertures';
   mesh(plate(.60,.32,.07,.045),gasket,frame,[0,-3.20,-.015]);
-  mesh(plate(.44,.23,.026,.02,.002),graphite,frame,[0,-3.29,-.026]);
-  batch(unitBox,gold,Array.from({length:12},(_,i)=>({p:[-.174+i*.0316,-3.34,-.008],s:[.015,.13,.008]})));
+  if(detail!=='page'){
+    mesh(plate(.44,.23,.026,.02,.002),graphite,frame,[0,-3.29,-.026]);
+    batch(unitBox,gold,Array.from({length:12},(_,i)=>({p:[-.174+i*.0316,-3.34,-.008],s:[.015,.13,.008]})));
+  }
   // Edge antenna joints and a mechanical switch are aligned with real rails.
   batch(unitBox,gasket,[-1,1].flatMap(sign=>[-2.55,2.55].map(y=>({p:[sign*1.62,y,0],s:[.18,.022,.324]}))));
-  for(const [x,y,h]of[[-1.707,.97,.63],[-1.707,.12,.63],[1.707,.7,.96]]){mesh(plate(.028,h+.09,.10,.014,.003),gasket,frame,[x,y,0]);mesh(plate(.038,h,.082,.018,.004),silver,frame,[x*1.006,y,.005]);}
-  mesh(plate(3.12,6.66,.035,.37,.006),display,frame,[0,0,-.204]);
-  mesh(ring(3.16,6.70,3.09,6.63,.012,.39,.003),gasket,frame,[0,0,-.181]);
+  for(const [x,y,h]of[[-1.707,.97,.63],[-1.707,.12,.63],[1.707,.7,.96]]){if(detail==='page'&&x<0)continue;mesh(plate(.028,h+.09,.10,.014,.003),gasket,frame,[x,y,0]);mesh(plate(.038,h,.082,.018,.004),silver,frame,[x*1.006,y,.005]);}
+  const rearScreen=mesh(plate(3.12,6.66,.035,.37,.006),display,frame,[0,0,-.204]);
+  const rearGasket=mesh(ring(3.16,6.70,3.09,6.63,.012,.39,.003),gasket,frame,[0,0,-.181]);
+  const rearEdges=[rearScreen,rearGasket];
+  if(detail==='page')for(const edge of rearEdges)edge.userData.dynamicVisibility=true;
   mesh(plate(3.02,6.48,.035,.33),chassis,frame,[0,0,-.115]).name='Light metal internal chassis';
   // A single cell is structural context under the board, not the main subject.
   mesh(plate(1.62,3.68,.072,.12,.007),graphite,frame,[-.45,-.55,-.054]);
-  batch(unitBox,gold,[{p:[.42,-.37,-.032],s:[.28,.26,.018]},{p:[.42,-.82,-.032],s:[.28,.26,.018]}]);
-  const internals=createDeviceInternals({THREE,ownGeometry,materials,textures});carrier.add(internals.root);
+  if(detail!=='page')batch(unitBox,gold,[{p:[.42,-.37,-.032],s:[.28,.26,.018]},{p:[.42,-.82,-.032],s:[.28,.26,.018]}]);
+  const internals=createDeviceInternals({THREE,ownGeometry,materials,textures,detail});carrier.add(internals.root);
   const routes=[];
   for(const points of internals.signalPaths||[]){
     const path=points.map(p=>p.clone());
@@ -131,7 +136,7 @@ export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures
     routes.push(curve);
   }
   const pulseGeometry=own(new THREE.SphereGeometry(1,10,6));
-  const pulses=new THREE.InstancedMesh(pulseGeometry,signalHead,routes.length*7);pulses.frustumCulled=false;carrier.add(pulses);
+  const pulses=new THREE.InstancedMesh(pulseGeometry,signalHead,routes.length*7);pulses.frustumCulled=false;pulses.userData.dynamicGeometry=true;carrier.add(pulses);
   for(let i=0;i<routes.length*7;i++)pulses.setColorAt(i,new THREE.Color(i<14?0xff4d35:0x00e0ef));
   const focusPoint=new THREE.Vector3(),probeContact=new THREE.Vector3(),testPadLocal=internals.probeContact||new THREE.Vector3(-.245,.2425,.092);
   const probeSeatedContact=testPadLocal.clone().add(new THREE.Vector3(-.035,.015,.127));
@@ -147,10 +152,12 @@ export function createDeviceShowcase({THREE,scene,ownGeometry,materials,textures
     let index=0;for(let route=0;route<routes.length;route++)for(let tail=0;tail<7;tail++){
       const phase=((time*.17-route*.21-tail*.014)%1+1)%1;routes[route].getPointAt(phase,dummy.position);dummy.position.z+=.026;dummy.rotation.set(0,0,0);dummy.scale.set(.034*(1-tail/8),.034*(1-tail/8),.019*(1-tail/8));dummy.scale.multiplyScalar(.06+.94*inspection);dummy.updateMatrix();pulses.setMatrixAt(index++,dummy.matrix);
     }pulses.instanceMatrix.needsUpdate=true;
-    internals.update?.(time,inspection);root.updateWorldMatrix(true,true);
+    internals.update?.(time,inspection);root.updateWorldMatrix(true,false);
     probeContact.copy(testPadLocal).add(carrier.position);
     focusPoint.copy(probeContact);root.localToWorld(focusPoint);
   }
   update(.5);
-  return {root,focusPoint,probeContact,probeSeatedContact,update,getProbeApproach:()=>probeApproach,getInspection:()=>inspection,getState:()=>({cycleTime:((time%14)+14)%14,expansion:progress,phase:inspection>.3?'diagnostic':progress<.02?'standby':'inspection',carrierLift:carrier.position.z,probeApproach})};
+  return {root,focusPoint,probeContact,probeSeatedContact,update,
+    setPageView(mobile){if(detail!=='page')return false;const changed=rearScreen.visible!==Boolean(mobile);for(const edge of rearEdges)edge.visible=Boolean(mobile);return changed;},
+    getProbeApproach:()=>probeApproach,getInspection:()=>inspection,getState:()=>({cycleTime:((time%14)+14)%14,expansion:progress,phase:inspection>.3?'diagnostic':progress<.02?'standby':'inspection',carrierLift:carrier.position.z,probeApproach})};
 }

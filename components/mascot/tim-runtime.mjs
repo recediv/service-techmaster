@@ -2,16 +2,23 @@ import * as THREE from 'three';
 import { measureTimTerritory } from './tim-placement.mjs';
 import { createPartsThought } from './tim-thought.mjs';
 import { createTimVehicle } from './tim-vehicle.mjs';
+import { createTimHitBatch } from './tim-hit-batch.mjs';
 import { createRoundTim, roundFacePatch, roundSurface, TIM_HEIGHT, TIM_HEAD_Y, TIM_ACCENT } from './tim-model.mjs';
 
 // The selected round robot shares one rig and interaction runtime across all routes.
 export function createTimMascot({ stage, host, shadow, fiveTarget, playDot, partsButton, partsAvailable = false, thoughtBubble, height = 125, walking = true, firstVisitAttention = false, onFirstAttention = () => {}, onMenu = () => {} }) {
 const lifetime = new AbortController();
 const listen = (target, type, callback, options = {}) => target.addEventListener(type, event => {wake();callback(event);}, { ...options, signal: lifetime.signal });
-let disposed = false, suspended = false, menuOpen = false, frameId = 0,staticFrameUntil=0,inFrame=false,hitGeneration=0;
+let disposed = false, suspended = false, menuOpen = false, frameId = 0,frameTimer=0,staticFrameUntil=0,inFrame=false,hitGeneration=0;
+function queueFrame(delay=0){
+ if(disposed||suspended||frameId||frameTimer)return;
+ if(delay>6){frameTimer=setTimeout(()=>{frameTimer=0;if(!disposed&&!suspended)frameId=requestAnimationFrame(frame);},delay);}
+ else frameId=requestAnimationFrame(frame);
+}
 function wake(){
  staticFrameUntil=performance.now()+1600;
- if(!disposed&&!suspended&&!frameId&&!inFrame){last=frameClock=performance.now();frameId=requestAnimationFrame(frame);}
+ if(frameTimer){clearTimeout(frameTimer);frameTimer=0;}
+ if(!disposed&&!suspended&&!frameId&&!inFrame){last=frameClock=performance.now();queueFrame();}
 }
 let roaming = walking, roamTarget = null, roamRestUntil = 4, nextRoamDirection = -1;
 let territory=null,territoryDirty=true,lastTerritoryAt=0,returning=false,carryBlend=0;
@@ -28,7 +35,7 @@ function writeStyle(element,key,value){let values=styleValues.get(element);if(!v
 
 const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-840,840,800,-40,1,4000);
 camera.position.set(0,0,1800);camera.lookAt(0,0,0);
-const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
+const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,failIfMajorPerformanceCaveat:true});
 renderer.setClearColor(0,0);renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
 renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
 host.replaceChildren(renderer.domElement);renderer.domElement.setAttribute('aria-hidden','true');
@@ -838,15 +845,8 @@ hitSvg.classList.add('tim-mascot__hit');hitSvg.setAttribute('viewBox','0 0 192 9
 const hitTarget=new THREE.WebGLRenderTarget(192,96,{depthBuffer:true}),hitPixels=new Uint8Array(192*96*4);
 const hitMaterial=new THREE.MeshBasicMaterial({color:0xffffff}),hitRay=new THREE.Raycaster(),hitMouse=new THREE.Vector2();
 const hitRoots=[headRig,bodyRig,...legs.map(l=>l.foot)];
-// PikaPika caches repeated atlas silhouettes. Our rig is continuous: only reuse
-// settled poses, at subpixel precision of this 96px mask; pointer hits still raycast.
-const hitCache=new Map(),hitRigs=[motionRig,bodyRig,headRig,...robot.arms.map(a=>a.group),...legs.map(l=>l.foot),spaceHelmet],hitMatrixIndices=[0,1,2,4,5,6,8,9,10,12,13,14];
-function hitPoseKey(){
- if(act||vehicleBlend>0||physical()||speed>.01||['greet','walk','prepare','turn','rest'].includes(state))return null;
- let key=(helmetAmount>=.5?'helmet:':'bare:')+(jetNozzles[0].g.visible?'jets:':'');
- for(const rig of hitRigs){rig.updateMatrix();const e=rig.matrix.elements;for(const i of hitMatrixIndices)key+=Math.round(e[i]/(i>=12?4:.01))+',';}
- return key;
-}
+const hitCache=new Map(),hitPointer={x:NaN,y:NaN};
+const hitBatch=createTimHitBatch(scene,hitMaterial,[props,helmetGlass]);
 let lastHitAt=-10,lastHitPath='',hoverStroke={x:0,t:-10,dir:0,travel:0,turns:0};
 let hitRead=null,asyncHit=typeof renderer.readRenderTargetPixelsAsync==='function';
 function commitHitSilhouette(key,generation){
@@ -859,12 +859,14 @@ function commitHitSilhouette(key,generation){
  if(key!==null){hitCache.set(key,path);if(hitCache.size>128)hitCache.delete(hitCache.keys().next().value);}
 }
 function updateHitSilhouette(now){
- if(hitRead||now-lastHitAt<65)return;lastHitAt=now;
- const key=hitPoseKey(),cached=key===null?undefined:hitCache.get(key);
+ if(hitRead||orderPanel)return;
+ const near=compact.matches||physical()||document.activeElement===host||Math.abs(hitPointer.x-stageBox.left-x)<actorWidth*1.8&&Math.abs(hitPointer.y-stageBox.top-ground+elevation+actorWidth*.5)<actorWidth;
+ if(now-lastHitAt<(near?65:200))return;lastHitAt=now;
+ const {key}=hitBatch.update(helmetAmount<.5?[spaceHelmet]:[]),cached=hitCache.get(key);
  if(cached!==undefined){if(cached!==lastHitPath){hitPath.setAttribute('d',cached);lastHitPath=cached;}return;}
- const previous=scene.overrideMaterial,propsVisible=props.visible,glassVisible=helmetGlass.visible,helmetVisible=spaceHelmet.visible,target=renderer.getRenderTarget();
+ const target=renderer.getRenderTarget();
  try{
-  props.visible=false;helmetGlass.visible=false;if(helmetAmount<.5)spaceHelmet.visible=false;scene.overrideMaterial=hitMaterial;renderer.setRenderTarget(hitTarget);renderer.render(scene,camera);
+  renderer.setRenderTarget(hitTarget);renderer.render(hitBatch.scene,camera);
   const generation=hitGeneration;
   // Keep the first input surface immediate. Subsequent reads wait for the GPU
   // through a fence instead of blocking the animation/input thread.
@@ -880,7 +882,7 @@ function updateHitSilhouette(now){
    renderer.readRenderTargetPixels(hitTarget,0,0,192,96,hitPixels);
    commitHitSilhouette(key,generation);
   }
- }finally{props.visible=propsVisible;helmetGlass.visible=glassVisible;spaceHelmet.visible=helmetVisible;scene.overrideMaterial=previous;renderer.setRenderTarget(target);}
+ }finally{renderer.setRenderTarget(target);}
 }
 function robotHit(event){
  const b=renderer.domElement.getBoundingClientRect();
@@ -913,6 +915,7 @@ function leaveAttention(){
 listen(hitPath,'pointerenter',attendToPointer);
 listen(hitPath,'pointerleave',leaveAttention);
 listen(document,'pointermove',e=>{
+ hitPointer.x=e.clientX;hitPointer.y=e.clientY;
  const b=stageBox,px=e.clientX-b.left,py=e.clientY-b.top;
  pointer={x:clamp((px-x)/60,-1,1),y:clamp((ground-actorWidth*(TIM_HEAD_Y/TIM_HEIGHT)-elevation-py)/80,-1,1),until:time+2};
  if(e.pointerType!=='touch'&&!e.buttons&&!physical()){
@@ -1027,9 +1030,9 @@ function syncSuspension(){
  const blocked=Boolean(document.hidden||!orderPanel&&(document.body.hasAttribute('data-scroll-locked')||compact.matches&&field));
  hitGeneration++;suspended=blocked;writeData(stage,'suspended',String(blocked));territoryDirty=true;
  partsThought.suspend(blocked);
- cancelAnimationFrame(frameId);frameId=0;
+ cancelAnimationFrame(frameId);clearTimeout(frameTimer);frameId=frameTimer=0;
  if(blocked){attentionHovered=false;attentionUntil=0;finishDrag(true);releaseJetSurface();onMenu(false);}
- else if(!disposed){last=frameClock=performance.now();frameId=requestAnimationFrame(frame);if(helmetDeferredTask){const task=helmetDeferredTask;helmetDeferredTask=null;queueHelmetWarmup(task);}}
+ else if(!disposed){last=frameClock=performance.now();queueFrame();if(helmetDeferredTask){const task=helmetDeferredTask;helmetDeferredTask=null;queueHelmetWarmup(task);}}
 }
 const lockObserver=new MutationObserver(syncSuspension);lockObserver.observe(document.body,{attributes:true,attributeFilter:['data-scroll-locked']});
 listen(document,'visibilitychange',syncSuspension);
@@ -1040,15 +1043,19 @@ listen(reducedMotion,'change',()=>{if(reducedMotion.matches){invitationBlend=inv
 function frame(now){
  frameId=0;
  if(disposed||suspended)return;
- if(reducedMotion.matches&&!act&&!physical()&&!orderPanel&&now>Math.max(staticFrameUntil,controlsUntil+80,attentionUntil+1600))return;
- const active=act||orderReturn||vehicleBlend>0||physical()||state==='walk'||state==='prepare'||state==='turn'||state==='greet'||speed>.01||hasAttention()||awaitingIntroduction&&!reducedMotion.matches&&time>.4&&(time-.4)%4.8<3.45;
- const interval=1000/(active?30:24),elapsed=now-frameClock;
- if(elapsed<interval){frameId=requestAnimationFrame(frame);return;}
- frameClock=now-Math.max(0,elapsed)%interval;
+ const stillOrder=orderPanel?.phase==='open';
+ if(reducedMotion.matches&&(!act||stillOrder)&&!physical()&&(!orderPanel||stillOrder)&&now>Math.max(staticFrameUntil,controlsUntil+80,attentionUntil+1600))return;
+ const scripted=act&&(act.kind!=='order'||orderPanel?.phase!=='open');
+ const orderPointing=orderPanel?.phase==='open'&&orderPanel.load==='loaded'&&time-orderPanel.readyAt<1.6;
+ const blinking=!reducedMotion.matches&&(time>nextBlink-.12||time-blinkStart<.38);
+ const active=Boolean(now<staticFrameUntil||blinking||scripted||orderPointing||orderReturn||vehicleBlend>0||helmetAmount>.001&&helmetAmount<.999||physical()||state==='walk'||state==='prepare'||state==='turn'||state==='greet'||speed>.01||gaitBlend>.01||hasAttention()||awaitingIntroduction&&!reducedMotion.matches&&time>.4&&(time-.4)%4.8<3.45);
+ const interval=1000/(active?30:12),elapsed=now-frameClock;
+ if(elapsed<interval-.5){queueFrame(active?0:Math.max(0,interval-elapsed-4));return;}
+ frameClock=now-Math.max(0,elapsed-interval)%interval;
  inFrame=true;
  try{
  if(orderReturn&&now-orderReturn.start>=420)orderReturn=null;
- const dt=Math.min(.08,(now-last)/1000);last=now;time+=reducedMotion.matches&&(!act||orderPanel||isAnimalScene(act.kind))&&!physical()?0:dt;stateTime+=dt;impactAge+=dt;updateOrderPanel(dt);updateAct(dt);
+ const dt=Math.min(active ? .08 : .12,(now-last)/1000);last=now;time+=reducedMotion.matches&&(!act||orderPanel||isAnimalScene(act.kind))&&!physical()?0:dt;stateTime+=dt;impactAge+=dt;updateOrderPanel(dt);updateAct(dt);
  if(!orderPanel?.travel&&vehicleBlend>0){vehicleBlend=reducedMotion.matches?0:Math.max(0,vehicleBlend-dt/.82);if(!orderPanel)writeData(stage,'vehicle',vehicleBlend>0?'unfold':'robot');}
  if(territoryDirty&&now-lastTerritoryAt>120)refreshTerritory();
  updateRoaming();
@@ -1264,7 +1271,7 @@ function frame(now){
  if(playDot){const dotHidden=!(act?.kind==='follow'&&time<playPoint.until);if(playDot.hidden!==dotHidden)playDot.hidden=dotHidden;if(!playDot.hidden){playDot.style.left=playPoint.x+'px';playDot.style.top=playPoint.y+'px';}}
  updateHelmet(dt);updateJetEffects();updateHitSilhouette(now);renderer.render(scene,camera);
  }finally{
-  inFrame=false;if(!disposed&&!suspended&&!frameId)frameId=requestAnimationFrame(frame);
+  inFrame=false;queueFrame(active?0:Math.max(0,interval-(performance.now()-frameClock)-4));
  }
 }
 syncSuspension();
@@ -1290,7 +1297,7 @@ return {
   return startAct(kind);
  },
  destroy(){
-  if(disposed)return;disposed=true;partsThought.destroy();cancelAct();cancelOrderPanel();document.documentElement.removeAttribute('data-tim-grabbing');cancelAnimationFrame(frameId);lifetime.abort();resizeObserver.disconnect();contentObserver.disconnect();lockObserver.disconnect();
+  if(disposed)return;disposed=true;partsThought.destroy();cancelAct();cancelOrderPanel();document.documentElement.removeAttribute('data-tim-grabbing');cancelAnimationFrame(frameId);clearTimeout(frameTimer);lifetime.abort();resizeObserver.disconnect();contentObserver.disconnect();lockObserver.disconnect();
   if(helmetWarmIdle!==null)cancelIdleCallback(helmetWarmIdle);if(helmetWarmTimer!==null)clearTimeout(helmetWarmTimer);
   helmetDeferredTask=null;
   try{if(gesture&&host.hasPointerCapture(gesture.id))host.releasePointerCapture(gesture.id)}catch{}
@@ -1298,7 +1305,7 @@ return {
   scene.traverse(object=>{if(object.geometry)geometries.add(object.geometry);for(const material of [object.material].flat().filter(Boolean)){materials.add(material);for(const value of Object.values(material))if(value?.isTexture)textures.add(value);}});
   const releaseGraphics=()=>{
    textures.forEach(texture=>texture.dispose());geometries.forEach(geometry=>geometry.dispose());materials.forEach(material=>material.dispose());
-   robot.dispose();hitTarget.dispose();hitMaterial.dispose();renderer.dispose();renderer.forceContextLoss();
+   robot.dispose();hitBatch.dispose();hitTarget.dispose();hitMaterial.dispose();renderer.dispose();renderer.forceContextLoss();
   };
   // Let an in-flight PBO read release its fence/buffer before losing the context.
   const pendingGraphics=[hitRead,helmetCompile].filter(Boolean);

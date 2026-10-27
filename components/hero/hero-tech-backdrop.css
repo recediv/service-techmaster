@@ -35,7 +35,12 @@
 .tech-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #f5f8f8, rgb(245 248 248 / .97) 18%, rgb(245 248 248 / .86) 29%, rgb(245 248 248 / .30) 44%, transparent 61%), linear-gradient(0deg, #f5f8f8, rgb(245 248 248 / .97) 18%, transparent 39%); pointer-events: none; }
 .tech-hero .tech-hero__canvas { position: absolute; inset: 0 0 auto; display: block; width: 100%; height: 680px; max-height: 100%; opacity: 0; transition: opacity 400ms ease; }
 .tech-hero .tech-hero__canvas canvas { display: block; width: 100%; height: 100%; }
+.tech-hero__poster { position: absolute; inset: 0 0 auto; width: 100%; height: 680px; max-height: 100%; }
+.tech-hero__poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tech-hero[data-tech-mode=static] .tech-hero__canvas { display: none; }
 .tech-hero[data-tech-ready='true'] .tech-hero__canvas { opacity: 1; }
+.tech-hero .tech-hero__canvas, .tech-hero__poster, .tech-hero::after { left: 50%; right: auto; width: 100%; max-width: 1440px; transform: translateX(-50%); }
+@media (min-width: 1441px) { .tech-hero .tech-hero__canvas, .tech-hero__poster { mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); } }
 @media (max-width: 1040px) {
   .site-hero.site-hero--home .site-home-hero__top { gap: 26px; }
   .site-hero.site-hero--home .site-home-hero__conditions { padding: 8px 16px; }
@@ -58,7 +63,8 @@
   .site-hero.site-hero--home .site-home-hero__intro { order: 2; margin-top: 0; font-size: 14px; line-height: 1.7; }
   .site-hero.site-hero--home .site-home-hero__scene-space { order: 1; min-height: 360px; }
   .site-hero.site-hero--home .site-home-hero__advantages { margin-top: 16px; }
-  .tech-hero .tech-hero__canvas { inset: 0 0 auto; height: 740px; max-height: 100%; }
+  .tech-hero .tech-hero__canvas { height: 740px; max-height: 100%; }
+  .tech-hero__poster { height: 740px; }
   .tech-hero::after { background: linear-gradient(180deg, #f5f8f8, rgb(245 248 248 / .94) 100px, transparent 185px, transparent 520px, #f5f8f8 740px); }
 }
 @media (max-width: 600px) {

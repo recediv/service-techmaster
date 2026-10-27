@@ -81,7 +81,7 @@ export function createRoundTim() {
     return materials.get(color);
   };
   const white = 0xf5f8f7, teal = 0x028291;
-  function shell(parent,a,b,c,e,color,x=0,y=0,z=0,nu=80,nv=52) {
+  function shell(parent,a,b,c,e,color,x=0,y=0,z=0,nu=40,nv=26) {
     const key=[a,b,c,e,nu,nv].join(':');
     if(!shells.has(key))shells.set(key,shellGeometry(a,b,c,e,nu,nv));
     const mesh = new THREE.Mesh(shells.get(key),typeof color==='number'?mat(color):color);
@@ -116,7 +116,7 @@ export function createRoundTim() {
   }
   polygon(pillow(314,284,-11),'#7aadb1');polygon(pillow(304,274,-11),'#0c2029');
   const faceTexture=new THREE.CanvasTexture(face);faceTexture.colorSpace=THREE.SRGBColorSpace;
-  const visor=new THREE.Mesh(roundFacePatch(0,-11,164,148,.8,64,64),new THREE.MeshStandardMaterial({map:faceTexture,roughness:.36,metalness:.03,transparent:true,depthWrite:true}));
+  const visor=new THREE.Mesh(roundFacePatch(0,-11,164,148,.8,32,32),new THREE.MeshStandardMaterial({map:faceTexture,roughness:.36,metalness:.03,transparent:true,depthWrite:true}));
   visor.renderOrder=1;head.add(visor);
   function eyeMap(happy) {
     if(eyeMaps.has(happy))return eyeMaps.get(happy);

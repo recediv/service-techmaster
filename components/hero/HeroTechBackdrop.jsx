@@ -1,16 +1,18 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { withBase } from '../../lib/public-urls.mjs';
+import { readGraphicsSupport } from '../../lib/graphics-support.mjs';
 import { acquireHeroScene } from './hero-scene-pool.mjs';
 import './hero-tech-backdrop.css';
 
-const sceneRevision = 'site-diagnostic-29';
+const sceneRevision = 'site-diagnostic-30';
 const environmentUrl = withBase('/assets/hero/studio-small-09-1k.hdr');
 
 export default function HeroTechBackdrop() {
   const rootRef = useRef(null);
   const canvasRef = useRef(null);
+  const [staticScene, setStaticScene] = useState(false);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -18,6 +20,10 @@ export default function HeroTechBackdrop() {
     const hero = root?.closest('.site-hero');
     const content = root?.closest('.site-page-content');
     if (!root || !host || !hero) return;
+    if (readGraphicsSupport().mode === 'static') {
+      setStaticScene(true);
+      return;
+    }
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let api = null;
     let lease = null;
@@ -84,6 +90,7 @@ export default function HeroTechBackdrop() {
               cancelStart();
               delete root.dataset.techReady;
               api?.setVisible(false);
+              setStaticScene(true);
             },
           },
         });
@@ -93,6 +100,7 @@ export default function HeroTechBackdrop() {
         if (!disposed && ownRequest === request) {
           failed = true;
           delete root.dataset.techReady;
+          setStaticScene(true);
         }
       } finally {
         if (ownRequest === request) {
@@ -173,7 +181,11 @@ export default function HeroTechBackdrop() {
     };
   }, [sceneRevision]);
 
-  return <div className="tech-hero" ref={rootRef} aria-hidden="true" data-page-reveal-skip>
+  return <div className="tech-hero" ref={rootRef} aria-hidden="true" data-page-reveal-skip data-tech-mode={staticScene ? 'static' : 'webgl'}>
+    {staticScene && <picture className="tech-hero__poster">
+      <source media="(max-width: 730px)" srcSet={withBase('/assets/hero/repair-lab-mobile.webp')} />
+      <img src={withBase('/assets/hero/repair-lab-desktop.webp')} alt="" width="2160" height="1020" decoding="async" />
+    </picture>}
     <div className="tech-hero__canvas" ref={canvasRef} />
   </div>;
 }

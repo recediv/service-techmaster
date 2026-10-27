@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { withBase } from '../../lib/public-urls.mjs';
+import { readGraphicsSupport } from '../../lib/graphics-support.mjs';
 import Button from '../ui/Button';
 import CatalogImagePlaceholder from '../catalog/CatalogImagePlaceholder';
 import './tim-mascot.css';
@@ -26,6 +27,7 @@ export default function TimMascot() {
   const orderRequestRef = useRef(0);
   const apiRef = useRef(null);
   const [ready, setReady] = useState(false);
+  const [renderMode, setRenderMode] = useState('webgl');
   const [OrderPanel, setOrderPanel] = useState(null);
   const [orderSession, setOrderSession] = useState(null);
   const [orderPreparing, setOrderPreparing] = useState(false);
@@ -135,7 +137,8 @@ export default function TimMascot() {
     let runtime = null;
     const load = async () => {
       try {
-        const { createTimMascot } = await import('./tim-runtime.mjs');
+        const mode = readGraphicsSupport().mode;
+        const { createTimMascot } = mode === 'static' ? await import('./tim-static.mjs') : await import('./tim-runtime.mjs');
         if (cancelled || !stageRef.current) return;
         let firstVisitAttention = true;
         try { firstVisitAttention = localStorage.getItem(introductionKey) !== '1'; } catch {}
@@ -147,6 +150,7 @@ export default function TimMascot() {
           onFirstAttention: () => { try { localStorage.setItem(introductionKey, '1'); } catch {} },
         });
         apiRef.current = runtime;
+        setRenderMode(mode);
         setReady(true);
       } catch (error) {
         if (!cancelled) {
@@ -183,13 +187,14 @@ export default function TimMascot() {
     className="tim-mascot"
     data-ready={ready}
     data-model-revision={modelRevision}
+    data-render-mode={renderMode}
     data-order-open={Boolean(orderSession)}
     data-tim-controls-root=""
   >
     <div ref={shadowRef} className="tim-mascot__shadow" aria-hidden="true" />
     <div ref={actorRef} className="tim-mascot__actor" role="button" tabIndex={ready && !orderSession ? 0 : -1}
       aria-label="Тим — робот-помощник" aria-describedby={descriptionId} />
-    <span id={descriptionId} className="tim-mascot__sr">Робота можно погладить, поднять и отпустить. Enter — прикоснуться. Кнопка рядом открывает проверку заказа.</span>
+    <span id={descriptionId} className="tim-mascot__sr">{renderMode === 'static' ? 'Наведите указатель, коснитесь робота или нажмите Enter. Кнопка рядом открывает проверку заказа.' : 'Робота можно погладить, поднять и отпустить. Enter — прикоснуться. Кнопка рядом открывает проверку заказа.'}</span>
     <a ref={partsThoughtRef} href={currentParts?.href} target={currentParts?.target || '_blank'} rel="noopener noreferrer"
       className="tim-mascot__thought" data-tim-controls="" data-visible="false" tabIndex={-1} aria-hidden="true"
       aria-label={currentParts ? `Купить запчасти для ${currentParts.title}` : undefined}>

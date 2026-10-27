@@ -8,6 +8,8 @@ import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
 import { createDeviceShowcase as createPhoneAssembly } from './device-showcase.mjs';
 import { createDevicePlatform as createPhoneLabStage } from './device-platform.mjs';
 import { createPhoneReflectionStudio } from './phone-reflection-studio.mjs';
+import { mergeRigidMeshes } from '../graphics/merge-rigid.mjs';
+import { repairLabWindow, positionRepairCanvas } from './repair-lab-layout.mjs';
 
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 // Resolve transparent silhouette coverage independently of FXAA's colour tests
@@ -52,8 +54,11 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   const introspectedPrograms=new Set();
   let maxColorSamples=0;
   let destroyed=false,failed=false,loaded=false,ready=false,visible=true,shaderFailure=null;
-  let frameId=0,lastFrame=0,elapsed=0,width=0,height=0,scroll=0;
+  let frameId=0,lastFrame=0,frameClock=0,elapsed=0,width=0,height=0,scroll=0;
   let frameUsesTimer=false,captureBusy=false;
+  let renderWindow=repairLabWindow(0,0),cameraKey='',shadowDirty=true,shadowPose='';
+  let mergedParts={sources:0,batches:0},framesRendered=0,shadowUpdates=0;
+  let qualityRatio=2,qualityStarted=0,qualityFrames=0,qualitySubmitMs=0;
   const lifetime=new AbortController(),geometries=new Set(),materials=new Set(),textures=new Set();
   const pointer=new THREE.Vector2(),pointerTarget=new THREE.Vector2(),zero=new THREE.Vector2(),drawingSize=new THREE.Vector2();
   let pointerActive=false;
@@ -65,13 +70,13 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   const api={
     setPointer(x,y,active=true){if(destroyed||reducedMotion)return;pointerTarget.set(clamp(Number(x)||0,-1,1),clamp(Number(y)||0,-1,1));pointerActive=Boolean(active);schedule();},
     setScroll(value){if(destroyed)return;scroll=clamp(Number(value)||0,0,1);if(!reducedMotion)schedule();},
-    setVisible(value){if(destroyed)return;visible=Boolean(value);cancelFrame();lastFrame=0;wakePreparation();if(visible){resumePreparation();schedule();}},
+    setVisible(value){if(destroyed)return;const next=Boolean(value);if(next===visible){if(next)schedule();return;}visible=next;cancelFrame();lastFrame=frameClock=0;qualityStarted=0;wakePreparation();if(visible){resumePreparation();schedule();}},
     resize,destroy,captureFrame,captureFrameAsync,attach,detach,
     isUsable(){return !destroyed&&!failed&&Boolean(renderer)&&!renderer.getContext().isContextLost();},
     getStats(){
       let meshes=0,instances=0,triangles=0;
       scene?.traverse(object=>{if(!object.isMesh)return;meshes++;const n=object.isInstancedMesh?object.count:1;instances+=n;const g=object.geometry;triangles+=n*(g.index?g.index.count:g.attributes.position.count)/3;});
-      return {scene:'diagnostic-workspace',cycleSeconds:14,phoneState:phone?.getState?.(),ready,loaded,meshes,instances,triangles:Math.round(triangles),postprocessing:Boolean(composer),antialiasSamples:sceneTarget?.samples||0,fxaaFallback:Boolean(fxaa?.enabled&&!sceneTarget?.samples),finalEdgeResolve:Boolean(fxaa?.enabled),frameDrawCallsIncludingPasses:renderer?.info.render.calls||0,frameTrianglesIncludingPasses:renderer?.info.render.triangles||0,environment:Boolean(environment),time:poseTime,startup:{...startup}};
+      return {scene:'diagnostic-workspace',cycleSeconds:14,phoneState:phone?.getState?.(),ready,loaded,meshes,instances,triangles:Math.round(triangles),postprocessing:Boolean(composer),antialiasSamples:sceneTarget?.samples||0,fxaaFallback:Boolean(fxaa?.enabled&&!sceneTarget?.samples),finalEdgeResolve:Boolean(fxaa?.enabled),frameDrawCallsIncludingPasses:renderer?.info.render.calls||0,frameTrianglesIncludingPasses:renderer?.info.render.triangles||0,framesRendered,shadowUpdates,mergedParts,renderWindow:{...renderWindow,pixelRatio:renderer?.getPixelRatio()||qualityRatio},environment:Boolean(environment),time:poseTime,startup:{...startup}};
     },
   };
 
@@ -79,8 +84,9 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   function basic(options){const mat=new THREE.MeshBasicMaterial(options);materials.add(mat);return mat;}
   function listen(node,type,handler,options={}){node.addEventListener(type,handler,{...options,signal:lifetime.signal});}
   function build(){
-    const context={THREE,scene,ownGeometry,materials,textures};
+    const context={THREE,scene,ownGeometry,materials,textures,detail:'page'};
     phone=createPhoneAssembly(context);
+    phone.setPageView(initialHost.getBoundingClientRect().width<=730);
     stage=createPhoneLabStage({...context,device:phone});
     phone.update(8);
     const framingBox=new THREE.Box3();
@@ -103,8 +109,14 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
     const rim=new THREE.DirectionalLight(0xf0f8ff,1.2);rim.position.set(-1,8,7);scene.add(rim);
     inspectionLight=new THREE.SpotLight(0xff4528,0,3,.9,.35,2);scene.add(inspectionLight,inspectionLight.target);
     wireframe=basic({color:0x255f71,wireframe:true,toneMapped:false});
+    mergedParts=mergeRigidMeshes(phone.root,ownGeometry);
+    scene.traverse(object=>{if(object.isMesh&&!object.userData.dynamicTransform){object.updateMatrix();object.matrixAutoUpdate=false;}});
   }
   function updateCamera(view='beauty',w=width,h=height){
+    if(w<1||h<1)return;
+    if(phone.setPageView(w<=730))shadowDirty=true;
+    const nextKey=[view,w,h,renderWindow.renderWidth,renderWindow.renderHeight,pointer.x,pointer.y,scroll].join('|');
+    if(nextKey===cameraKey)return;cameraKey=nextKey;
     const mobile=w<=730;camera.aspect=w/Math.max(1,h);
     cameraTarget.set(0,0,.30);camera.fov=mobile?40:28;
     if(view==='side'){cameraPosition.set(10.5,-11.0,6.5);cameraTarget.set(0,0,1.6);camera.fov=32;}
@@ -130,11 +142,21 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
       camera.projectionMatrix.elements[9]=(projected.minY+projected.maxY)/2-(1-rect.top-rect.bottom);
       camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
     }
+    // Render only the right/top window of the original composition. The same
+    // scene pixels keep their physical size, without allocating the empty area.
+    const sx=w/Math.max(1,renderWindow.renderWidth),sy=h/Math.max(1,renderWindow.renderHeight);
+    camera.projectionMatrix.elements[0]*=sx;
+    camera.projectionMatrix.elements[8]=(camera.projectionMatrix.elements[8]+1)*sx-1;
+    camera.projectionMatrix.elements[5]*=sy;
+    camera.projectionMatrix.elements[9]=(camera.projectionMatrix.elements[9]+1)*sy-1;
+    camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
     camera.updateMatrixWorld();
   }
   function updatePose(time,view='beauty'){
     if(!phone)return;poseTime=time;poseView=view;
     phone.update(time);stage?.update?.(time);
+    const nextShadowPose=phone.getState().carrierLift+'|'+phone.getProbeApproach();
+    if(nextShadowPose!==shadowPose){shadowDirty=true;shadowPose=nextShadowPose;}
     if(phone.focusPoint)focusPoint.copy(phone.focusPoint);else focusPoint.set(0,0,1.3);
     if(inspectionLight){inspectionLight.intensity=5.5*(phone.getInspection?.()||0);inspectionLight.target.position.copy(focusPoint);inspectionLight.position.set(focusPoint.x+.4,focusPoint.y-.5,focusPoint.z+.9);}
     updateCamera(view);
@@ -174,7 +196,7 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   function attach(nextHost,options={}){
     if(!api.isUsable()||!nextHost?.getBoundingClientRect||(!workerMode&&!nextHost.appendChild))return false;
     detach();host=nextHost;callbacks={onReady:options.onReady,onError:options.onError,onAssetReady:options.onAssetReady};attachId++;assetNotifiedId=-1;attachStarted=performance.now();
-    visible=true;ready=false;elapsed=0;lastFrame=0;scroll=0;pointer.set(0,0);pointerTarget.set(0,0);pointerActive=false;width=height=0;
+    visible=true;ready=false;elapsed=0;lastFrame=frameClock=0;qualityStarted=0;cameraKey='';shadowDirty=true;shadowPose='';scroll=0;pointer.set(0,0);pointerTarget.set(0,0);pointerActive=false;width=height=0;
     if(!workerMode)host.appendChild(renderer.domElement);observer?.observe(host);resize();updatePose(reducedMotion?8.0:.5);wakePreparation();resumePreparation();schedule();return true;
   }
   function detach(){
@@ -279,41 +301,56 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   function resize(){
     if(destroyed||!renderer||!host)return;const rect=host.getBoundingClientRect(),w=Math.round(rect.width),h=Math.round(rect.height);
     if(w<1||h<1){width=height=0;cancelFrame();wakePreparation();return;}
-    // Resolve fine moving leads/traces at an integer 2x scale, including DPR2
-    // screens; 1.5x left these opaque details undersampled. The loop stays 30fps.
-    const ratio=2;
-    if(width!==w||height!==h||renderer.getPixelRatio()!==ratio){width=w;height=h;renderer.setPixelRatio(ratio);renderer.setSize(w,h,false);composer?.setPixelRatio(ratio);composer?.setSize(w,h);configureAntialiasing(w,h);updateCamera();wakePreparation();schedule();}
+    const next=repairLabWindow(w,h),ratio=qualityRatio;
+    positionRepairCanvas(renderer.domElement,next);
+    if(width!==next.width||height!==next.height||renderWindow.renderWidth!==next.renderWidth||renderWindow.renderHeight!==next.renderHeight||renderer.getPixelRatio()!==ratio){
+      renderWindow=next;width=next.width;height=next.height;cameraKey='';renderer.setPixelRatio(ratio);renderer.setSize(next.renderWidth,next.renderHeight,false);composer?.setPixelRatio(ratio);composer?.setSize(next.renderWidth,next.renderHeight);configureAntialiasing();updateCamera();wakePreparation();schedule();
+    }else renderWindow=next;
   }
-  function renderScene(){const started=firstFrameSubmitted?0:performance.now();renderer.info.reset();renderer.shadowMap.needsUpdate=true;if(shadowLight)shadowLight.shadow.needsUpdate=true;if(composer&&poseView!=='wireframe'){composer.readBuffer=sceneTarget;composer.writeBuffer=postTarget;composer.render(0);}else renderer.render(scene,camera);if(!firstFrameSubmitted){firstFrameSubmitted=true;startup.firstFrameSubmitMs=performance.now()-started;}}
+  function renderScene(){const started=firstFrameSubmitted?0:performance.now();renderer.info.reset();renderer.shadowMap.needsUpdate=shadowDirty;if(shadowLight)shadowLight.shadow.needsUpdate=shadowDirty;if(shadowDirty)shadowUpdates++;if(composer&&poseView!=='wireframe'){composer.readBuffer=sceneTarget;composer.writeBuffer=postTarget;composer.render(0);}else renderer.render(scene,camera);shadowDirty=false;framesRendered++;if(!firstFrameSubmitted){firstFrameSubmitted=true;startup.firstFrameSubmitMs=performance.now()-started;}}
   function draw(now){
     frameId=0;if(!loaded||!canPrepare())return;
-    if(!reducedMotion&&lastFrame&&now-lastFrame<1000/30){schedule();return;}
+    const interval=1000/30;
+    if(!reducedMotion&&frameClock&&now-frameClock<interval-.5){schedule();return;}
+    frameClock=now-Math.max(0,now-frameClock-interval)%interval;
     const dt=lastFrame?Math.min(.075,(now-lastFrame)/1000):1/30;lastFrame=now;if(!reducedMotion)elapsed+=dt;
     pointer.lerp(pointerActive?pointerTarget:zero,1-Math.exp(-dt*4));
+    if(pointer.distanceToSquared(pointerActive?pointerTarget:zero)<1e-8)pointer.copy(pointerActive?pointerTarget:zero);
     updatePose(reducedMotion?8.0:elapsed+.5);
+    const submitted=performance.now();
     try{renderScene();if(shaderFailure){fail(shaderFailure);return;}if(!ready&&!destroyed&&host){ready=true;if(!startup.constructorToReadyMs)startup.constructorToReadyMs=performance.now()-constructorStarted;startup.attachToReadyMs=performance.now()-attachStarted;callbacks.onReady?.();}}
     catch(error){fail(error);return;}
+    // Only sustained low throughput after warm-up lowers the render scale.
+    // Keep the 3D model and all animation; never oscillate quality per frame.
+    if(!reducedMotion&&qualityRatio>1.5){
+      if(!qualityStarted)qualityStarted=now;
+      qualityFrames++;qualitySubmitMs+=performance.now()-submitted;
+      if(now-qualityStarted>4000){
+        if(qualityFrames*1000/(now-qualityStarted)<16||qualitySubmitMs/qualityFrames>18){qualityRatio=1.5;resize();}
+        qualityStarted=now;qualityFrames=0;qualitySubmitMs=0;
+      }
+    }
     if(!reducedMotion)schedule();
   }
   function beginCapture(options){
     if(!loaded||!canPrepare())return null;
-    const saved={width,height,ratio:renderer.getPixelRatio(),time:poseTime,view:poseView,override:scene.overrideMaterial,pointer:pointer.clone(),renderer,attachId};
+    const saved={width,height,renderWindow:{...renderWindow},ratio:renderer.getPixelRatio(),time:poseTime,view:poseView,override:scene.overrideMaterial,pointer:pointer.clone(),renderer,attachId};
     const exportWidth=clamp(Math.round(Number(options.width)||width),32,4096),exportHeight=clamp(Math.round(Number(options.height)||height),32,4096),exportRatio=clamp(Number(options.pixelRatio)||1,1,2);
     const time=Number.isFinite(options.time)?Number(options.time):poseTime,view=options.view==='side'?'side':options.view==='wireframe'?'wireframe':'beauty';
-    captureBusy=true;cancelFrame();lastFrame=0;
+    captureBusy=true;cancelFrame();lastFrame=0;qualityStarted=0;qualityFrames=0;qualitySubmitMs=0;
     try{
-      width=exportWidth;height=exportHeight;renderer.setPixelRatio(exportRatio);renderer.setSize(width,height,false);composer?.setPixelRatio(exportRatio);composer?.setSize(width,height);configureAntialiasing(width,height);pointer.set(0,0);updatePose(time,view);scene.overrideMaterial=view==='wireframe'?wireframe:null;
+      width=exportWidth;height=exportHeight;renderWindow={width,height,renderWidth:width,renderHeight:height,left:0,top:0};cameraKey='';renderer.setPixelRatio(exportRatio);renderer.setSize(width,height,false);composer?.setPixelRatio(exportRatio);composer?.setSize(width,height);configureAntialiasing();pointer.set(0,0);updatePose(time,view);scene.overrideMaterial=view==='wireframe'?wireframe:null;
       renderScene();
       return saved;
     }catch{finishCapture(saved);return null;}
   }
   function finishCapture(saved){
-    captureBusy=false;lastFrame=0;
+    captureBusy=false;lastFrame=0;qualityStarted=0;qualityFrames=0;qualitySubmitMs=0;
     if(destroyed||!renderer||saved.renderer!==renderer)return;
     if(scene)scene.overrideMaterial=saved.override;
     if(saved.attachId===attachId){
       try{
-        renderer.setPixelRatio(saved.ratio);renderer.setSize(saved.width,saved.height,false);composer?.setPixelRatio(saved.ratio);composer?.setSize(saved.width,saved.height);configureAntialiasing(saved.width,saved.height);
+        renderWindow=saved.renderWindow;cameraKey='';renderer.setPixelRatio(saved.ratio);renderer.setSize(renderWindow.renderWidth,renderWindow.renderHeight,false);composer?.setPixelRatio(saved.ratio);composer?.setSize(renderWindow.renderWidth,renderWindow.renderHeight);configureAntialiasing();
         if(host){width=saved.width;height=saved.height;pointer.copy(saved.pointer);updatePose(saved.time,saved.view);resize();if(visible&&!isHidden())renderScene();}
         else width=height=0;
       }catch{}
@@ -346,7 +383,7 @@ export function createRepairLabScene(initialHost,{reducedMotion=false,onReady,on
   try{
     if(!initialHost?.getBoundingClientRect||(!workerMode&&(!initialHost.appendChild||typeof window==='undefined'))||(workerMode&&!providedCanvas?.getContext))throw new Error('Repair lab scene needs a canvas and sized host.');
     const rendererStarted=performance.now();
-    renderer=new THREE.WebGLRenderer({canvas:providedCanvas,alpha:true,antialias:false,preserveDrawingBuffer:false,powerPreference:'low-power'});
+    renderer=new THREE.WebGLRenderer({canvas:providedCanvas,alpha:true,antialias:false,preserveDrawingBuffer:false,powerPreference:'low-power',failIfMajorPerformanceCaveat:true});
     renderer.setClearColor(0xf5f8f8,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
     renderer.info.autoReset=false;
     startup.parallelShaderCompile=renderer.extensions.has('KHR_parallel_shader_compile');

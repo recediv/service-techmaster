@@ -67,3 +67,17 @@ html[data-tim-grabbing], html[data-tim-grabbing] * { cursor: grabbing !important
 .tim-mascot:is([data-suspended=true],[data-order-open=true],[data-projecting=true]) .tim-mascot__thought { opacity: 0; visibility: hidden; pointer-events: none; }
 @media (hover: none), (pointer: coarse) { .tim-mascot[data-controls-visible=true]:not([data-walking=true]):not([data-projecting=true]) .tim-mascot__order { opacity: 1; visibility: visible; pointer-events: auto; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .tim-mascot .site-button { transition: none; } .tim-mascot .tim-mascot__thought { transform: none; transition: opacity 150ms ease, visibility 150ms; } }
+
+.tim-mascot[data-render-mode=static] .tim-mascot__actor { left: calc(var(--tim-x) - var(--tim-size) / 2); top: var(--tim-top); width: var(--tim-size); height: var(--tim-size); pointer-events: auto; touch-action: manipulation; cursor: pointer; }
+.tim-mascot__static-image { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.tim-mascot[data-render-mode=static] .tim-mascot__shadow { left: calc(var(--tim-x) - var(--tim-size) * .2); top: calc(var(--tim-top) + var(--tim-size) - 2px); width: calc(var(--tim-size) * .4); height: 4px; opacity: .16; filter: blur(1.3px); }
+.tim-mascot[data-render-mode=static][data-introducing=true] .tim-mascot__actor { transform-origin: center bottom; animation: tim-static-hello 4.8s ease-in-out infinite; }
+.tim-mascot[data-render-mode=static]:is([data-suspended=true],[data-order-open=true]) .tim-mascot__actor { animation-play-state: paused; }
+.tim-mascot[data-render-mode=static][data-order-open=true] :is(.tim-mascot__actor,.tim-mascot__shadow) { visibility: hidden; pointer-events: none; }
+.tim-mascot[data-render-mode=static] .tim-order__handle { display: none; }
+@keyframes tim-static-hello { 0%, 32%, 100% { transform: none; } 7%, 21% { transform: translateY(-7px) rotate(-5deg); } 14%, 28% { transform: translateY(-3px) rotate(5deg); } }
+@media (max-width: 767px), (hover: none) and (pointer: coarse) {
+  .tim-mascot[data-render-mode=static] .tim-order[data-side=right] .tim-order__header { min-height: 0; padding: 20px 52px 20px 18px; }
+  .tim-mascot[data-render-mode=static] .tim-order[data-side=right] .tim-order__close { position: static; margin: -3px -36px -3px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .tim-mascot[data-render-mode=static][data-introducing=true] .tim-mascot__actor { animation: none; } }

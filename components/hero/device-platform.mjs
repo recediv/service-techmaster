@@ -40,7 +40,7 @@ export function createDevicePlatform({THREE,scene,ownGeometry,materials,textures
   // Flex only the free cable loop; its far end stays on the work surface.
   // Reuse the same buffers instead of rebuilding a TubeGeometry every frame.
   const cable=tube([along(2.36).toArray(),along(2.72).toArray(),[2.5,3.8,2.25],[5,5,1.5],[8,7,.4],[13,10,.4]],.044,rubber);
-  cable.name='Flexible microprobe lead';
+  cable.name='Flexible microprobe lead';cable.userData.dynamicGeometry=true;
   const cableGeometry=cable.geometry,cablePosition=cableGeometry.attributes.position;
   const cableRest=cablePosition.array.slice(),cableWeights=new Float32Array(cablePosition.count);
   for(let i=0;i<cableWeights.length;i++){
@@ -51,7 +51,7 @@ export function createDevicePlatform({THREE,scene,ownGeometry,materials,textures
   cableGeometry.computeBoundingSphere();cableGeometry.boundingSphere.radius+=1;
   const lastCableOffset=new THREE.Vector3(Infinity,Infinity,Infinity);
   const glow=new THREE.MeshBasicMaterial({color:0xff4d24,transparent:true,opacity:0,depthWrite:false,toneMapped:false});materials.add(glow);
-  const halo=mesh(own(new THREE.RingGeometry(.108,.139,48)),glow);halo.name='Diagnostic test land contact halo';halo.castShadow=false;halo.receiveShadow=false;
+  const halo=mesh(own(new THREE.RingGeometry(.108,.139,48)),glow);halo.name='Diagnostic test land contact halo';halo.castShadow=false;halo.receiveShadow=false;halo.userData.dynamicTransform=true;
   const clamp=v=>Number.isFinite(v)?Math.max(0,Math.min(1,v)):0;
   function update(time=0){
     const inspection=clamp(device?.getInspection?.()||0),approach=clamp(device?.getProbeApproach?.()??inspection);

@@ -1,3 +1,5 @@
+import { repairLabWindow, positionRepairCanvas } from './repair-lab-layout.mjs';
+
 let fallbackModule = null;
 
 function loadFallback() {
@@ -136,6 +138,7 @@ export function createRepairLabScene(initialHost, initialOptions = {}) {
         canvas.setAttribute('aria-hidden', 'true');
         canvas.tabIndex = -1;
         canvas.style.cssText = 'display:block;width:100%;height:100%;pointer-events:none;';
+        positionRepairCanvas(canvas,repairLabWindow(size.width,size.height));
         host.appendChild(canvas);
         offscreen = canvas.transferControlToOffscreen();
         const ownGeneration = ++generation;
@@ -209,6 +212,7 @@ export function createRepairLabScene(initialHost, initialOptions = {}) {
     if (destroyed || !host) return;
     const rect = host.getBoundingClientRect();
     size = { width: Math.max(0, Math.round(rect.width)), height: Math.max(0, Math.round(rect.height)), dpr: Math.max(1, window.devicePixelRatio || 1) };
+    positionRepairCanvas(canvas,repairLabWindow(size.width,size.height));
     mainApi?.resize();
     send('resize', size);
     syncVisible();
@@ -240,6 +244,7 @@ export function createRepairLabScene(initialHost, initialOptions = {}) {
     size = { width: Math.max(0, Math.round(rect.width)), height: Math.max(0, Math.round(rect.height)), dpr: Math.max(1, window.devicePixelRatio || 1) };
     if (mainApi && !mainApi.attach(host, mainOptions(attachment))) { finalError('Repair lab fallback could not attach.'); return false; }
     if (canvas) host.appendChild(canvas);
+    positionRepairCanvas(canvas,repairLabWindow(size.width,size.height));
     if (workerStarted) send('attach', { ...size, visible: Boolean(active()) });
     observer?.observe(host);
     syncVisible();
