@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { withBase } from '../../lib/public-urls.mjs';
 import { readGraphicsSupport } from '../../lib/graphics-support.mjs';
 import { acquireHeroScene } from './hero-scene-pool.mjs';
-import './hero-tech-backdrop.css';
 
 const sceneRevision = 'site-diagnostic-30';
 const environmentUrl = withBase('/assets/hero/studio-small-09-1k.hdr');

@@ -71,3 +71,7 @@
   .site-hero.site-hero--home .site-home-hero__advantages > .site-home-hero__conditions { padding: 2px 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .tech-hero .tech-hero__canvas { transition: none; } }
+
+.site-hero.site-hero--home-without-scene .site-home-hero__top { grid-template-columns: minmax(0, 1fr); }
+.site-hero.site-hero--home-without-scene .site-home-hero__copy { max-width: 960px; }
+.site-hero.site-hero--home-without-scene .site-home-hero__intro { max-width: 75ch; }

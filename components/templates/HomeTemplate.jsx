@@ -7,19 +7,23 @@ import CommunityPanels from '../community/CommunityPanels';
 import HeroFrame, { HeroTitle } from '../hero/HeroFrame';
 import HeroTechBackdrop from '../hero/HeroTechBackdrop';
 import '../hero/marketing-hero.css';
+import '../hero/hero-tech-backdrop.css';
+
+// Temporarily disabled for the demo; restore the board and its layout with this flag.
+const showHeroBoard = false;
 
 export default function HomeTemplate({ model }) {
   const { resource, site = {} } = model;
   const home = site.home || {};
   const title = home.title || resource.longTitle || resource.title;
   return <main className="site-home">
-    <HeroFrame model={model} className="site-hero--home" breadcrumbs={false} background={<HeroTechBackdrop />}>
+    <HeroFrame model={model} className={`site-hero--home${showHeroBoard ? '' : ' site-hero--home-without-scene'}`} breadcrumbs={false} background={showHeroBoard ? <HeroTechBackdrop /> : null}>
       <div className="site-home-hero__top">
         <div className="site-home-hero__copy">
           <HeroTitle>{title}</HeroTitle>
           <RichText html={home.introHtml || resource.introHtml} className="site-home-hero__intro" />
         </div>
-        <div className="site-home-hero__scene-space" aria-hidden="true" data-page-reveal-skip />
+        {showHeroBoard ? <div className="site-home-hero__scene-space" aria-hidden="true" data-page-reveal-skip /> : null}
       </div>
       <Advantages items={home.advantages || []} model={model} critical variant="home" className="site-home-hero__advantages" />
     </HeroFrame>
