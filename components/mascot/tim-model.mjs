@@ -9,6 +9,8 @@ const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const pow = (n, p) => Math.sign(n) * Math.abs(n) ** p;
 const v = (x, y, z) => new THREE.Vector3(x, y, z);
 const shape = { a: 188, b: 192, c: 158, e: .82 };
+// Keep the existing textured expressions, with the small eye-mesh budget used in Blender.
+const EYE_NX = 14, EYE_NY = 16;
 
 export function roundSurface(x, y) {
   const ph = Math.asin(clamp(pow(y / shape.b, 1 / shape.e), -.99999, .99999));
@@ -17,30 +19,33 @@ export function roundSurface(x, y) {
 }
 
 function shellGeometry(a, b, c, e, nu = 80, nv = 52) {
-  const pos = [], uv = [], idx = [];
-  for (let j = 0; j <= nv; j++) {
-    const ph = -Math.PI / 2 + j / nv * Math.PI, r = j === 0 || j === nv ? 0 : Math.max(0, Math.cos(ph)) ** e, y = pow(Math.sin(ph), e);
-    for (let i = 0; i <= nu; i++) {
+  // Blender's closed topology: one vertex per pole and a shared seam.
+  // These solid-colour shells need no UVs; the display and eyes keep theirs.
+  const pos = [0, -b, 0], idx = [];
+  for (let j = 1; j < nv; j++) {
+    const ph = -Math.PI / 2 + j / nv * Math.PI, r = Math.max(0, Math.cos(ph)) ** e, y = pow(Math.sin(ph), e);
+    for (let i = 0; i < nu; i++) {
       const th = -Math.PI + i / nu * Math.PI * 2;
-      const seam = i === 0 || i === nu;
-      pos.push(seam ? 0 : a * r * Math.sin(th), b * y, c * r * (seam ? -1 : Math.cos(th))); uv.push(i / nu, .5 + y * .5);
+      pos.push(a * r * Math.sin(th), b * y, c * r * Math.cos(th));
     }
   }
-  for (let j = 0; j < nv; j++) for (let i = 0; i < nu; i++) {
-    const k = j * (nu + 1) + i; idx.push(k, k + 1, k + nu + 1, k + 1, k + nu + 2, k + nu + 1);
+  const top = pos.length / 3; pos.push(0, b, 0);
+  for (let i = 0; i < nu; i++) idx.push(0, 1 + (i + 1) % nu, 1 + i);
+  for (let j = 0; j < nv - 2; j++) for (let i = 0; i < nu; i++) {
+    const lo = 1 + j * nu, hi = lo + nu, next = (i + 1) % nu;
+    idx.push(lo + i, lo + next, hi + i, lo + next, hi + next, hi + i);
   }
+  const last = 1 + (nv - 2) * nu;
+  for (let i = 0; i < nu; i++) idx.push(last + i, last + (i + 1) % nu, top);
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-  g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
   g.setIndex(idx); g.computeVertexNormals();
   const normals = g.attributes.normal;
-  for (let i = 0; i <= nu; i++) {
-    normals.setXYZ(i, 0, -1, 0); normals.setXYZ(nv * (nu + 1) + i, 0, 1, 0);
-  }
-  for (let j = 1; j < nv; j++) {
-    const left = j * (nu + 1), right = left + nu;
-    const normal = v(normals.getX(left) + normals.getX(right), normals.getY(left) + normals.getY(right), normals.getZ(left) + normals.getZ(right)).normalize();
-    normals.setXYZ(left, normal.x, normal.y, normal.z); normals.setXYZ(right, normal.x, normal.y, normal.z);
+  normals.setXYZ(0, 0, -1, 0); normals.setXYZ(top, 0, 1, 0);
+  if (e === 1 && a === b && b === c) {
+    // Preserve SphereGeometry's analytic sphere normals on the shared shoulders.
+    const p = g.attributes.position;
+    for (let i = 0; i < p.count; i++) normals.setXYZ(i, p.getX(i) / a, p.getY(i) / b, p.getZ(i) / c);
   }
   return g;
 }
@@ -72,7 +77,7 @@ export function createRoundTim() {
   const root = new THREE.Group(), head = new THREE.Group(), body = new THREE.Group();
   root.add(body, head); head.position.y = TIM_HEAD_Y;
   // Resources belong to this instance; hiding/reopening the mascot creates a fresh rig.
-  const materials = new Map(), eyeMaps = new Map(), shells = new Map(), sphere = new THREE.SphereGeometry(1,24,16);
+  const materials = new Map(), eyeMaps = new Map(), shells = new Map(), sphere = shellGeometry(1,1,1,1,24,16);
   const mat = color => {
     // Only the small chest indicator uses the exact button red; the shell trim stays teal.
     if (!materials.has(color)) materials.set(color,color===TIM_ACCENT
@@ -91,18 +96,18 @@ export function createRoundTim() {
     const mesh=new THREE.Mesh(sphere,mat(color));mesh.position.set(x,y,z);mesh.scale.set(rx,ry,rz);parent.add(mesh);return mesh;
   }
   // Detail follows the 125px maximum; keep the head/display at their original resolution.
-  shell(body,168,154,126,.90,white,0,200,0,48,32);
-  const collar=shell(body,94,24,112,.70,teal,0,326,-8,40,20);
-  const indicator=shell(body,32,5.4,3.6,.55,mat(TIM_ACCENT).clone(),0,222,127,24,12);
+  shell(body,168,154,126,.90,white,0,200,0,40,26);
+  const collar=shell(body,94,24,112,.70,teal,0,326,-8,32,12);
+  const indicator=shell(body,32,5.4,3.6,.55,mat(TIM_ACCENT).clone(),0,222,127,24,8);
   const arms=[],legs=[];
   for (const side of [-1,1]) {
     const group=new THREE.Group();group.position.set(side*150,296,0);body.add(group);
     ball(group,teal,0,0,0,34,38,36);
-    const wing=shell(group,36,86,34,.94,white,side*34,-46,4,32,24);wing.rotation.z=side*.60;
+    const wing=shell(group,36,86,34,.94,white,side*34,-46,4,24,16);wing.rotation.z=side*.60;
     const grip=v(side*74,-108,9);arms.push({group,side,grip,direction:grip.clone().normalize()});
     const foot=new THREE.Group();root.add(foot);foot.position.x=side*72;
-    shell(foot,64,28,78,.72,white,0,30,28,40,24);
-    shell(foot,58,7,70,.75,teal,0,8,28,40,16);legs.push({side,foot});
+    shell(foot,64,28,78,.72,white,0,30,28,32,16);
+    shell(foot,58,7,70,.75,teal,0,8,28,28,10);legs.push({side,foot});
   }
   // A closed, uniformly white shell. Screen colours exist only on the front panel.
   shell(head,188,192,158,.82,white);
@@ -128,7 +133,7 @@ export function createRoundTim() {
     const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;eyeMaps.set(happy,texture);return texture;
   }
   const eyes=[-60,60].map(cx=>{
-    const mesh=new THREE.Mesh(roundFacePatch(cx,-6,42,54),new THREE.MeshBasicMaterial({map:eyeMap(false),transparent:true,depthWrite:false,toneMapped:false}));
+    const mesh=new THREE.Mesh(roundFacePatch(cx,-6,42,54,2.4,EYE_NX,EYE_NY),new THREE.MeshBasicMaterial({map:eyeMap(false),transparent:true,depthWrite:false,toneMapped:false}));
     mesh.geometry.attributes.position.setUsage(THREE.DynamicDrawUsage);
     // Runtime expression weights stay in [0,1]. Include every clamped gaze,
     // blink and alert deformation once, so culling/raycast never needs a
@@ -256,9 +261,9 @@ export function createRoundTim() {
       const key=[opening,gx,gy,happy,alert].map(n=>typeof n==='number'?n.toFixed(3):n).join(':');
       if(key===eye.last)return;eye.last=key;eye.mesh.material.map=eyeMap(happy);
       const p=eye.mesh.geometry.attributes.position;
-      for(let j=0;j<=28;j++)for(let k=0;k<=24;k++){
-        const x=eye.cx+gx+(k/24*2-1)*42*(1+alert*.10),y=-6+gy+(j/28*2-1)*54*opening*(1+alert*.13);
-        p.setXYZ(j*25+k,x,y,roundSurface(x,y)+2.4);
+      for(let j=0;j<=EYE_NY;j++)for(let k=0;k<=EYE_NX;k++){
+        const x=eye.cx+gx+(k/EYE_NX*2-1)*42*(1+alert*.10),y=-6+gy+(j/EYE_NY*2-1)*54*opening*(1+alert*.13);
+        p.setXYZ(j*(EYE_NX+1)+k,x,y,roundSurface(x,y)+2.4);
       }
       p.needsUpdate=true;
     });
